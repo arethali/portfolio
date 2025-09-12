@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 
 @export var anim_tree : AnimationTree
+@export var anim_player : AnimationPlayer
 @export var conditions_array : Array[String]
 @export var target_array : Array[int]
 @export var timing_array : Array[float]
@@ -39,10 +40,14 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			print("clicked")
 			state = "Yell"
+			anim_tree.set("parameters/conditions/default", true)
+			await get_tree().create_timer(.1).timeout
+			anim_tree.set("parameters/conditions/default", false)
 			anim_tree.get("parameters/playback").travel("Default")
 			anim_tree.set("parameters/conditions/Yell", true)
 			await get_tree().create_timer(.7).timeout
 			anim_tree.set("parameters/conditions/Yell", false)
+			anim_tree.get("parameters/playback").travel("Default")
 			state = ""
 
 func _play_condition_anim(anim_tree: AnimationTree, condition : String, time : float):
@@ -50,6 +55,9 @@ func _play_condition_anim(anim_tree: AnimationTree, condition : String, time : f
 	anim_tree.set("parameters/conditions/" + condition, true)
 	await get_tree().create_timer(time).timeout
 	anim_tree.set("parameters/conditions/" + condition, false)
+	anim_tree.set("parameters/conditions/default", true)
+	await get_tree().create_timer(time).timeout
+	anim_tree.set("parameters/conditions/default", false)
 	state = ""
 
 func _play_sleep_anim(anim_tree: AnimationTree):

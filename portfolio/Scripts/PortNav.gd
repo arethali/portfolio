@@ -21,9 +21,10 @@ func _ready():
 	
 	#Set cursors
 	Input.set_custom_mouse_cursor(arrow, Input.CURSOR_ARROW, Vector2(10,10))
-	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND, Vector2(10,10))
-	print("set_mouse")
-	Input.set_default_cursor_shape(2)
+	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND, Vector2(5,5))
+	await get_tree().process_frame
+	#Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	#print(Input.get_current_cursor_shape())
 #
 func _on_window_size_changed():
 	var aspect_ratio = float(get_viewport().size.x)/float(get_viewport().size.y)

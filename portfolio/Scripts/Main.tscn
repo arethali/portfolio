@@ -1,14 +1,14 @@
 [gd_scene load_steps=498 format=3 uid="uid://dfhro4he33mwe"]
 
 [ext_resource type="Texture2D" uid="uid://bldgwkrwu0770" path="res://Stylized outline.png" id="1_glv2v"]
-[ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://PortNav.gd" id="1_uu6xs"]
+[ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://Scripts/PortNav.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://cegd5obta3j67" path="res://Assets/Background/Origin/Sky + Mountains/Sky.png" id="2_3dxm6"]
-[ext_resource type="Script" uid="uid://bgy6aeryatwd5" path="res://background_anims.gd" id="2_oye8v"]
+[ext_resource type="Script" uid="uid://bgy6aeryatwd5" path="res://Scripts/background_anims.gd" id="2_oye8v"]
 [ext_resource type="Texture2D" uid="uid://c05ec4atpi1v7" path="res://Assets/Background/Origin/Sky + Mountains/Back Mountains.png" id="3_lgr22"]
 [ext_resource type="Texture2D" uid="uid://3kkp4n3bt8ej" path="res://Assets/Background/Origin/Clouds/Planet.png" id="4_4bst2"]
 [ext_resource type="Texture2D" uid="uid://bv4fpplgipoj0" path="res://Assets/Background/Origin/Sky + Mountains/Front Mountains.png" id="4_trn2v"]
 [ext_resource type="Texture2D" uid="uid://bx5s4wranypso" path="res://Assets/Background/Origin/Crashed/Crashed/Crashed1.png" id="4_w3rk5"]
-[ext_resource type="Script" uid="uid://df3psg0innjpd" path="res://cloud_generation.gd" id="5_3fgw6"]
+[ext_resource type="Script" uid="uid://df3psg0innjpd" path="res://Scripts/cloud_generation.gd" id="5_3fgw6"]
 [ext_resource type="Texture2D" uid="uid://dfkjqjmfdoui8" path="res://Assets/Background/Origin/Sky + Mountains/Highway.png" id="5_03owx"]
 [ext_resource type="Texture2D" uid="uid://bu6765ii3foll" path="res://Assets/Background/Origin/Crashed/Crashed/Crashed2.png" id="5_5mvff"]
 [ext_resource type="Texture2D" uid="uid://drkmpg7wvwkxl" path="res://Assets/Background/Below/Ground/Desert.png" id="6_03owx"]
@@ -51,7 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://cy3tvv8g8ru8e" path="res://Assets/Background/Below/Dead Pixel/dp7.png" id="34_f4ese"]
 [ext_resource type="Texture2D" uid="uid://b3fm1yd45sarm" path="res://Assets/Background/Below/Dead Pixel/dp8.png" id="35_rchyr"]
 [ext_resource type="Texture2D" uid="uid://c35cblvf5yod2" path="res://Assets/Background/Below/Dead Pixel/dp9.png" id="36_pljue"]
-[ext_resource type="Script" uid="uid://d0o8gt22ua3na" path="res://dead_pixel.gd" id="37_nx4yo"]
+[ext_resource type="Script" uid="uid://d0o8gt22ua3na" path="res://Scripts/dead_pixel.gd" id="37_nx4yo"]
 [ext_resource type="Texture2D" uid="uid://bgj2xy7fw6noq" path="res://Assets/Background/Below/Lever/Box.png" id="42_ac6pf"]
 [ext_resource type="Texture2D" uid="uid://bf5hf8ioh5vo" path="res://Assets/Background/Below/Lever/Spark 1/S_1.png" id="43_ek63v"]
 [ext_resource type="Texture2D" uid="uid://bbep5phbw7v7k" path="res://Assets/Background/Below/Lever/Spark 1/S_2.png" id="44_oaklg"]
@@ -81,11 +81,11 @@
 [ext_resource type="Texture2D" uid="uid://cb2ga7fxdbbni" path="res://Assets/Mail/Home Contact Closed/Home Contact Closed.png" id="67_livak"]
 [ext_resource type="Texture2D" uid="uid://dgi3sljl6idrg" path="res://Assets/Mail/Home Contact Open first/Home Contact Open first2.png" id="68_fatcg"]
 [ext_resource type="Texture2D" uid="uid://b80b6aggdbavt" path="res://Assets/About Me/Head/Me Head6.png" id="68_tjmm3"]
-[ext_resource type="Script" uid="uid://bs3b4t15uovy3" path="res://Mouse.gd" id="69_3b7lf"]
+[ext_resource type="Script" uid="uid://bs3b4t15uovy3" path="res://Scripts/Mouse.gd" id="69_3b7lf"]
 [ext_resource type="Texture2D" uid="uid://b2uqa8wxhushd" path="res://Assets/About Me/Head/Me Head7.png" id="69_deygs"]
 [ext_resource type="Texture2D" uid="uid://nhnm66bxa7w7" path="res://Assets/Mail/Home Contact Open first/Home Contact Open first3.png" id="69_tmkk1"]
 [ext_resource type="Texture2D" uid="uid://bdv6okwgvjsih" path="res://Assets/About Me/Head/Me Head8.png" id="70_6ievk"]
-[ext_resource type="Script" uid="uid://bvvqwfnts78il" path="res://home_anims.gd" id="70_kq445"]
+[ext_resource type="Script" uid="uid://bvvqwfnts78il" path="res://Scripts/home_anims.gd" id="70_kq445"]
 [ext_resource type="Texture2D" uid="uid://by73wnyb1vsm3" path="res://Assets/Mail/Home Contact Open first/Home Contact Open first4.png" id="70_uupql"]
 [ext_resource type="Texture2D" uid="uid://b6rr5xuvhe117" path="res://Assets/Mail/Home Contact Open first/Home Contact Open first5.png" id="71_nakit"]
 [ext_resource type="Texture2D" uid="uid://dm3sxlmjy12k0" path="res://Assets/About Me/Head/Me Head9.png" id="71_rg2x5"]
@@ -134,7 +134,7 @@
 [ext_resource type="Texture2D" uid="uid://hrj5oli8x5i2" path="res://Assets/Birbs/Leo/Sleep/Leo Sleep3.png" id="101_vybqf"]
 [ext_resource type="Texture2D" uid="uid://b42xgaqgh373b" path="res://Assets/Birbs/Leo/Sleep/Leo Sleep4.png" id="102_marsu"]
 [ext_resource type="Texture2D" uid="uid://b24tb5ch11bk2" path="res://Assets/Birbs/Leo/Sleep/Leo Sleep5.png" id="103_imbc2"]
-[ext_resource type="Script" uid="uid://dcdpg3cv8c24w" path="res://random_cycle_animation.gd" id="104_3fgw6"]
+[ext_resource type="Script" uid="uid://dcdpg3cv8c24w" path="res://Scripts/random_cycle_animation.gd" id="104_3fgw6"]
 [ext_resource type="Texture2D" uid="uid://dopb130c2aeaa" path="res://Assets/Birbs/Leo/Yell/Leo Yell1.png" id="104_6xmvy"]
 [ext_resource type="Texture2D" uid="uid://yehapm2jesog" path="res://Assets/Birbs/Leo/Yell/Leo Yell2.png" id="105_xkfyu"]
 [ext_resource type="Texture2D" uid="uid://c2swhjjmovyiw" path="res://Assets/Birbs/Leo/Yell/Leo Yell3.png" id="106_ep5lf"]
@@ -151,7 +151,7 @@
 [ext_resource type="Texture2D" uid="uid://bvf1dgakcvjxv" path="res://Assets/Birbs/Alvis/Yell/Alvis yell2.png" id="117_2l42k"]
 [ext_resource type="Texture2D" uid="uid://bsv5y85e58olw" path="res://Assets/Birbs/Alvis/Yell/Alvis yell3.png" id="118_s1eck"]
 [ext_resource type="Texture2D" uid="uid://c8c8dimsyq46y" path="res://Assets/Birbs/Alvis/Yell/Alvis yell4.png" id="119_rngq8"]
-[ext_resource type="Script" uid="uid://c40d5m5ucgikb" path="res://anim_tree_one_shot_rng.gd" id="120_spkrm"]
+[ext_resource type="Script" uid="uid://c40d5m5ucgikb" path="res://Scripts/anim_tree_one_shot_rng.gd" id="120_spkrm"]
 [ext_resource type="Texture2D" uid="uid://d3oee00rdk337" path="res://Assets/Phone/Phone On/Phone On1.png" id="120_y5qkn"]
 [ext_resource type="Texture2D" uid="uid://cauo3wp0vhj5f" path="res://Assets/Phone/Phone On/Phone On2.png" id="121_08030"]
 [ext_resource type="Texture2D" uid="uid://mo410xqnjdf8" path="res://Assets/Phone/Phone On/Phone On3.png" id="122_vybqf"]
@@ -173,7 +173,7 @@
 [ext_resource type="Texture2D" uid="uid://dc4qnihx8ay76" path="res://Assets/Lamps/Left/Lamp/L_Lamp11.png" id="138_alj7c"]
 [ext_resource type="Texture2D" uid="uid://dndk000lw50uq" path="res://Assets/Lamps/Left/Lamp/L_Lamp1.png" id="139_t7kw1"]
 [ext_resource type="Texture2D" uid="uid://cv3fnppxg4i6g" path="res://Assets/Lamps/Left/Sand/L_Sand1.png" id="140_elw4l"]
-[ext_resource type="Script" uid="uid://ccrcaakftvq8w" path="res://bird_anims.gd" id="140_r15k5"]
+[ext_resource type="Script" uid="uid://ccrcaakftvq8w" path="res://Scripts/bird_anims.gd" id="140_r15k5"]
 [ext_resource type="Texture2D" uid="uid://cougderwg6rld" path="res://Assets/Lamps/Left/Sand/L_Sand2.png" id="141_pxy3g"]
 [ext_resource type="Texture2D" uid="uid://bdqhrji8nppfl" path="res://Assets/Lamps/Left/Sand/L_Sand3.png" id="142_biiag"]
 [ext_resource type="Texture2D" uid="uid://51et8bsxgihh" path="res://Assets/Lamps/Left/Sand/L_Sand4.png" id="143_05tku"]
@@ -2094,10 +2094,10 @@ animation = &"Default"
 animation = &"Hair"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_62ef8"]
-animation = &"Sleeping"
+animation = &"To_Sleep"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3h7hk"]
-animation = &"To_Sleep"
+animation = &"Sleeping"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5871"]
 animation = &"Yell"
@@ -2112,14 +2112,15 @@ advance_condition = &"Alert"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n8kau"]
 switch_mode = 2
 advance_mode = 2
+advance_condition = &"default"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fm58o"]
 advance_mode = 2
 advance_condition = &"Hair"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hve0h"]
-switch_mode = 2
 advance_mode = 2
+advance_condition = &"default"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j3o4w"]
 advance_mode = 2
@@ -3711,6 +3712,7 @@ sparks = NodePath("Lever/AnimationPlayer")
 texture_filter = 1
 offset_right = 5760.0
 offset_bottom = 1020.0
+mouse_filter = 2
 texture = ExtResource("2_3dxm6")
 stretch_mode = 2
 
@@ -3822,6 +3824,7 @@ texture_filter = 1
 offset_top = 568.0
 offset_right = 5760.0
 offset_bottom = 876.0
+mouse_filter = 2
 texture = ExtResource("3_lgr22")
 stretch_mode = 2
 
@@ -3846,6 +3849,7 @@ texture_filter = 1
 offset_top = 492.0
 offset_right = 5760.0
 offset_bottom = 1264.0
+mouse_filter = 2
 texture = ExtResource("4_trn2v")
 stretch_mode = 2
 
@@ -3854,6 +3858,7 @@ texture_filter = 1
 offset_top = 1088.0
 offset_right = 5760.0
 offset_bottom = 1700.0
+mouse_filter = 2
 texture = ExtResource("6_03owx")
 stretch_mode = 2
 
@@ -3862,6 +3867,7 @@ texture_filter = 1
 offset_top = 1064.0
 offset_right = 5760.0
 offset_bottom = 1316.0
+mouse_filter = 2
 texture = ExtResource("27_uy3go")
 stretch_mode = 2
 
@@ -3870,6 +3876,7 @@ texture_filter = 1
 offset_top = 1208.0
 offset_right = 5760.0
 offset_bottom = 2688.0
+mouse_filter = 2
 texture = ExtResource("7_wkp8b")
 stretch_mode = 2
 
@@ -3893,6 +3900,7 @@ texture_filter = 1
 offset_top = 776.0
 offset_right = 5760.0
 offset_bottom = 1204.0
+mouse_filter = 2
 texture = ExtResource("5_03owx")
 stretch_mode = 2
 
@@ -3917,12 +3925,14 @@ libraries = {
 offset_top = 2688.0
 offset_right = 5760.0
 offset_bottom = 6840.0
+mouse_filter = 2
 texture = ExtResource("8_20pc6")
 
 [node name="Underground2" type="TextureRect" parent="Background"]
 offset_top = 6840.0
 offset_right = 5760.0
 offset_bottom = 10992.0
+mouse_filter = 2
 texture = ExtResource("8_20pc6")
 
 [node name="NoAI" type="Sprite2D" parent="Background"]
@@ -3934,6 +3944,7 @@ texture = ExtResource("28_5mvff")
 offset_top = 10992.0
 offset_right = 5760.0
 offset_bottom = 15144.0
+mouse_filter = 2
 texture = ExtResource("8_20pc6")
 
 [node name="Nokings" type="Sprite2D" parent="Background"]
@@ -4064,12 +4075,13 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/Left_lift = false
 parameters/conditions/Right_lift = false
 
-[node name="Leo" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_tree")]
+[node name="Leo" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_tree", "anim_player")]
 texture_filter = 1
 position = Vector2(2922, 790)
 sprite_frames = SubResource("SpriteFrames_k08b2")
 script = ExtResource("140_r15k5")
 anim_tree = NodePath("AnimationTree")
+anim_player = NodePath("AnimationPlayer")
 conditions_array = Array[String](["Alert", "Hair", "Sleep"])
 target_array = Array[int]([6, 8, 10])
 timing_array = Array[float]([1.0, 4.0, 0.0])
@@ -4087,6 +4099,7 @@ parameters/conditions/Awake = false
 parameters/conditions/Hair = false
 parameters/conditions/Sleep = false
 parameters/conditions/Yell = false
+parameters/conditions/default = false
 
 [node name="Alvis" type="AnimatedSprite2D" parent="Home"]
 texture_filter = 1
@@ -4487,10 +4500,10 @@ texture_filter = 1
 texture = ExtResource("1_glv2v")
 centered = false
 
-[node name="Area2D" type="Area2D" parent="Buttons"]
+[node name="Leo Area" type="Area2D" parent="Buttons"]
 position = Vector2(2922, 790)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Leo Area"]
 position = Vector2(7.5, -4)
 shape = SubResource("RectangleShape2D_r15k5")
 
@@ -4505,9 +4518,9 @@ autostart = true
 [connection signal="pressed" from="Home/Projects" to="." method="_on_projects_pressed"]
 [connection signal="pressed" from="Personal/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Projects/Back" to="." method="_on_back_pressed"]
-[connection signal="input_event" from="Buttons/Area2D" to="Home/Leo" method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Buttons/Area2D" to="Buttons" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons/Area2D" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Leo Area" to="Home/Leo" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Buttons/Leo Area" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Leo Area" to="Buttons" method="_on_mouse_exited"]
 [connection signal="timeout" from="Timer" to="Background" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Head" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Legs" method="_on_timer_timeout"]
