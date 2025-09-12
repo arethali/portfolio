@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 @onready var home_pos = 1920
 @onready var projects_pos = 3840
@@ -20,8 +20,10 @@ func _ready():
 	root_window.size_changed.connect(_on_window_size_changed)
 	
 	#Set cursors
-	Input.set_custom_mouse_cursor(arrow, Input.CURSOR_ARROW)
-	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND)
+	Input.set_custom_mouse_cursor(arrow, Input.CURSOR_ARROW, Vector2(10,10))
+	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND, Vector2(10,10))
+	print("set_mouse")
+	Input.set_default_cursor_shape(2)
 #
 func _on_window_size_changed():
 	var aspect_ratio = float(get_viewport().size.x)/float(get_viewport().size.y)

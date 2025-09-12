@@ -7,9 +7,12 @@ extends AnimatedSprite2D
 
 func _on_timer_timeout():
 	var rand_num = randi_range(1,100)
+	#print(rand_num)
 	if rand_num % target != 0:
 		return
 	player.play(anim_name)
 	if need_reversed:
 		await player.animation_finished
 		player.play_backwards(anim_name)
+	await player.animation_finished
+	player.play("RESET")

@@ -14,7 +14,7 @@ func _ready():
 func _on_timer_timeout():
 	var rand_num = randi_range(1,100)
 	# Spark anim
-	print(rand_num)
+	#print(rand_num)
 	_handle_spark_anims(rand_num)
 	_handle_dead_pixel(rand_num)
 	# Dead Pixel
@@ -23,24 +23,23 @@ func _on_timer_timeout():
 func _handle_spark_anims(dice : int):
 	if dice % 10 != 0:
 		return
-	print("playing1")
+	#print("playing1")
 	sparks.play("Spark1")
 	await sparks.animation_finished
 	if dice % 2 != 0:
 		return
-	print("playing2")
+	#print("playing2")
 	sparks.play("Spark2")
 	await sparks.animation_finished
 	if dice % 3 != 0:
 		return
-	print("playing3")
+	#print("playing3")
 	sparks.play("Spark3")
 	await sparks.animation_finished
 
 func _handle_dead_pixel(dice : int):
 	if dice % 5 != 0:
 		return
-	print("explode")
 	dp_anim.play("Explode")
 	await dp_anim.animation_finished
 	dp_anim.play_backwards("Explode")

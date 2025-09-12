@@ -7,7 +7,7 @@ extends Node
 const X_MULT_MIN : int = 88
 const X_MULTI_MAX : int = 1478
 const Y_MULT_MIN : int = 4
-const Y_MULTI_MAX : int = 120
+const Y_MULTI_MAX : int = 105
 const MULTIPLIER : int = 4
 
 #Arrays
