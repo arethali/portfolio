@@ -1,4 +1,4 @@
-[gd_scene load_steps=498 format=3 uid="uid://dfhro4he33mwe"]
+[gd_scene load_steps=532 format=3 uid="uid://dfhro4he33mwe"]
 
 [ext_resource type="Texture2D" uid="uid://bldgwkrwu0770" path="res://Stylized outline.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://Scripts/PortNav.gd" id="1_uu6xs"]
@@ -123,6 +123,7 @@
 [ext_resource type="Texture2D" uid="uid://b4x1c81df4nsa" path="res://Assets/About Me/Legs/Idle/Me Legs Idle shadow.png" id="89_a7p2d"]
 [ext_resource type="Texture2D" uid="uid://bpiqolqftqtdm" path="res://Assets/About Me/Legs/Left Lift/Me Legs Left kick Shadow1.png" id="90_fbvi6"]
 [ext_resource type="Texture2D" uid="uid://b3xhoxwgbceh" path="res://Assets/About Me/Legs/Left Lift/Me Legs Left kick Shadow2.png" id="91_h0r08"]
+[ext_resource type="Script" uid="uid://l86ygx7mxi66" path="res://Scripts/mail_anims.gd" id="92_rlscr"]
 [ext_resource type="Texture2D" uid="uid://d1nfuu77nkt2c" path="res://Assets/About Me/Legs/Right Lift/Me Legs Right kick shadow1.png" id="92_uecmj"]
 [ext_resource type="Texture2D" uid="uid://ndwbm6fjtwfi" path="res://Assets/About Me/Legs/Right Lift/Me Legs Right kick shadow2.png" id="93_rkgid"]
 [ext_resource type="Texture2D" uid="uid://dwgifx62aj650" path="res://Assets/Birbs/Leo/Alert/Leo Alert1.png" id="95_fbvi6"]
@@ -190,6 +191,7 @@
 [ext_resource type="Texture2D" uid="uid://cjm2rdma15lal" path="res://Assets/Lamps/Right/Lamp/R_Lamp4.png" id="154_8um1n"]
 [ext_resource type="Texture2D" uid="uid://c0a7lp2rueruo" path="res://Assets/Lamps/Right/Lamp/R_Lamp5.png" id="155_myh4s"]
 [ext_resource type="Texture2D" uid="uid://b1gwmbn25onvy" path="res://Assets/Lamps/Right/Lamp/R_Lamp6.png" id="156_5qs2s"]
+[ext_resource type="Script" uid="uid://dvalbccod8rwf" path="res://Scripts/anim_activate.gd" id="156_gotmd"]
 [ext_resource type="Texture2D" uid="uid://bikq24r8y4cvd" path="res://Assets/Lamps/Right/Lamp/R_Lamp7.png" id="157_s2bl2"]
 [ext_resource type="Texture2D" uid="uid://vsmkx53e7tt1" path="res://Assets/Lamps/Right/Lamp/R_Lamp8.png" id="158_r8p3m"]
 [ext_resource type="Texture2D" uid="uid://bj64btasyo7q6" path="res://Assets/Lamps/Right/Lamp/R_Lamp9.png" id="159_wwk8v"]
@@ -1233,6 +1235,65 @@ _data = {
 &"RESET": SubResource("Animation_62ef8")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wpgx8"]
+animation = &"Open"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5iw6c"]
+animation = &"Closed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tvijt"]
+animation = &"First_Open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m6ggt"]
+animation = &"Open"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wywj0"]
+animation = &"Open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ueh3w"]
+animation = &"Opened"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4cqk1"]
+advance_mode = 2
+advance_condition = &"first_open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pbhej"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4i1ne"]
+advance_mode = 2
+advance_condition = &"Close"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4hi06"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1st7y"]
+advance_mode = 2
+advance_condition = &"Open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qhavo"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qn60s"]
+states/Close/node = SubResource("AnimationNodeAnimation_wpgx8")
+states/Close/position = Vector2(623, 168)
+states/Closed/node = SubResource("AnimationNodeAnimation_5iw6c")
+states/Closed/position = Vector2(781, 168)
+states/First_Open/node = SubResource("AnimationNodeAnimation_tvijt")
+states/First_Open/position = Vector2(364, 100)
+states/Open/node = SubResource("AnimationNodeAnimation_wywj0")
+states/Open/position = Vector2(658, 49)
+"states/Open 2/node" = SubResource("AnimationNodeAnimation_m6ggt")
+"states/Open 2/position" = Vector2(920, 207)
+states/Opened/node = SubResource("AnimationNodeAnimation_ueh3w")
+states/Opened/position = Vector2(500, 100)
+transitions = ["Start", "First_Open", SubResource("AnimationNodeStateMachineTransition_4cqk1"), "First_Open", "Opened", SubResource("AnimationNodeStateMachineTransition_pbhej"), "Opened", "Close", SubResource("AnimationNodeStateMachineTransition_4i1ne"), "Close", "Closed", SubResource("AnimationNodeStateMachineTransition_4hi06"), "Closed", "Open", SubResource("AnimationNodeStateMachineTransition_1st7y"), "Open", "Opened", SubResource("AnimationNodeStateMachineTransition_qhavo")]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_y5qkn"]
 animations = [{
 "frames": [{
@@ -2110,7 +2171,6 @@ advance_mode = 2
 advance_condition = &"Alert"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n8kau"]
-switch_mode = 2
 advance_mode = 2
 advance_condition = &"default"
 
@@ -2155,15 +2215,15 @@ states/Default/node = SubResource("AnimationNodeAnimation_t7f7l")
 states/Default/position = Vector2(324, 100)
 states/End/position = Vector2(1111, 82)
 states/Hair/node = SubResource("AnimationNodeAnimation_nnlqo")
-states/Hair/position = Vector2(505, 216)
+states/Hair/position = Vector2(441, 236)
 states/Sleeping/node = SubResource("AnimationNodeAnimation_62ef8")
 states/Sleeping/position = Vector2(709, 82)
 states/To_Sleep/node = SubResource("AnimationNodeAnimation_3h7hk")
 states/To_Sleep/position = Vector2(900, 82)
 states/Yell/node = SubResource("AnimationNodeAnimation_c5871")
-states/Yell/position = Vector2(698, 197)
+states/Yell/position = Vector2(782, 230)
 transitions = ["Start", "Default", SubResource("AnimationNodeStateMachineTransition_21333"), "Default", "Alert", SubResource("AnimationNodeStateMachineTransition_7w4pf"), "Alert", "Default", SubResource("AnimationNodeStateMachineTransition_n8kau"), "Default", "Hair", SubResource("AnimationNodeStateMachineTransition_fm58o"), "Hair", "Default", SubResource("AnimationNodeStateMachineTransition_hve0h"), "Default", "Yell", SubResource("AnimationNodeStateMachineTransition_j3o4w"), "Yell", "Default", SubResource("AnimationNodeStateMachineTransition_4y1hc"), "Default", "Sleeping", SubResource("AnimationNodeStateMachineTransition_ywmjv"), "Sleeping", "To_Sleep", SubResource("AnimationNodeStateMachineTransition_hixkv"), "Awake", "Default", SubResource("AnimationNodeStateMachineTransition_n7n7s"), "To_Sleep", "Awake", SubResource("AnimationNodeStateMachineTransition_co5dr")]
-graph_offset = Vector2(0, -21.6914)
+graph_offset = Vector2(0, 6.716)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qwha1"]
 animations = [{
@@ -2340,6 +2400,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_b4x2c"]
 resource_name = "To_sleep"
+length = 0.6
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2404,6 +2465,77 @@ _data = {
 &"To_sleep": SubResource("Animation_b4x2c"),
 &"Yell": SubResource("Animation_2bc30")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dae8g"]
+animation = &"Alert"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gotmd"]
+animation = &"Default"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlscr"]
+animation = &"Sleeping"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wgm2v"]
+animation = &"To_sleep"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vgj11"]
+animation = &"To_sleep"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6vflr"]
+animation = &"Yell"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wpgx8"]
+advance_mode = 2
+advance_condition = &"Alert"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5iw6c"]
+advance_mode = 2
+advance_condition = &"default"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tvijt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wywj0"]
+advance_mode = 2
+advance_condition = &"Sleep"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ueh3w"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m6ggt"]
+advance_mode = 2
+advance_condition = &"Awake"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4oqqu"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_28u1i"]
+advance_mode = 2
+advance_condition = &"Yell"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ypv7r"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4cqk1"]
+states/Alert/node = SubResource("AnimationNodeAnimation_dae8g")
+states/Alert/position = Vector2(508, 12)
+states/Default/node = SubResource("AnimationNodeAnimation_gotmd")
+states/Default/position = Vector2(322, 100)
+states/Sleeping/node = SubResource("AnimationNodeAnimation_rlscr")
+states/Sleeping/position = Vector2(656, 167)
+states/Start/position = Vector2(201, 100)
+states/To_sleep/node = SubResource("AnimationNodeAnimation_wgm2v")
+states/To_sleep/position = Vector2(485, 129)
+states/To_wake/node = SubResource("AnimationNodeAnimation_vgj11")
+states/To_wake/position = Vector2(499, 231.959)
+states/Yell/node = SubResource("AnimationNodeAnimation_6vflr")
+states/Yell/position = Vector2(743, 63)
+transitions = ["Default", "Alert", SubResource("AnimationNodeStateMachineTransition_wpgx8"), "Alert", "Default", SubResource("AnimationNodeStateMachineTransition_5iw6c"), "Start", "Default", SubResource("AnimationNodeStateMachineTransition_tvijt"), "Default", "To_sleep", SubResource("AnimationNodeStateMachineTransition_wywj0"), "To_sleep", "Sleeping", SubResource("AnimationNodeStateMachineTransition_ueh3w"), "Sleeping", "To_wake", SubResource("AnimationNodeStateMachineTransition_m6ggt"), "To_wake", "Default", SubResource("AnimationNodeStateMachineTransition_4oqqu"), "Default", "Yell", SubResource("AnimationNodeStateMachineTransition_28u1i"), "Yell", "Default", SubResource("AnimationNodeStateMachineTransition_ypv7r")]
+graph_offset = Vector2(0, 22.1769)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6xmvy"]
 animations = [{
@@ -3697,6 +3829,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r15k5"]
 size = Vector2(41, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbhej"]
+size = Vector2(44, 26.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlscr"]
+size = Vector2(38, 27.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibn8e"]
+size = Vector2(36, 34)
+
 [node name="Main" type="Node2D" node_paths=PackedStringArray("camera")]
 texture_filter = 1
 script = ExtResource("1_uu6xs")
@@ -3717,6 +3858,7 @@ texture = ExtResource("2_3dxm6")
 stretch_mode = 2
 
 [node name="Planet" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
 position = Vector2(2550, 419)
 texture = ExtResource("4_4bst2")
@@ -3994,16 +4136,26 @@ libraries = {
 &"": SubResource("AnimationLibrary_t7f7l")
 }
 
-[node name="Mail" type="AnimatedSprite2D" parent="Home"]
+[node name="Mail" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_tree", "anim_player")]
 texture_filter = 1
 position = Vector2(2752, 898)
 sprite_frames = SubResource("SpriteFrames_jhmog")
 animation = &"After Open"
+script = ExtResource("92_rlscr")
+anim_tree = NodePath("AnimationTree")
+anim_player = NodePath("AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Home/Mail"]
 libraries = {
 &"": SubResource("AnimationLibrary_km5g2")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="Home/Mail"]
+tree_root = SubResource("AnimationNodeStateMachine_qn60s")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/Close = false
+parameters/conditions/Open = false
+parameters/conditions/first_open = false
 
 [node name="Butt Shadow" type="Sprite2D" parent="Home"]
 modulate = Color(1, 1, 1, 0.580392)
@@ -4075,16 +4227,15 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/Left_lift = false
 parameters/conditions/Right_lift = false
 
-[node name="Leo" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_tree", "anim_player")]
+[node name="Leo" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_tree")]
 texture_filter = 1
 position = Vector2(2922, 790)
 sprite_frames = SubResource("SpriteFrames_k08b2")
 script = ExtResource("140_r15k5")
 anim_tree = NodePath("AnimationTree")
-anim_player = NodePath("AnimationPlayer")
 conditions_array = Array[String](["Alert", "Hair", "Sleep"])
 target_array = Array[int]([6, 8, 10])
-timing_array = Array[float]([1.0, 4.0, 0.0])
+timing_array = Array[float]([1.0, 4.0, 0.6])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Home/Leo"]
 libraries = {
@@ -4101,20 +4252,38 @@ parameters/conditions/Sleep = false
 parameters/conditions/Yell = false
 parameters/conditions/default = false
 
-[node name="Alvis" type="AnimatedSprite2D" parent="Home"]
+[node name="Alvis" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_tree")]
 texture_filter = 1
 position = Vector2(3064, 964)
 sprite_frames = SubResource("SpriteFrames_qwha1")
+script = ExtResource("140_r15k5")
+anim_tree = NodePath("AnimationTree")
+conditions_array = Array[String](["Alert", "Sleep"])
+target_array = Array[int]([12, 5])
+timing_array = Array[float]([1.0, 0.6])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Home/Alvis"]
 libraries = {
 &"": SubResource("AnimationLibrary_2bc30")
 }
 
-[node name="Phone" type="AnimatedSprite2D" parent="Home"]
+[node name="AnimationTree" type="AnimationTree" parent="Home/Alvis"]
+tree_root = SubResource("AnimationNodeStateMachine_4cqk1")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/Alert = false
+parameters/conditions/Awake = false
+parameters/conditions/Sleep = false
+parameters/conditions/Yell = false
+parameters/conditions/default = false
+
+[node name="Phone" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_player")]
 texture_filter = 1
 position = Vector2(2870, 960)
 sprite_frames = SubResource("SpriteFrames_6xmvy")
+script = ExtResource("156_gotmd")
+anim_player = NodePath("AnimationPlayer")
+on_anim = "On"
+off_anim = "Off"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Home/Phone"]
 libraries = {
@@ -4306,31 +4475,31 @@ texture = ExtResource("254_1mm7m")
 [node name="FilmShadow" type="Sprite2D" parent="Personal"]
 modulate = Color(1, 1, 1, 0.580392)
 texture_filter = 1
-position = Vector2(1000, 926)
+position = Vector2(960, 926)
 texture = ExtResource("255_rrjbx")
 
 [node name="Film" type="AnimatedSprite2D" parent="Personal"]
 texture_filter = 1
-position = Vector2(942, 868)
+position = Vector2(902, 868)
 sprite_frames = SubResource("SpriteFrames_uq243")
 animation = &"Stop"
 
 [node name="ScreenShadow" type="Sprite2D" parent="Personal"]
 modulate = Color(1, 1, 1, 0.580392)
 texture_filter = 1
-position = Vector2(1410, 942)
+position = Vector2(1370, 942)
 texture = ExtResource("261_vs3tq")
 
 [node name="Screen" type="Sprite2D" parent="Personal"]
 texture_filter = 1
-position = Vector2(1356, 816)
+position = Vector2(1316, 816)
 texture = ExtResource("262_sfwua")
 
 [node name="Light" type="AnimatedSprite2D" parent="Personal"]
 modulate = Color(1, 1, 1, 0.188235)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_fvwem")
-position = Vector2(1222, 830)
+position = Vector2(1182, 830)
 sprite_frames = SubResource("SpriteFrames_cexpb")
 animation = &"Play"
 frame_progress = 0.564615
@@ -4507,6 +4676,24 @@ position = Vector2(2922, 790)
 position = Vector2(7.5, -4)
 shape = SubResource("RectangleShape2D_r15k5")
 
+[node name="Alvis Area" type="Area2D" parent="Buttons"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Alvis Area"]
+position = Vector2(3058, 957.125)
+shape = SubResource("RectangleShape2D_pbhej")
+
+[node name="Phone Area" type="Area2D" parent="Buttons"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Phone Area"]
+position = Vector2(2870, 961.75)
+shape = SubResource("RectangleShape2D_rlscr")
+
+[node name="Mail Box" type="Area2D" parent="Buttons"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Mail Box"]
+position = Vector2(2756, 871)
+shape = SubResource("RectangleShape2D_ibn8e")
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
@@ -4521,9 +4708,19 @@ autostart = true
 [connection signal="input_event" from="Buttons/Leo Area" to="Home/Leo" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Buttons/Leo Area" to="Buttons" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Leo Area" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Alvis Area" to="Home/Alvis" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Buttons/Alvis Area" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Alvis Area" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Phone Area" to="Home/Phone" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="Buttons/Phone Area" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Phone Area" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Mail Box" to="Home/Mail" method="_on_input_event"]
+[connection signal="mouse_entered" from="Buttons/Mail Box" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Mail Box" to="Buttons" method="_on_mouse_exited"]
 [connection signal="timeout" from="Timer" to="Background" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Head" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Legs" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Leo" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Home/Alvis" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/LampLSand" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/LampRSand" method="_on_timer_timeout"]
