@@ -1,4 +1,4 @@
-[gd_scene load_steps=532 format=3 uid="uid://dfhro4he33mwe"]
+[gd_scene load_steps=581 format=3 uid="uid://dfhro4he33mwe"]
 
 [ext_resource type="Texture2D" uid="uid://bldgwkrwu0770" path="res://Stylized outline.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://Scripts/PortNav.gd" id="1_uu6xs"]
@@ -307,12 +307,14 @@
 [ext_resource type="Texture2D" uid="uid://bwyeon1ti0t3n" path="res://Assets/Desk Stuff/Resume/Resume3.png" id="286_kq445"]
 [ext_resource type="Texture2D" uid="uid://dsaddbudqx2gs" path="res://Assets/Desk Stuff/Resume/Resume4.png" id="287_r15k5"]
 [ext_resource type="Texture2D" uid="uid://clfv361ug6f85" path="res://Assets/Desk Stuff/Resume/Resume5.png" id="288_3b7lf"]
+[ext_resource type="Script" uid="uid://sa56nvx0ti1n" path="res://Scripts/projects_anims.gd" id="288_wgm2v"]
 [ext_resource type="Texture2D" uid="uid://boroah2l6batt" path="res://Assets/Desk Stuff/Resume/Resume6.png" id="289_suda2"]
 [ext_resource type="Texture2D" uid="uid://c6yxn267erefn" path="res://Assets/Desk Stuff/Resume/Resume7.png" id="290_t7f7l"]
 [ext_resource type="Texture2D" uid="uid://bl7qrj7ins3i3" path="res://Assets/Desk Stuff/Resume/Resume8.png" id="291_nnlqo"]
 [ext_resource type="Texture2D" uid="uid://ban7haut6u2ja" path="res://Assets/Desk Stuff/Resume/Resume1.png" id="292_62ef8"]
 [ext_resource type="Texture2D" uid="uid://biw014x42dc8x" path="res://Assets/Desk Stuff/Perch/Perch Blow2.png" id="293_3h7hk"]
 [ext_resource type="Texture2D" uid="uid://b8tvarpcoxc6f" path="res://Assets/Desk Stuff/Perch/Perch Blow3.png" id="294_c5871"]
+[ext_resource type="Script" uid="uid://pdnb4uwuwc7s" path="res://Scripts/chair_spin.gd" id="295_6vflr"]
 [ext_resource type="Texture2D" uid="uid://dhxyr3g6xd6mf" path="res://Assets/Desk Stuff/Perch/Perch Blow4.png" id="295_26oun"]
 [ext_resource type="Texture2D" uid="uid://d0y1nwbyibka4" path="res://Assets/Desk Stuff/Perch/Perch Blow5.png" id="296_km5g2"]
 [ext_resource type="Texture2D" uid="uid://cypp70gtolf6m" path="res://Assets/Desk Stuff/Perch/Perch Blow6.png" id="297_gaorv"]
@@ -344,6 +346,7 @@
 [ext_resource type="Texture2D" uid="uid://bnvfxwluu5txl" path="res://Assets/Desk Stuff/Cup/Cup_steam8.png" id="323_vw3qv"]
 [ext_resource type="Texture2D" uid="uid://bhaiw84q54yy" path="res://Assets/Desk Stuff/Cup/Cup_steam2.png" id="324_y17vc"]
 [ext_resource type="Texture2D" uid="uid://gtyy45t68bxt" path="res://Assets/Desk Stuff/Cup/Cup_steam3.png" id="325_qtra0"]
+[ext_resource type="Script" uid="uid://dgwlll45dd7kp" path="res://Scripts/laptop_click.gd" id="325_vgj11"]
 [ext_resource type="Texture2D" uid="uid://cnoq6symf2ygp" path="res://Assets/Desk Stuff/Cup/Cup_steam4.png" id="326_20nwp"]
 [ext_resource type="Texture2D" uid="uid://b12qrqp36yft7" path="res://Assets/Desk Stuff/Cup/Cup_steam5.png" id="327_7dbpu"]
 [ext_resource type="Texture2D" uid="uid://cd2138n1sjiib" path="res://Assets/Desk Stuff/Cup/Cup_steam6.png" id="328_53ad2"]
@@ -1024,6 +1027,69 @@ _data = {
 &"RESET": SubResource("Animation_suda2")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_28u1i"]
+animation = &"After_open"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ypv7r"]
+animation = &"After_open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4cqk1"]
+animation = &"Closed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pbhej"]
+animation = &"First_Open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4i1ne"]
+animation = &"Opened"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4hi06"]
+animation = &"Closed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ibn8e"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3k6gk"]
+advance_mode = 2
+advance_condition = &"first_open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lboh7"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_meayg"]
+advance_mode = 2
+advance_condition = &"Close"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8nkan"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qcpgi"]
+advance_mode = 2
+advance_condition = &"Open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rlscr"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_d0eng"]
+states/After_close/node = SubResource("AnimationNodeAnimation_28u1i")
+states/After_close/position = Vector2(804, 187)
+states/After_open/node = SubResource("AnimationNodeAnimation_ypv7r")
+states/After_open/position = Vector2(804, 48)
+states/Closed/node = SubResource("AnimationNodeAnimation_4cqk1")
+states/Closed/position = Vector2(924, 100)
+states/End/position = Vector2(1024, 100)
+states/First_Open/node = SubResource("AnimationNodeAnimation_pbhej")
+states/First_Open/position = Vector2(500, 100)
+states/Opened/node = SubResource("AnimationNodeAnimation_4i1ne")
+states/Opened/position = Vector2(627, 106)
+states/Start_closed/node = SubResource("AnimationNodeAnimation_4hi06")
+states/Start_closed/position = Vector2(357, 100)
+transitions = ["Start", "Start_closed", SubResource("AnimationNodeStateMachineTransition_ibn8e"), "Start_closed", "First_Open", SubResource("AnimationNodeStateMachineTransition_3k6gk"), "First_Open", "Opened", SubResource("AnimationNodeStateMachineTransition_lboh7"), "Opened", "After_close", SubResource("AnimationNodeStateMachineTransition_meayg"), "After_close", "Closed", SubResource("AnimationNodeStateMachineTransition_8nkan"), "Closed", "After_open", SubResource("AnimationNodeStateMachineTransition_qcpgi"), "After_open", "Opened", SubResource("AnimationNodeStateMachineTransition_rlscr")]
+graph_offset = Vector2(148.517, 0)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_jhmog"]
 animations = [{
 "frames": [{
@@ -1068,7 +1134,7 @@ animations = [{
 "texture": ExtResource("73_k1ahk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("74_mk7o0")
+"texture": ExtResource("73_k1ahk")
 }],
 "loop": true,
 "name": &"First Open",
@@ -1255,9 +1321,8 @@ animation = &"Open"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ueh3w"]
 animation = &"Opened"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4cqk1"]
-advance_mode = 2
-advance_condition = &"first_open"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4oqqu"]
+animation = &"Closed"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pbhej"]
 switch_mode = 2
@@ -1279,6 +1344,13 @@ advance_condition = &"Open"
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4cqk1"]
+advance_mode = 2
+advance_condition = &"first_open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qn60s"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qn60s"]
 states/Close/node = SubResource("AnimationNodeAnimation_wpgx8")
 states/Close/position = Vector2(623, 168)
@@ -1292,7 +1364,10 @@ states/Open/position = Vector2(658, 49)
 "states/Open 2/position" = Vector2(920, 207)
 states/Opened/node = SubResource("AnimationNodeAnimation_ueh3w")
 states/Opened/position = Vector2(500, 100)
-transitions = ["Start", "First_Open", SubResource("AnimationNodeStateMachineTransition_4cqk1"), "First_Open", "Opened", SubResource("AnimationNodeStateMachineTransition_pbhej"), "Opened", "Close", SubResource("AnimationNodeStateMachineTransition_4i1ne"), "Close", "Closed", SubResource("AnimationNodeStateMachineTransition_4hi06"), "Closed", "Open", SubResource("AnimationNodeStateMachineTransition_1st7y"), "Open", "Opened", SubResource("AnimationNodeStateMachineTransition_qhavo")]
+states/Start/position = Vector2(85, 100)
+"states/Start Closed/node" = SubResource("AnimationNodeAnimation_4oqqu")
+"states/Start Closed/position" = Vector2(215, 100)
+transitions = ["First_Open", "Opened", SubResource("AnimationNodeStateMachineTransition_pbhej"), "Opened", "Close", SubResource("AnimationNodeStateMachineTransition_4i1ne"), "Close", "Closed", SubResource("AnimationNodeStateMachineTransition_4hi06"), "Closed", "Open", SubResource("AnimationNodeStateMachineTransition_1st7y"), "Open", "Opened", SubResource("AnimationNodeStateMachineTransition_qhavo"), "Start Closed", "First_Open", SubResource("AnimationNodeStateMachineTransition_4cqk1"), "Start", "Start Closed", SubResource("AnimationNodeStateMachineTransition_qn60s")]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y5qkn"]
 animations = [{
@@ -1445,7 +1520,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_3fgw6"]
 resource_name = "Wave"
-length = 1.8
+length = 3.2
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1466,10 +1541,10 @@ tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nnlqo"]
@@ -3535,6 +3610,68 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_rlscr"]
+resource_name = "Spin"
+length = 2.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Spin"]
+}
+
+[sub_resource type="Animation" id="Animation_wgm2v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Spin"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vgj11"]
+_data = {
+&"RESET": SubResource("Animation_wgm2v"),
+&"Spin": SubResource("Animation_rlscr")
+}
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_xf3yn"]
 animations = [{
 "frames": [{
@@ -3597,6 +3734,96 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_6vflr"]
+resource_name = "Open"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Opening"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_wpgx8"]
+resource_name = "Closed"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Closing"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.49012e-08, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_5iw6c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Opening"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tvijt"]
+_data = {
+&"Closed": SubResource("Animation_wpgx8"),
+&"Open": SubResource("Animation_6vflr"),
+&"RESET": SubResource("Animation_5iw6c")
+}
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_16jvh"]
 animations = [{
 "frames": [{
@@ -3633,6 +3860,69 @@ animations = [{
 "name": &"Still",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_vgj11"]
+resource_name = "Blowing"
+length = 1.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Blowing"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_tvijt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Still"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wywj0"]
+_data = {
+&"Blowing": SubResource("Animation_vgj11"),
+&"RESET": SubResource("Animation_tvijt")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ymiro"]
 animations = [{
@@ -3676,6 +3966,68 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_ueh3w"]
+resource_name = "Blow"
+length = 1.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Blow"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_m6ggt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Blow"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4oqqu"]
+_data = {
+&"Blow": SubResource("Animation_ueh3w"),
+&"RESET": SubResource("Animation_m6ggt")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ov0yk"]
 animations = [{
@@ -3752,6 +4104,68 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_28u1i"]
+resource_name = "Keyboard_clicks"
+length = 1.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Click"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_ypv7r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Click"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4cqk1"]
+_data = {
+&"Keyboard_clicks": SubResource("Animation_28u1i"),
+&"RESET": SubResource("Animation_ypv7r")
+}
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_nfndr"]
 animations = [{
 "frames": [{
@@ -3788,6 +4202,67 @@ animations = [{
 "name": &"Fall",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_pbhej"]
+resource_name = "Book_fall"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Fall"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_4i1ne"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Fall"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hi06"]
+_data = {
+&"Book_fall": SubResource("Animation_pbhej"),
+&"RESET": SubResource("Animation_4i1ne")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t3vkg"]
 animations = [{
@@ -3826,6 +4301,68 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_1st7y"]
+resource_name = "Steam"
+length = 1.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Steam"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_qhavo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Steam"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qn60s"]
+_data = {
+&"RESET": SubResource("Animation_qhavo"),
+&"Steam": SubResource("Animation_1st7y")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r15k5"]
 size = Vector2(41, 20)
 
@@ -3837,6 +4374,30 @@ size = Vector2(38, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibn8e"]
 size = Vector2(36, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgm2v"]
+size = Vector2(36, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgj11"]
+size = Vector2(97.5, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vflr"]
+size = Vector2(70, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpgx8"]
+size = Vector2(51, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iw6c"]
+size = Vector2(112, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvijt"]
+size = Vector2(61, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wywj0"]
+size = Vector2(52, 43.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueh3w"]
+size = Vector2(40, 47.75)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("camera")]
 texture_filter = 1
@@ -4124,19 +4685,30 @@ script = ExtResource("70_kq445")
 lamp_R_anim = NodePath("LampR/AnimationPlayer")
 lamp_L_anim = NodePath("LampL/AnimationPlayer")
 
-[node name="Mail Shadow" type="AnimatedSprite2D" parent="Home"]
+[node name="Mail Shadow" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_tree", "anim_player", "open_input")]
 modulate = Color(1, 1, 1, 0.580392)
 texture_filter = 1
 position = Vector2(2752, 898)
 sprite_frames = SubResource("SpriteFrames_aquj3")
 animation = &"First Open"
+script = ExtResource("92_rlscr")
+anim_tree = NodePath("AnimationTree")
+anim_player = NodePath("AnimationPlayer")
+open_input = NodePath("../../Buttons/Mail Box/CollisionShape2D2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Home/Mail Shadow"]
 libraries = {
 &"": SubResource("AnimationLibrary_t7f7l")
 }
 
-[node name="Mail" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_tree", "anim_player")]
+[node name="AnimationTree" type="AnimationTree" parent="Home/Mail Shadow"]
+tree_root = SubResource("AnimationNodeStateMachine_d0eng")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/Close = false
+parameters/conditions/Open = false
+parameters/conditions/first_open = false
+
+[node name="Mail" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_tree", "anim_player", "open_input", "paper")]
 texture_filter = 1
 position = Vector2(2752, 898)
 sprite_frames = SubResource("SpriteFrames_jhmog")
@@ -4144,6 +4716,8 @@ animation = &"After Open"
 script = ExtResource("92_rlscr")
 anim_tree = NodePath("AnimationTree")
 anim_player = NodePath("AnimationPlayer")
+open_input = NodePath("../../Buttons/Mail Box/CollisionShape2D2")
+paper = NodePath("Paper")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Home/Mail"]
 libraries = {
@@ -4156,6 +4730,12 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/Close = false
 parameters/conditions/Open = false
 parameters/conditions/first_open = false
+
+[node name="Paper" type="Sprite2D" parent="Home/Mail"]
+visible = false
+texture_filter = 1
+position = Vector2(0, 24)
+texture = ExtResource("74_mk7o0")
 
 [node name="Butt Shadow" type="Sprite2D" parent="Home"]
 modulate = Color(1, 1, 1, 0.580392)
@@ -4177,11 +4757,15 @@ libraries = {
 &"": SubResource("AnimationLibrary_mqe6h")
 }
 
-[node name="Body" type="AnimatedSprite2D" parent="Home"]
+[node name="Body" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_player")]
 texture_filter = 1
 position = Vector2(2930, 910)
 sprite_frames = SubResource("SpriteFrames_08030")
 animation = &"Wave"
+script = ExtResource("156_gotmd")
+anim_player = NodePath("AnimationPlayer")
+on_anim = "Wave"
+off_anim = "RESET"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Home/Body"]
 libraries = {
@@ -4278,7 +4862,7 @@ parameters/conditions/default = false
 
 [node name="Phone" type="AnimatedSprite2D" parent="Home" node_paths=PackedStringArray("anim_player")]
 texture_filter = 1
-position = Vector2(2870, 960)
+position = Vector2(2854, 964)
 sprite_frames = SubResource("SpriteFrames_6xmvy")
 script = ExtResource("156_gotmd")
 anim_player = NodePath("AnimationPlayer")
@@ -4293,7 +4877,7 @@ libraries = {
 [node name="PhoneShadow" type="Sprite2D" parent="Home"]
 self_modulate = Color(1, 1, 1, 0.580392)
 texture_filter = 1
-position = Vector2(2888, 966)
+position = Vector2(2872, 970)
 texture = ExtResource("124_imbc2")
 
 [node name="ToPersonalShadow" type="Sprite2D" parent="Home"]
@@ -4540,7 +5124,9 @@ texture_hover = ExtResource("276_4jki6")
 position = Vector2(1920, 0)
 anchor_mode = 0
 
-[node name="Projects" type="Node" parent="."]
+[node name="Projects" type="Node" parent="." node_paths=PackedStringArray("lamp_anim")]
+script = ExtResource("288_wgm2v")
+lamp_anim = NodePath("LampL_Projects/AnimationPlayer")
 
 [node name="ChairShadow" type="Sprite2D" parent="Projects"]
 texture_filter = 1
@@ -4552,8 +5138,12 @@ texture_filter = 1
 position = Vector2(4496, 882)
 sprite_frames = SubResource("SpriteFrames_yq48g")
 animation = &"Spin"
-frame = 2
-frame_progress = 0.952599
+script = ExtResource("295_6vflr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Projects/Chair"]
+libraries = {
+&"": SubResource("AnimationLibrary_vgj11")
+}
 
 [node name="DeskShadow" type="Sprite2D" parent="Projects"]
 modulate = Color(1, 1, 1, 0.580392)
@@ -4566,52 +5156,106 @@ texture_filter = 1
 position = Vector2(4894, 874)
 texture = ExtResource("278_33eqb")
 
-[node name="Tool" type="AnimatedSprite2D" parent="Projects"]
+[node name="Tool" type="AnimatedSprite2D" parent="Projects" node_paths=PackedStringArray("anim_player")]
 texture_filter = 1
 position = Vector2(5136, 854)
 sprite_frames = SubResource("SpriteFrames_xf3yn")
-animation = &"Open"
+animation = &"Opening"
+script = ExtResource("156_gotmd")
+anim_player = NodePath("AnimationPlayer")
+on_anim = "Open"
+off_anim = "Closed"
 
-[node name="Resume" type="AnimatedSprite2D" parent="Projects"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Projects/Tool"]
+libraries = {
+&"": SubResource("AnimationLibrary_tvijt")
+}
+
+[node name="Resume" type="AnimatedSprite2D" parent="Projects" node_paths=PackedStringArray("anim_player")]
 texture_filter = 1
 position = Vector2(5134, 920)
 sprite_frames = SubResource("SpriteFrames_16jvh")
 animation = &"Still"
-frame_progress = 0.473564
+script = ExtResource("156_gotmd")
+anim_player = NodePath("AnimationPlayer")
+on_anim = "RESET"
+off_anim = "Blowing"
 
-[node name="Perch" type="AnimatedSprite2D" parent="Projects"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Projects/Resume"]
+libraries = {
+&"": SubResource("AnimationLibrary_wywj0")
+}
+
+[node name="Perch" type="AnimatedSprite2D" parent="Projects" node_paths=PackedStringArray("player")]
 texture_filter = 1
 position = Vector2(4998, 868)
 sprite_frames = SubResource("SpriteFrames_ymiro")
 animation = &"Blow"
+script = ExtResource("104_3fgw6")
+player = NodePath("AnimationPlayer")
+anim_name = "Blow"
+target = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Projects/Perch"]
+libraries = {
+&"": SubResource("AnimationLibrary_4oqqu")
+}
 
 [node name="Laptop" type="AnimatedSprite2D" parent="Projects"]
 texture_filter = 1
 position = Vector2(4750, 820)
 sprite_frames = SubResource("SpriteFrames_ov0yk")
-animation = &"Desktop"
+animation = &"Aesprite"
+script = ExtResource("325_vgj11")
+god_target = 10
+aes_target = 8
 
-[node name="Keyboard" type="AnimatedSprite2D" parent="Projects"]
+[node name="Keyboard" type="AnimatedSprite2D" parent="Projects" node_paths=PackedStringArray("anim_player")]
 texture_filter = 1
 position = Vector2(4868, 852)
 sprite_frames = SubResource("SpriteFrames_gw6qm")
 animation = &"Click"
-frame = 6
-frame_progress = 0.466675
+frame = 7
+script = ExtResource("156_gotmd")
+anim_player = NodePath("AnimationPlayer")
+on_anim = "Keyboard_clicks"
+off_anim = "Keyboard_clicks"
 
-[node name="Book" type="AnimatedSprite2D" parent="Projects"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Projects/Keyboard"]
+libraries = {
+&"": SubResource("AnimationLibrary_4cqk1")
+}
+
+[node name="Book" type="AnimatedSprite2D" parent="Projects" node_paths=PackedStringArray("anim_player")]
 texture_filter = 1
 position = Vector2(4622, 832)
 sprite_frames = SubResource("SpriteFrames_nfndr")
-animation = &"Default"
+animation = &"Fall"
+script = ExtResource("156_gotmd")
+anim_player = NodePath("AnimationPlayer")
+on_anim = "Book_fall"
+reversed = true
 
-[node name="Cup" type="AnimatedSprite2D" parent="Projects"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Projects/Book"]
+libraries = {
+&"": SubResource("AnimationLibrary_4hi06")
+}
+
+[node name="Cup" type="AnimatedSprite2D" parent="Projects" node_paths=PackedStringArray("player")]
 texture_filter = 1
 position = Vector2(4662, 820)
 sprite_frames = SubResource("SpriteFrames_t3vkg")
 animation = &"Steam"
-frame = 1
-frame_progress = 0.947167
+frame = 6
+script = ExtResource("104_3fgw6")
+player = NodePath("AnimationPlayer")
+anim_name = "Steam"
+target = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Projects/Cup"]
+libraries = {
+&"": SubResource("AnimationLibrary_qn60s")
+}
 
 [node name="RBarrier" type="Sprite2D" parent="Projects"]
 texture_filter = 1
@@ -4624,21 +5268,31 @@ texture_filter = 1
 position = Vector2(5698, 894)
 texture = ExtResource("331_rb3cd")
 
-[node name="LampL" type="AnimatedSprite2D" parent="Projects"]
+[node name="LampL_Projects" type="AnimatedSprite2D" parent="Projects"]
 texture_filter = 1
 position = Vector2(3904, 586)
 sprite_frames = SubResource("SpriteFrames_6qke2")
 animation = &"Default"
-frame = 9
-frame_progress = 0.173633
 
-[node name="LampLSand" type="AnimatedSprite2D" parent="Projects"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Projects/LampL_Projects"]
+libraries = {
+&"": SubResource("AnimationLibrary_qtra0")
+}
+
+[node name="LampLSand_Projects" type="AnimatedSprite2D" parent="Projects" node_paths=PackedStringArray("player")]
 texture_filter = 1
 position = Vector2(3936, 584)
 sprite_frames = SubResource("SpriteFrames_8um1n")
-animation = &"Sand_fall"
-frame = 7
-frame_progress = 0.853816
+animation = &"Default"
+script = ExtResource("104_3fgw6")
+player = NodePath("AnimationPlayer")
+anim_name = "Fall"
+target = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Projects/LampLSand_Projects"]
+libraries = {
+&"": SubResource("AnimationLibrary_b47ui")
+}
 
 [node name="ToPersonalShadow" type="Sprite2D" parent="Projects"]
 modulate = Color(1, 1, 1, 0.580392)
@@ -4683,6 +5337,7 @@ position = Vector2(3058, 957.125)
 shape = SubResource("RectangleShape2D_pbhej")
 
 [node name="Phone Area" type="Area2D" parent="Buttons"]
+position = Vector2(-16, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Phone Area"]
 position = Vector2(2870, 961.75)
@@ -4693,6 +5348,52 @@ shape = SubResource("RectangleShape2D_rlscr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Mail Box"]
 position = Vector2(2756, 871)
 shape = SubResource("RectangleShape2D_ibn8e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Buttons/Mail Box"]
+position = Vector2(2756, 899.5)
+shape = SubResource("RectangleShape2D_wgm2v")
+
+[node name="Body Area" type="Area2D" parent="Buttons"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Body Area"]
+position = Vector2(2929.75, 945)
+shape = SubResource("RectangleShape2D_vgj11")
+
+[node name="Chair Area" type="Area2D" parent="Buttons"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Chair Area"]
+position = Vector2(4496, 879)
+shape = SubResource("RectangleShape2D_6vflr")
+
+[node name="Book" type="Area2D" parent="Buttons"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Book"]
+position = Vector2(4627.5, 830)
+shape = SubResource("RectangleShape2D_wpgx8")
+
+[node name="Laptop" type="Area2D" parent="Buttons"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Laptop"]
+position = Vector2(4748, 818)
+shape = SubResource("RectangleShape2D_5iw6c")
+
+[node name="Keyboard" type="Area2D" parent="Buttons"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Keyboard"]
+position = Vector2(4868.5, 851.5)
+shape = SubResource("RectangleShape2D_tvijt")
+
+[node name="Tool Box" type="Area2D" parent="Buttons"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Tool Box"]
+position = Vector2(5130, 858.25)
+shape = SubResource("RectangleShape2D_wywj0")
+
+[node name="Resume" type="Area2D" parent="Buttons"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Resume"]
+position = Vector2(5140, 920.125)
+shape = SubResource("RectangleShape2D_ueh3w")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -4714,9 +5415,31 @@ autostart = true
 [connection signal="input_event" from="Buttons/Phone Area" to="Home/Phone" method="_on_area_input_event"]
 [connection signal="mouse_entered" from="Buttons/Phone Area" to="Buttons" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Phone Area" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Mail Box" to="Home/Mail Shadow" method="_on_input_event"]
 [connection signal="input_event" from="Buttons/Mail Box" to="Home/Mail" method="_on_input_event"]
 [connection signal="mouse_entered" from="Buttons/Mail Box" to="Buttons" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Mail Box" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Body Area" to="Home/Body" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="Buttons/Body Area" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Body Area" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Chair Area" to="Projects/Chair" method="_on_chair_area_input_event"]
+[connection signal="mouse_entered" from="Buttons/Chair Area" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Chair Area" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Book" to="Projects/Book" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="Buttons/Book" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Book" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Laptop" to="Projects/Laptop" method="_on_laptop_input_event"]
+[connection signal="mouse_entered" from="Buttons/Laptop" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Laptop" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Keyboard" to="Projects/Keyboard" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="Buttons/Keyboard" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Keyboard" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Tool Box" to="Projects/Tool" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="Buttons/Tool Box" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Tool Box" to="Buttons" method="_on_mouse_exited"]
+[connection signal="input_event" from="Buttons/Resume" to="Projects/Resume" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="Buttons/Resume" to="Buttons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Resume" to="Buttons" method="_on_mouse_exited"]
 [connection signal="timeout" from="Timer" to="Background" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Head" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Legs" method="_on_timer_timeout"]
@@ -4724,3 +5447,6 @@ autostart = true
 [connection signal="timeout" from="Timer" to="Home/Alvis" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/LampLSand" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/LampRSand" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Projects/Perch" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Projects/Cup" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Projects/LampLSand_Projects" method="_on_timer_timeout"]
