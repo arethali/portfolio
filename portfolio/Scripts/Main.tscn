@@ -1,4 +1,4 @@
-[gd_scene load_steps=623 format=3 uid="uid://dfhro4he33mwe"]
+[gd_scene load_steps=628 format=3 uid="uid://dfhro4he33mwe"]
 
 [ext_resource type="Texture2D" uid="uid://bldgwkrwu0770" path="res://Stylized outline.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://Scripts/PortNav.gd" id="1_uu6xs"]
@@ -3791,6 +3791,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_qcpgi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Swing"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_lboh7"]
 resource_name = "Swing"
 step = 0.2
@@ -3817,33 +3844,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
-}
-
-[sub_resource type="Animation" id="Animation_qcpgi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Swing"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yep5p"]
@@ -3889,33 +3889,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_orfne"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Swing"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="Animation" id="Animation_d0eng"]
 resource_name = "Flap"
 length = 1.2
@@ -3943,6 +3916,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_orfne"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Swing"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mxs5t"]
@@ -5078,6 +5078,42 @@ size = Vector2(63, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28u1i"]
 size = Vector2(127.5, 169)
+
+[sub_resource type="Curve" id="Curve_m6ggt"]
+_data = [Vector2(0.0927419, 0.0634649), 0.0, 0.0, 0, 0, Vector2(0.870968, 0.498285), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_4oqqu"]
+curve_y = SubResource("Curve_m6ggt")
+
+[sub_resource type="Curve" id="Curve_28u1i"]
+_data = [Vector2(0, 0.264944), 0.0, 0.0, 0, 0, Vector2(0.988462, 0.569467), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ypv7r"]
+curve = SubResource("Curve_28u1i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4cqk1"]
+lifetime_randomness = 0.16
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(20, 180, 1)
+angular_velocity_min = -70.49
+angular_velocity_max = 75.52
+directional_velocity_min = 1.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_4oqqu")
+gravity = Vector3(-50, 0, 0)
+linear_accel_min = -46.85
+linear_accel_max = 15.38
+damping_max = 8.741
+turbulence_noise_strength = 0.31
+turbulence_noise_scale = 1.292
+turbulence_influence_min = 0.026
+turbulence_influence_max = 0.026
+turbulence_initial_displacement_min = -26.7
+turbulence_initial_displacement_max = -22.8
+turbulence_influence_over_life = SubResource("CurveTexture_ypv7r")
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("camera")]
 texture_filter = 1
@@ -6221,6 +6257,39 @@ bbcode_enabled = true
 text = "[center]Rage, rage against the dying of the light [/center]"
 fit_content = true
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Buttons"]
+texture_filter = 1
+position = Vector2(5838, 650)
+amount = 30
+amount_ratio = 0.8882
+texture = ExtResource("74_mk7o0")
+lifetime = 60.0
+speed_scale = 4.81
+randomness = 0.47
+process_material = SubResource("ParticleProcessMaterial_4cqk1")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Buttons"]
+texture_filter = 1
+position = Vector2(1911, 659)
+amount = 5
+amount_ratio = 0.8882
+texture = ExtResource("74_mk7o0")
+lifetime = 60.0
+speed_scale = 4.81
+randomness = 0.47
+process_material = SubResource("ParticleProcessMaterial_4cqk1")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="Buttons"]
+texture_filter = 1
+position = Vector2(3849, 624)
+amount = 5
+amount_ratio = 0.8882
+texture = ExtResource("74_mk7o0")
+lifetime = 60.0
+speed_scale = 4.81
+randomness = 0.47
+process_material = SubResource("ParticleProcessMaterial_4cqk1")
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
@@ -6290,7 +6359,7 @@ autostart = true
 [connection signal="timeout" from="Timer" to="Home/LampRSand" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Personal/Tent" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Personal/Lamp" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Personal/LampRSand" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Projects/Perch" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Projects/Cup" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Projects/LampLSand_Projects" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="Personal/LampRSand" method="_on_timer_timeout"]
