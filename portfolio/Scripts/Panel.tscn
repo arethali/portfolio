@@ -121,8 +121,8 @@ texture_filter = 1
 tile_set = SubResource("TileSet_vt1hh")
 rendering_quadrant_size = 32
 script = ExtResource("2_iwtbq")
-height = 20
-width = 40
+height = 5
+width = 10
 arrow_sprite = NodePath("Arrow")
 anim_play = NodePath("Arrow/AnimationPlayer")
 
@@ -134,3 +134,9 @@ sprite_frames = SubResource("SpriteFrames_c2hsg")
 libraries = {
 &"": SubResource("AnimationLibrary_4i33e")
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0.724)

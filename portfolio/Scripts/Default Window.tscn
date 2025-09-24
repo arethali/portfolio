@@ -1,24 +1,51 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=16 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
 [ext_resource type="Texture2D" uid="uid://cdtq8fwys0gat" path="res://Assets/UI/Global/Exit/Exit_normal.png" id="2_b24j5"]
 [ext_resource type="Texture2D" uid="uid://bn5u3fyhjn0wi" path="res://Assets/UI/Global/Exit/Exit_Pressed.png" id="3_u3agq"]
 [ext_resource type="Script" uid="uid://dx3byof2jsdf3" path="res://Scripts/place_exit.gd" id="4_b24j5"]
+[ext_resource type="Script" uid="uid://c8oikl26rxnom" path="res://Scripts/activate_scroll_bar.gd" id="6_c010p"]
 [ext_resource type="FontFile" uid="uid://dsy7a4r455j54" path="res://Fonts/Default.ttf" id="6_v7ar0"]
 [ext_resource type="FontFile" uid="uid://db0nxlp577mr6" path="res://Fonts/Display.ttf" id="7_63ls6"]
+[ext_resource type="Script" uid="uid://c44erpmssj1ao" path="res://Scripts/set_body.gd" id="8_63ls6"]
 [ext_resource type="Script" uid="uid://bewtg5jxap88a" path="res://Scripts/set_title.gd" id="8_c010p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i73k"]
+bg_color = Color(1, 0.94902, 0.768627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjxqa"]
+bg_color = Color(0.635294, 0.627451, 0.454902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63ls6"]
+bg_color = Color(0.635294, 0.627451, 0.454902, 1)
+expand_margin_left = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c010p"]
+bg_color = Color(1, 0.94902, 0.768627, 1)
+expand_margin_left = 8.0
+
+[sub_resource type="Theme" id="Theme_0i73k"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_63ls6")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_63ls6")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_63ls6")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_c010p")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_c010p")
 
 [node name="Window" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3agq")
+format = "Text"
 
 [node name="Panel" parent="." instance=ExtResource("1_4a88q")]
+width = 16
 
 [node name="Exit" type="TextureButton" parent="."]
 texture_filter = 1
@@ -29,13 +56,37 @@ texture_normal = ExtResource("2_b24j5")
 texture_pressed = ExtResource("3_u3agq")
 texture_hover = ExtResource("3_u3agq")
 script = ExtResource("4_b24j5")
-padding = Vector2(-20, 8)
+padding = Vector2(20, 20)
 
-[node name="Title" type="RichTextLabel" parent="."]
+[node name="Text" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="VScrollBar" type="VScrollBar" parent="Text" node_paths=PackedStringArray("text_body")]
+layout_mode = 0
+offset_right = 8.0
+mouse_filter = 1
+theme_override_styles/scroll = SubResource("StyleBoxFlat_0i73k")
+theme_override_styles/scroll_focus = SubResource("StyleBoxFlat_0i73k")
+theme_override_styles/grabber = SubResource("StyleBoxFlat_xjxqa")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_xjxqa")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxFlat_xjxqa")
+script = ExtResource("6_c010p")
+text_body = NodePath("../Body")
+padding_x = 8
+padding_y_top = 48
+padding_y_bott = 20
+
+[node name="Body" type="RichTextLabel" parent="Text"]
 texture_filter = 1
 layout_mode = 0
-offset_right = 455.0
-offset_bottom = 112.0
+offset_right = 462.0
+offset_bottom = 135.0
+theme = SubResource("Theme_0i73k")
 theme_override_colors/default_color = Color(0.635294, 0.627451, 0.454902, 1)
 theme_override_constants/line_separation = 16
 theme_override_fonts/normal_font = ExtResource("6_v7ar0")
@@ -43,12 +94,66 @@ theme_override_fonts/bold_font = ExtResource("7_63ls6")
 theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
-text = "[b]Projects [/b]"
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+script = ExtResource("8_63ls6")
+body_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+left_margin = 20
+right_margin = 40
+margin_y = 20
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0.508)
+
+[node name="Buttons" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="RichTextLabel" parent="Buttons"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 455.0
+offset_bottom = 112.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.635294, 0.627451, 0.454902, 1)
+theme_override_constants/line_separation = 16
+theme_override_fonts/normal_font = ExtResource("6_v7ar0")
+theme_override_fonts/bold_font = ExtResource("7_63ls6")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Title[/b]"
 fit_content = true
+autowrap_mode = 0
 script = ExtResource("8_c010p")
 title = "[b]Personal[/b]"
-padding = Vector2(0, 4)
+padding = Vector2(20, 28)
 
-[connection signal="top_left" from="Panel" to="Title" method="_on_panel_top_left"]
+[node name="Resume" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Skills" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="top_left" from="Panel" to="Buttons/Title" method="_on_panel_top_left"]
 [connection signal="top_right" from="Panel" to="Exit" method="_on_panel_top_right"]
+[connection signal="top_right" from="Panel" to="Text/VScrollBar" method="_on_panel_top_right"]
+[connection signal="x_size" from="Panel" to="Text/Body" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Buttons/Title" method="_on_panel_x_size"]
+[connection signal="y_size" from="Panel" to="Text/Body" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Buttons/Title" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Text/VScrollBar" method="_on_panel_y_size"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="Text/VScrollBar" to="Text/VScrollBar" method="_on_value_changed"]

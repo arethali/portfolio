@@ -5271,15 +5271,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_khphd")
 }
 
-[node name="Front Mountains" type="TextureRect" parent="Background"]
-texture_filter = 1
-offset_top = 492.0
-offset_right = 5760.0
-offset_bottom = 1264.0
-mouse_filter = 2
-texture = ExtResource("4_trn2v")
-stretch_mode = 2
-
 [node name="Bottom Desert" type="TextureRect" parent="Background"]
 texture_filter = 1
 offset_top = 1088.0
@@ -5289,15 +5280,6 @@ mouse_filter = 2
 texture = ExtResource("6_03owx")
 stretch_mode = 2
 
-[node name="Top Pillars" type="TextureRect" parent="Background"]
-texture_filter = 1
-offset_top = 1064.0
-offset_right = 5760.0
-offset_bottom = 1316.0
-mouse_filter = 2
-texture = ExtResource("27_uy3go")
-stretch_mode = 2
-
 [node name="Rocks" type="TextureRect" parent="Background"]
 texture_filter = 1
 offset_top = 1208.0
@@ -5305,6 +5287,24 @@ offset_right = 5760.0
 offset_bottom = 2688.0
 mouse_filter = 2
 texture = ExtResource("7_wkp8b")
+stretch_mode = 2
+
+[node name="Front Mountains" type="TextureRect" parent="Background"]
+texture_filter = 1
+offset_top = 492.0
+offset_right = 5760.0
+offset_bottom = 1264.0
+mouse_filter = 2
+texture = ExtResource("4_trn2v")
+stretch_mode = 2
+
+[node name="Top Pillars" type="TextureRect" parent="Background"]
+texture_filter = 1
+offset_top = 1064.0
+offset_right = 5760.0
+offset_bottom = 1316.0
+mouse_filter = 2
+texture = ExtResource("27_uy3go")
 stretch_mode = 2
 
 [node name="ViewOnDesktop" type="Sprite2D" parent="Background"]
