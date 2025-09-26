@@ -20,10 +20,12 @@ func _on_mouse_entered():
 	title_label.text = title
 	time_label.visible = true
 	emit_signal("set_hover", time)
-	emit_signal("set_body", body)
+	if body_label:
+		emit_signal("set_body", body)
 
 
 func _on_mouse_exited():
 	title_label.text = default_title
-	body_label.visible = false
 	time_label.visible = false
+	if body_label:
+		body_label.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=52 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
@@ -36,6 +36,15 @@
 [ext_resource type="Texture2D" uid="uid://d2do4pnir6005" path="res://Assets/UI/Film/Video Button Normal.png" id="34_lbclf"]
 [ext_resource type="Texture2D" uid="uid://dhoqxoknqhmly" path="res://Assets/UI/Film/Video Button Pressed.png" id="35_jay7j"]
 [ext_resource type="Texture2D" uid="uid://dglacirtehkhk" path="res://Assets/UI/Film/Video Button hovered.png" id="36_n78kt"]
+[ext_resource type="Texture2D" uid="uid://6mh6yire2i1b" path="res://Assets/UI/Notebook/Digital Draw2.png" id="37_07gwf"]
+[ext_resource type="Texture2D" uid="uid://htc06mjv44bc" path="res://Assets/UI/Notebook/Digital Draw3.png" id="38_l77b0"]
+[ext_resource type="Texture2D" uid="uid://cotplojg6vmv8" path="res://Assets/UI/Notebook/Digital Draw1.png" id="39_tvm31"]
+[ext_resource type="Texture2D" uid="uid://c1xu67v7y1dkl" path="res://Assets/UI/Notebook/Pixel Draw2.png" id="40_5tn1p"]
+[ext_resource type="Texture2D" uid="uid://dvnokdklo7s1g" path="res://Assets/UI/Notebook/Pixel Draw1.png" id="41_8iyxp"]
+[ext_resource type="Texture2D" uid="uid://cw2866v7owvha" path="res://Assets/UI/Notebook/Pixel Draw3.png" id="42_jqdcr"]
+[ext_resource type="Texture2D" uid="uid://cemasghuhyqax" path="res://Assets/UI/Notebook/Paper Draw2.png" id="43_f7wef"]
+[ext_resource type="Texture2D" uid="uid://bolgxuhqapqfn" path="res://Assets/UI/Notebook/Paper Draw3.png" id="44_icjc7"]
+[ext_resource type="Texture2D" uid="uid://l7dbui3ncud6" path="res://Assets/UI/Notebook/Paper Draw1.png" id="45_f1ohu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i73k"]
 bg_color = Color(1, 0.94902, 0.768627, 1)
@@ -58,6 +67,40 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_63ls6")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_c010p")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_c010p")
 
+[sub_resource type="GDScript" id="GDScript_kwql2"]
+script/source = "extends TextureButton
+
+@export var title_label : RichTextLabel
+@export var time_label : RichTextLabel
+@export var body_label : RichTextLabel
+
+@export var title : String
+@export var time : String = \"\"
+@export var body : String
+
+@onready var default_title
+
+signal set_body(body : String)
+signal set_hover(content : String)
+
+func _ready():
+	default_title = title_label.content
+
+func _on_mouse_entered():
+	title_label.text = title
+	time_label.visible = true
+	emit_signal(\"set_hover\", time)
+	if body_label:
+		emit_signal(\"set_body\", body)
+
+
+func _on_mouse_exited():
+	title_label.text = default_title
+	time_label.visible = false
+	if body_label:
+		body_label.visible = false
+"
+
 [node name="Window" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -69,7 +112,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3agq")
 format = "Buttons"
-metadata/_edit_vertical_guides_ = [84.0]
 
 [node name="Panel" parent="." instance=ExtResource("1_4a88q")]
 width = 16
@@ -138,7 +180,7 @@ body_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu
 left_margin = 20
 right_margin = 40
 
-[node name="Buttons" type="Control" parent="." node_paths=PackedStringArray("project_buttons", "film_buttons", "row_container", "buttons_container")]
+[node name="Buttons" type="Control" parent="." node_paths=PackedStringArray("project_buttons", "film_buttons", "art_buttons", "row_container", "buttons_container")]
 unique_name_in_owner = true
 process_mode = 4
 visible = false
@@ -148,7 +190,8 @@ offset_bottom = 40.0
 mouse_filter = 1
 script = ExtResource("10_7vdy2")
 project_buttons = [NodePath("Project_TCOAS"), NodePath("Project_Portfolio"), NodePath("Project_TRW"), NodePath("Project_Ecotime"), NodePath("Project_grocery"), NodePath("Project_Basline")]
-film_buttons = [NodePath("Film1"), NodePath("Film2"), NodePath("Film3"), NodePath("Film4"), NodePath("Film5"), NodePath("Film6"), NodePath("Film10"), NodePath("Film7"), NodePath("Film8"), NodePath("Film9")]
+film_buttons = [NodePath("Film1"), NodePath("Film2"), NodePath("Film3"), NodePath("Film4"), NodePath("Film5"), NodePath("Film6"), NodePath("Film7"), NodePath("Film8"), NodePath("Film9"), NodePath("Film10")]
+art_buttons = [NodePath("DigiArt1"), NodePath("PixelArt1"), NodePath("TradArt1")]
 row_container = [NodePath("Button Container/Row 1"), NodePath("Button Container/Row 2")]
 buttons_container = NodePath("Button Container")
 
@@ -351,6 +394,7 @@ body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Film1" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label", "body_label")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -367,6 +411,7 @@ body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Film2" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label", "body_label")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -383,6 +428,7 @@ body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Film3" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label", "body_label")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -399,6 +445,7 @@ body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Film4" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label", "body_label")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -415,6 +462,7 @@ body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Film5" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label", "body_label")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -431,6 +479,7 @@ body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Film6" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label", "body_label")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 72.0
@@ -447,6 +496,7 @@ body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Film7" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label", "body_label")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -463,6 +513,7 @@ body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Film8" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label", "body_label")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -479,6 +530,7 @@ body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Film9" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label", "body_label")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -495,6 +547,7 @@ body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 
 [node name="Film10" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label", "body_label")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 72.0
@@ -508,6 +561,51 @@ body_label = NodePath("../Body")
 title = "Cafe 1930"
 time = "August 2021"
 body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Cafe"
+
+[node name="DigiArt1" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("37_07gwf")
+texture_pressed = ExtResource("38_l77b0")
+texture_hover = ExtResource("39_tvm31")
+script = ExtResource("16_6v0q4")
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Drawing"
+time = "Date"
+
+[node name="PixelArt1" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("41_8iyxp")
+texture_hover = ExtResource("42_jqdcr")
+script = SubResource("GDScript_kwql2")
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Pixel"
+time = "Date"
+
+[node name="TradArt1" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("43_f7wef")
+texture_pressed = ExtResource("44_icjc7")
+texture_hover = ExtResource("45_f1ohu")
+script = ExtResource("16_6v0q4")
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "trad Drawing"
+time = "Date"
 
 [node name="Bios" type="Control" parent="."]
 unique_name_in_owner = true
@@ -623,3 +721,12 @@ offset_bottom = 40.0
 [connection signal="mouse_exited" from="Buttons/Film10" to="Buttons/Film10" method="_on_mouse_exited"]
 [connection signal="set_body" from="Buttons/Film10" to="Buttons/Body" method="_on_set_body"]
 [connection signal="set_hover" from="Buttons/Film10" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="mouse_entered" from="Buttons/DigiArt1" to="Buttons/DigiArt1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/DigiArt1" to="Buttons/DigiArt1" method="_on_mouse_exited"]
+[connection signal="set_hover" from="Buttons/DigiArt1" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="mouse_entered" from="Buttons/PixelArt1" to="Buttons/PixelArt1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt1" to="Buttons/PixelArt1" method="_on_mouse_exited"]
+[connection signal="set_hover" from="Buttons/PixelArt1" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="mouse_entered" from="Buttons/TradArt1" to="Buttons/TradArt1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/TradArt1" to="Buttons/TradArt1" method="_on_mouse_exited"]
+[connection signal="set_hover" from="Buttons/TradArt1" to="Buttons/TimeLine" method="set_on_hover"]

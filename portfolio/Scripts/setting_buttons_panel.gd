@@ -3,6 +3,7 @@ extends Control
 @export_enum("Projects", "Camera", "Contact", "Art", "Films") var button_format: String = ""
 @export var project_buttons : Array[TextureButton]
 @export var film_buttons : Array[TextureButton]
+@export var art_buttons : Array[TextureButton]
 @export var row_container : Array[HBoxContainer]
 @export var buttons_container : VBoxContainer
 @onready var project_name = $"Project Name"
@@ -28,7 +29,13 @@ func _ready():
 		"Contact":
 			pass
 		"Art":
-			pass
+			title.content = "[b]Illustrations[/b]"
+			emit_signal("overide_panel_size", 20, 24)
+			project_name.padding = Vector2(20, 500)
+			buttons_container.top_padding = 100
+			time_line.left_alignment = true
+			time_line.padding = Vector2(20, 552)
+			add_buttons(art_buttons, row_container, 6)
 		"Films":
 			title.content = "[b]Filmography[/b]"
 			emit_signal("overide_panel_size", 20, 24)

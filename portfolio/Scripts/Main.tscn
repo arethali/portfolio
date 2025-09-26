@@ -6397,6 +6397,7 @@ click_box = NodePath("../NOAI Poster")
 
 [node name="Panel" parent="Buttons/AI Poster Look" index="0"]
 width = 12
+override = false
 
 [node name="Body" parent="Buttons/AI Poster Look/Text" index="1"]
 body_text = "[center]Rage, rage against the dying of the light[/center]"
@@ -6418,6 +6419,7 @@ click_box = NodePath("../NokKing Poster")
 [node name="Panel" parent="Buttons/No King Look" index="0"]
 height = 3
 width = 11
+override = false
 
 [node name="Body" parent="Buttons/No King Look/Text" index="1"]
 body_text = "[center]sic semper tyrannis[/center]"
@@ -6439,6 +6441,7 @@ click_box = NodePath("../Clippy")
 [node name="Panel" parent="Buttons/Clippy Look" index="0"]
 height = 3
 width = 13
+override = false
 
 [node name="Body" parent="Buttons/Clippy Look/Text" index="1"]
 body_text = "[center]He just wanted to help.[/center]"
@@ -6473,6 +6476,18 @@ click_box = NodePath("../Film Area")
 
 [node name="Buttons" parent="Buttons/Films" index="4"]
 button_format = "Films"
+
+[node name="Notebook" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
+visible = false
+offset_left = 436.0
+offset_top = 846.0
+offset_right = -1484.0
+offset_bottom = -234.0
+panel = NodePath("../Panel")
+click_box = NodePath("../NoteBook Area")
+
+[node name="Buttons" parent="Buttons/Notebook" index="4"]
+button_format = "Art"
 
 [node name="Outline Text" type="RichTextLabel" parent="Buttons"]
 visible = false
@@ -6638,6 +6653,7 @@ autostart = true
 [connection signal="mouse_exited" from="Buttons/Camera Area" to="." method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="Buttons/Camera Area" to="Buttons/Camera Area" method="_on_mouse_exited"]
 [connection signal="input_event" from="Buttons/NoteBook Area" to="Personal/Notebook" method="_on_area_input_event"]
+[connection signal="input_event" from="Buttons/NoteBook Area" to="Buttons/Notebook" method="_on_input_event"]
 [connection signal="mouse_entered" from="Buttons/NoteBook Area" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/NoteBook Area" to="Buttons/NoteBook Area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/NoteBook Area" to="." method="_on_mouse_exited"]
@@ -6666,6 +6682,7 @@ autostart = true
 [connection signal="mouse_entered" from="Buttons/Clippy" to="Buttons/Clippy" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Clippy" to="." method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="Buttons/Clippy" to="Buttons/Clippy" method="_on_mouse_exited"]
+[connection signal="gui_input" from="Buttons/Panel" to="Personal/Notebook" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Personal/Film" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Projects/Laptop" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/AI Poster Look" method="_on_panel_gui_input"]
@@ -6673,8 +6690,10 @@ autostart = true
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Clippy Look" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Projects" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Films" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Buttons/Notebook" method="_on_panel_gui_input"]
 [connection signal="pressed" from="Buttons/Projects/Exit" to="Personal/Film" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Projects/Exit" to="Projects/Laptop" method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons/Notebook/Exit" to="Personal/Notebook" method="_on_exit_pressed"]
 [connection signal="timeout" from="Timer" to="Background" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Head" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Legs" method="_on_timer_timeout"]
@@ -6694,3 +6713,4 @@ autostart = true
 [editable path="Buttons/Clippy Look"]
 [editable path="Buttons/Projects"]
 [editable path="Buttons/Films"]
+[editable path="Buttons/Notebook"]
