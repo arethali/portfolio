@@ -1,10 +1,11 @@
-[gd_scene load_steps=52 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=68 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
 [ext_resource type="Texture2D" uid="uid://cdtq8fwys0gat" path="res://Assets/UI/Global/Exit/Exit_normal.png" id="2_b24j5"]
 [ext_resource type="Texture2D" uid="uid://bn5u3fyhjn0wi" path="res://Assets/UI/Global/Exit/Exit_Pressed.png" id="3_u3agq"]
 [ext_resource type="Script" uid="uid://dx3byof2jsdf3" path="res://Scripts/place_exit.gd" id="4_b24j5"]
+[ext_resource type="Texture2D" uid="uid://dmllbom3mj0ej" path="res://Assets/UI/Global/Exit/Exit_Hovered.png" id="5_8iyxp"]
 [ext_resource type="Script" uid="uid://c8oikl26rxnom" path="res://Scripts/activate_scroll_bar.gd" id="6_c010p"]
 [ext_resource type="FontFile" uid="uid://dsy7a4r455j54" path="res://Fonts/Default.ttf" id="6_v7ar0"]
 [ext_resource type="FontFile" uid="uid://db0nxlp577mr6" path="res://Fonts/Display.ttf" id="7_63ls6"]
@@ -45,12 +46,24 @@
 [ext_resource type="Texture2D" uid="uid://cemasghuhyqax" path="res://Assets/UI/Notebook/Paper Draw2.png" id="43_f7wef"]
 [ext_resource type="Texture2D" uid="uid://bolgxuhqapqfn" path="res://Assets/UI/Notebook/Paper Draw3.png" id="44_icjc7"]
 [ext_resource type="Texture2D" uid="uid://l7dbui3ncud6" path="res://Assets/UI/Notebook/Paper Draw1.png" id="45_f1ohu"]
+[ext_resource type="Texture2D" uid="uid://6o0dsgko17xy" path="res://Assets/UI/Contact/MailButton1.png" id="47_adwo7"]
+[ext_resource type="Texture2D" uid="uid://iedf7kehpj4n" path="res://Assets/UI/Contact/MailButton3.png" id="48_k3mck"]
+[ext_resource type="Texture2D" uid="uid://drsc61hfbtcu4" path="res://Assets/UI/Contact/MailButton2.png" id="49_r6nmg"]
+[ext_resource type="Texture2D" uid="uid://ca34oyof1wnoi" path="res://Assets/UI/Contact/LinkedInButton1.png" id="50_1u7cx"]
+[ext_resource type="Texture2D" uid="uid://curyg22fjitha" path="res://Assets/UI/Contact/LinkedInButton3.png" id="51_jnqrh"]
+[ext_resource type="Texture2D" uid="uid://d1fl0dgpoh6v5" path="res://Assets/UI/Contact/LinkedInButton2.png" id="52_0utnw"]
+[ext_resource type="Texture2D" uid="uid://xcah6rcu2rx3" path="res://Assets/UI/Contact/YouTubeButton1.png" id="53_66sfg"]
+[ext_resource type="Texture2D" uid="uid://dr5k75ucwhvur" path="res://Assets/UI/Contact/YouTubeButton3.png" id="54_yych5"]
+[ext_resource type="Texture2D" uid="uid://dq3h25yfun7gd" path="res://Assets/UI/Contact/YouTubeButton2.png" id="55_4ctlj"]
+[ext_resource type="Texture2D" uid="uid://4170p7f2xexj" path="res://Assets/UI/Contact/BlueSkyButton1.png" id="56_x1kxa"]
+[ext_resource type="Texture2D" uid="uid://b77ne1yoyrty2" path="res://Assets/UI/Contact/BlueSkyButton3.png" id="57_x3ji6"]
+[ext_resource type="Texture2D" uid="uid://rkrslxrjitff" path="res://Assets/UI/Contact/BlueSkyButton2.png" id="58_u2u5r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i73k"]
-bg_color = Color(1, 0.94902, 0.768627, 1)
+bg_color = Color(0.792157, 0.803922, 0.705882, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjxqa"]
-bg_color = Color(0.635294, 0.627451, 0.454902, 1)
+bg_color = Color(0.588235, 0.603922, 0.423529, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63ls6"]
 bg_color = Color(0.635294, 0.627451, 0.454902, 1)
@@ -101,6 +114,15 @@ func _on_mouse_exited():
 		body_label.visible = false
 "
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4mfqt"]
+load_path = "res://.godot/imported/InstaButton1.png-48c25cc32037f2b6be1db8c936b629c7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hgb13"]
+load_path = "res://.godot/imported/InstaButton3.png-bea36494c33fdfabc97410f68c47e601.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pp1yn"]
+load_path = "res://.godot/imported/InstaButton2.png-c8294d875c517a96d93b37c45aadef59.ctex"
+
 [node name="Window" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -110,8 +132,8 @@ offset_right = -1920.0
 offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 script = ExtResource("1_u3agq")
-format = "Buttons"
 
 [node name="Panel" parent="." instance=ExtResource("1_4a88q")]
 width = 16
@@ -128,12 +150,12 @@ color = Color(1, 1, 1, 0.375)
 unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = 28.0
+offset_bottom = 28.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_b24j5")
 texture_pressed = ExtResource("3_u3agq")
-texture_hover = ExtResource("3_u3agq")
+texture_hover = ExtResource("5_8iyxp")
 script = ExtResource("4_b24j5")
 padding = Vector2(20, 20)
 
@@ -167,7 +189,7 @@ layout_mode = 0
 offset_right = 462.0
 offset_bottom = 135.0
 theme = SubResource("Theme_0i73k")
-theme_override_colors/default_color = Color(0.635294, 0.627451, 0.454902, 1)
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
 theme_override_constants/line_separation = 16
 theme_override_fonts/normal_font = ExtResource("6_v7ar0")
 theme_override_fonts/bold_font = ExtResource("7_63ls6")
@@ -179,8 +201,9 @@ script = ExtResource("8_63ls6")
 body_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 left_margin = 20
 right_margin = 40
+margin_top = 20
 
-[node name="Buttons" type="Control" parent="." node_paths=PackedStringArray("project_buttons", "film_buttons", "art_buttons", "row_container", "buttons_container")]
+[node name="Buttons" type="Control" parent="." node_paths=PackedStringArray("project_buttons", "film_buttons", "art_buttons", "contact_buttons", "row_container", "buttons_container")]
 unique_name_in_owner = true
 process_mode = 4
 visible = false
@@ -189,9 +212,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
 script = ExtResource("10_7vdy2")
+button_format = "Contact"
 project_buttons = [NodePath("Project_TCOAS"), NodePath("Project_Portfolio"), NodePath("Project_TRW"), NodePath("Project_Ecotime"), NodePath("Project_grocery"), NodePath("Project_Basline")]
 film_buttons = [NodePath("Film1"), NodePath("Film2"), NodePath("Film3"), NodePath("Film4"), NodePath("Film5"), NodePath("Film6"), NodePath("Film7"), NodePath("Film8"), NodePath("Film9"), NodePath("Film10")]
 art_buttons = [NodePath("DigiArt1"), NodePath("PixelArt1"), NodePath("TradArt1")]
+contact_buttons = [NodePath("Contact_Mail"), NodePath("Contact_Insta"), NodePath("Contact_LinkedIn"), NodePath("Contact_Youtube"), NodePath("Contact_BlueSky")]
 row_container = [NodePath("Button Container/Row 1"), NodePath("Button Container/Row 2")]
 buttons_container = NodePath("Button Container")
 
@@ -200,7 +225,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 455.0
 offset_bottom = 112.0
-theme_override_colors/default_color = Color(0.635294, 0.627451, 0.454902, 1)
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
 theme_override_constants/line_separation = 16
 theme_override_fonts/normal_font = ExtResource("7_63ls6")
 theme_override_fonts/bold_font = ExtResource("11_sp3od")
@@ -219,7 +244,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 455.0
 offset_bottom = 112.0
-theme_override_colors/default_color = Color(0.635294, 0.627451, 0.454902, 1)
+theme_override_colors/default_color = Color(0.521569, 0.552941, 0.368627, 1)
 theme_override_constants/line_separation = 16
 theme_override_fonts/normal_font = ExtResource("7_63ls6")
 theme_override_fonts/bold_font = ExtResource("11_sp3od")
@@ -238,7 +263,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 455.0
 offset_bottom = 112.0
-theme_override_colors/default_color = Color(0.677629, 0.670038, 0.497546, 1)
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
 theme_override_constants/line_separation = 16
 theme_override_fonts/normal_font = ExtResource("6_v7ar0")
 theme_override_fonts/bold_font = ExtResource("7_63ls6")
@@ -249,12 +274,37 @@ horizontal_alignment = 2
 script = ExtResource("8_c010p")
 content = "Dates"
 
+[node name="Subwindow title" type="RichTextLabel" parent="Buttons"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 455.0
+offset_bottom = 112.0
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
+theme_override_constants/line_separation = 16
+theme_override_fonts/normal_font = ExtResource("6_v7ar0")
+theme_override_fonts/bold_font = ExtResource("7_63ls6")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+horizontal_alignment = 2
+script = ExtResource("8_c010p")
+content = "Title"
+
+[node name="PlaceImage" type="TextureRect" parent="Buttons"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Body" type="RichTextLabel" parent="Buttons"]
 texture_filter = 1
 layout_mode = 0
 offset_right = 455.0
 offset_bottom = 112.0
-theme_override_colors/default_color = Color(0.635294, 0.627451, 0.454902, 1)
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
 theme_override_constants/line_separation = 8
 theme_override_fonts/normal_font = ExtResource("6_v7ar0")
 theme_override_fonts/bold_font = ExtResource("7_63ls6")
@@ -266,6 +316,7 @@ padding = Vector2(20, 388)
 padding_bottom = 20
 
 [node name="Button Container" type="VBoxContainer" parent="Buttons"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -568,6 +619,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("37_07gwf")
 texture_pressed = ExtResource("38_l77b0")
 texture_hover = ExtResource("39_tvm31")
@@ -583,6 +635,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("40_5tn1p")
 texture_pressed = ExtResource("41_8iyxp")
 texture_hover = ExtResource("42_jqdcr")
@@ -598,6 +651,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("43_f7wef")
 texture_pressed = ExtResource("44_icjc7")
 texture_hover = ExtResource("45_f1ohu")
@@ -606,6 +660,56 @@ title_label = NodePath("../Project Name")
 time_label = NodePath("../TimeLine")
 title = "trad Drawing"
 time = "Date"
+
+[node name="Contact_Mail" type="TextureButton" parent="Buttons"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("47_adwo7")
+texture_pressed = ExtResource("48_k3mck")
+texture_hover = ExtResource("49_r6nmg")
+
+[node name="Contact_Insta" type="TextureButton" parent="Buttons"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("CompressedTexture2D_4mfqt")
+texture_pressed = SubResource("CompressedTexture2D_hgb13")
+texture_hover = SubResource("CompressedTexture2D_pp1yn")
+
+[node name="Contact_LinkedIn" type="TextureButton" parent="Buttons"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("50_1u7cx")
+texture_pressed = ExtResource("51_jnqrh")
+texture_hover = ExtResource("52_0utnw")
+
+[node name="Contact_Youtube" type="TextureButton" parent="Buttons"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("53_66sfg")
+texture_pressed = ExtResource("54_yych5")
+texture_hover = ExtResource("55_4ctlj")
+
+[node name="Contact_BlueSky" type="TextureButton" parent="Buttons"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("56_x1kxa")
+texture_pressed = ExtResource("57_x3ji6")
+texture_hover = ExtResource("58_u2u5r")
 
 [node name="Bios" type="Control" parent="."]
 unique_name_in_owner = true
@@ -659,6 +763,7 @@ offset_bottom = 40.0
 [connection signal="overide_panel_size" from="Buttons" to="Panel" method="_on_overide_panel_size"]
 [connection signal="mouse_entered" from="Buttons/Project_Basline" to="Buttons/Project_Basline" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Project_Basline" to="Buttons/Project_Basline" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/Project_Basline" to="Buttons/Project_Basline" method="_on_pressed"]
 [connection signal="set_body" from="Buttons/Project_Basline" to="Buttons/Body" method="_on_set_body"]
 [connection signal="set_hover" from="Buttons/Project_Basline" to="Buttons/TimeLine" method="set_on_hover"]
 [connection signal="mouse_entered" from="Buttons/Project_TRW" to="Buttons/Project_TRW" method="_on_mouse_entered"]

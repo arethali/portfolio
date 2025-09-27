@@ -26,3 +26,7 @@ func _on_mouse_exited():
 	outline_text.text = ""
 	outline_text.size = Vector2(0,0)
 	color_block.size = Vector2(0,0)
+
+
+func _on_exit_pressed():
+	pass # Replace with function body.

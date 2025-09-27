@@ -4,6 +4,7 @@ extends Control
 @export var project_buttons : Array[TextureButton]
 @export var film_buttons : Array[TextureButton]
 @export var art_buttons : Array[TextureButton]
+@export var contact_buttons : Array[TextureButton]
 @export var row_container : Array[HBoxContainer]
 @export var buttons_container : VBoxContainer
 @onready var project_name = $"Project Name"
@@ -27,7 +28,12 @@ func _ready():
 		"Camera":
 			pass
 		"Contact":
-			pass
+			title.content = "[b]Contact Me[/b]"
+			emit_signal("overide_panel_size", 7, 14)
+			project_name.visible  = false
+			buttons_container.top_padding = 112
+			time_line.visible  = false
+			add_buttons(contact_buttons, row_container, 5)
 		"Art":
 			title.content = "[b]Illustrations[/b]"
 			emit_signal("overide_panel_size", 20, 24)
@@ -46,7 +52,8 @@ func _ready():
 			body.padding = Vector2(20, 388)
 			add_buttons(film_buttons, row_container, 6)
 		_:
-			pass
+			print_debug("No button Layout choosen.")
+			return
 
 func add_buttons(butt_arr : Array, buttons_container: Array[HBoxContainer], length : int):
 	var container = 0

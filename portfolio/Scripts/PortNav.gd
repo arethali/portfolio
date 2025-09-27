@@ -24,8 +24,8 @@ func _ready():
 	root_window.size_changed.connect(_on_window_size_changed)
 	
 	#Set cursors
-	Input.set_custom_mouse_cursor(arrow, Input.CURSOR_ARROW, Vector2(10,10))
-	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND, Vector2(5,5))
+	Input.set_custom_mouse_cursor(arrow, Input.CURSOR_ARROW, Vector2(0,0))
+	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND, Vector2(0, 0))
 	await get_tree().process_frame
 	label.hide()
 	color_block.hide()

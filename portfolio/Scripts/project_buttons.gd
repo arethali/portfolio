@@ -1,5 +1,7 @@
 extends TextureButton
 
+@export_enum("Link", "Window") var button_type : String
+
 @export var title_label : RichTextLabel
 @export var time_label : RichTextLabel
 @export var body_label : RichTextLabel
@@ -7,6 +9,11 @@ extends TextureButton
 @export var title : String
 @export var time : String = ""
 @export var body : String
+
+#hide when window
+@onready var button_container = %"Button Container"
+@onready var subwindow_title = %"Subwindow title"
+@onready var place_image = %PlaceImage
 
 @onready var default_title
 
@@ -29,3 +36,27 @@ func _on_mouse_exited():
 	time_label.visible = false
 	if body_label:
 		body_label.visible = false
+
+
+
+func _on_pressed():
+	match button_type:
+		"Link":
+			print("go to link")
+			return
+		"Window":
+			print("switch to window")
+			#hide prev window
+			_toggle_buttons(false)
+			_toggle_window(true)
+			return
+
+func _toggle_buttons(visiblity : bool):
+	title_label.visible = visiblity
+	time_label.visible = visiblity
+	body_label.visible = visiblity
+	button_container.visible = visiblity
+
+func _toggle_window(visiblity : bool):
+	subwindow_title.visible = visiblity
+	place_image.visible = visiblity

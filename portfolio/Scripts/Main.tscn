@@ -5291,15 +5291,6 @@ mouse_filter = 2
 texture = ExtResource("6_03owx")
 stretch_mode = 2
 
-[node name="Rocks" type="TextureRect" parent="Background"]
-texture_filter = 1
-offset_top = 1208.0
-offset_right = 5760.0
-offset_bottom = 2688.0
-mouse_filter = 2
-texture = ExtResource("7_wkp8b")
-stretch_mode = 2
-
 [node name="Front Mountains" type="TextureRect" parent="Background"]
 texture_filter = 1
 offset_top = 492.0
@@ -5316,6 +5307,15 @@ offset_right = 5760.0
 offset_bottom = 1316.0
 mouse_filter = 2
 texture = ExtResource("27_uy3go")
+stretch_mode = 2
+
+[node name="Rocks" type="TextureRect" parent="Background"]
+texture_filter = 1
+offset_top = 1208.0
+offset_right = 5760.0
+offset_bottom = 2688.0
+mouse_filter = 2
+texture = ExtResource("7_wkp8b")
 stretch_mode = 2
 
 [node name="ViewOnDesktop" type="Sprite2D" parent="Background"]
@@ -6455,6 +6455,7 @@ offset_left = 4750.0
 offset_top = 746.0
 offset_right = 2830.0
 offset_bottom = -334.0
+format = "Buttons"
 panel = NodePath("../Panel")
 click_box = NodePath("../Laptop")
 
@@ -6471,6 +6472,7 @@ offset_left = 900.0
 offset_top = 756.0
 offset_right = -1020.0
 offset_bottom = -324.0
+format = "Buttons"
 panel = NodePath("../Panel")
 click_box = NodePath("../Film Area")
 
@@ -6483,11 +6485,22 @@ offset_left = 436.0
 offset_top = 846.0
 offset_right = -1484.0
 offset_bottom = -234.0
+format = "Buttons"
 panel = NodePath("../Panel")
 click_box = NodePath("../NoteBook Area")
 
 [node name="Buttons" parent="Buttons/Notebook" index="4"]
 button_format = "Art"
+
+[node name="Contact" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
+visible = false
+offset_left = 2754.0
+offset_top = 830.0
+offset_right = 834.0
+offset_bottom = -250.0
+format = "Buttons"
+panel = NodePath("../Panel")
+click_box = NodePath("../Mail Box")
 
 [node name="Outline Text" type="RichTextLabel" parent="Buttons"]
 visible = false
@@ -6602,6 +6615,7 @@ autostart = true
 [connection signal="mouse_exited" from="Buttons/Phone Area" to="Buttons/Phone Area" method="_on_mouse_exited"]
 [connection signal="input_event" from="Buttons/Mail Box" to="Home/Mail Shadow" method="_on_input_event"]
 [connection signal="input_event" from="Buttons/Mail Box" to="Home/Mail" method="_on_input_event"]
+[connection signal="input_event" from="Buttons/Mail Box" to="Buttons/Contact" method="_on_input_event"]
 [connection signal="mouse_entered" from="Buttons/Mail Box" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Mail Box" to="Buttons/Mail Box" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Mail Box" to="." method="_on_mouse_exited"]
@@ -6682,6 +6696,8 @@ autostart = true
 [connection signal="mouse_entered" from="Buttons/Clippy" to="Buttons/Clippy" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Clippy" to="." method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="Buttons/Clippy" to="Buttons/Clippy" method="_on_mouse_exited"]
+[connection signal="gui_input" from="Buttons/Panel" to="Home/Mail Shadow" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Home/Mail" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Personal/Notebook" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Personal/Film" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Projects/Laptop" method="_on_panel_gui_input"]
@@ -6691,9 +6707,13 @@ autostart = true
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Projects" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Films" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Notebook" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Buttons/Contact" method="_on_panel_gui_input"]
 [connection signal="pressed" from="Buttons/Projects/Exit" to="Personal/Film" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Projects/Exit" to="Projects/Laptop" method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons/Films/Exit" to="Personal/Film" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Notebook/Exit" to="Personal/Notebook" method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons/Contact/Exit" to="Home/Mail Shadow" method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons/Contact/Exit" to="Home/Mail" method="_on_exit_pressed"]
 [connection signal="timeout" from="Timer" to="Background" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Head" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Legs" method="_on_timer_timeout"]
@@ -6714,3 +6734,4 @@ autostart = true
 [editable path="Buttons/Projects"]
 [editable path="Buttons/Films"]
 [editable path="Buttons/Notebook"]
+[editable path="Buttons/Contact"]
