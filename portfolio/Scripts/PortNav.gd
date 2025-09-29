@@ -16,6 +16,7 @@ var root_window
 var arrow = load("res://Assets/UI/Global/Cursor/Arrow_green.png")
 var point = load("res://Assets/UI/Global/Cursor/Pointing Hand small.png")
 
+signal panel_offset(offset)
 func _ready():
 	#display settings
 	root_window = get_tree().root
@@ -39,6 +40,7 @@ func _on_window_size_changed():
 	else: 
 		root_window.content_scale_mode = Window.CONTENT_SCALE_MODE_DISABLED
 		camera.offset.y = float(1080.0 - float(get_viewport().size.y))
+		emit_signal("panel_offset", camera.offset.y)
 	
 
 func _on_projects_pressed():

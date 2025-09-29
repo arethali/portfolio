@@ -5,6 +5,7 @@ extends AnimatedSprite2D
 @export var on_anim : String
 @export var off_anim : String
 @export var start_on_reset : bool
+@export var joint_sprite : AnimatedSprite2D
 
 @export var interact_area : Area2D
 @onready var on_off = false
@@ -36,18 +37,25 @@ func _on_panel_gui_input(event):
 
 func _toggle_screen():
 	if on_off == false:
+		#print("on")
 		anim_player.play(on_anim)
 		if anim_player_2:
+			if joint_sprite:
+				joint_sprite.show()
 			anim_player_2.play(on_anim)
 		if one_shot == false:
 			on_off = !on_off
 	else:
+		#print("off")
 		if reversed == true:
 			anim_player.play_backwards(on_anim)
 		else:
 			if off_anim:
 				anim_player.play(off_anim)
 				if anim_player_2:
+					if joint_sprite:
+						joint_sprite.hide()
+				#	print("off_anim2")
 					anim_player_2.play(off_anim)
 		on_off = !on_off
 

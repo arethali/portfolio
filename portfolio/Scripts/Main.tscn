@@ -5871,7 +5871,7 @@ texture_filter = 1
 position = Vector2(960, 926)
 texture = ExtResource("255_rrjbx")
 
-[node name="Film" type="AnimatedSprite2D" parent="Personal" node_paths=PackedStringArray("anim_player", "anim_player_2", "interact_area")]
+[node name="Film" type="AnimatedSprite2D" parent="Personal" node_paths=PackedStringArray("anim_player", "anim_player_2", "joint_sprite", "interact_area")]
 texture_filter = 1
 position = Vector2(902, 868)
 sprite_frames = SubResource("SpriteFrames_uq243")
@@ -5881,6 +5881,7 @@ anim_player = NodePath("AnimationPlayer")
 anim_player_2 = NodePath("../Light/AnimationPlayer")
 on_anim = "Play"
 off_anim = "RESET"
+joint_sprite = NodePath("../Light")
 interact_area = NodePath("../../Buttons/Film Area")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Personal/Film"]
@@ -6586,6 +6587,13 @@ process_material = SubResource("ParticleProcessMaterial_4cqk1")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="panel_offset" from="." to="Buttons/AI Poster Look" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/No King Look" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/Clippy Look" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/Projects" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/Films" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/Notebook" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/Contact" method="_on_panel_offset"]
 [connection signal="timeout" from="Background/Clouds/Timer_1" to="Background/Clouds" method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_2" to="Background/Clouds" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_3" to="Background/Clouds" method="_on_timer_3_timeout"]

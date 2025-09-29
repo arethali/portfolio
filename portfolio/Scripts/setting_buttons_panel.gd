@@ -11,6 +11,9 @@ extends Control
 @onready var title = $Title
 @onready var time_line = $TimeLine
 @onready var body = $Body
+@onready var subwindow_title = %"Subwindow title"
+@onready var looky_back = %"Looky Back"
+@onready var place_image = %PlaceImage
 
 signal overide_panel_size(h, w)
 
@@ -41,6 +44,11 @@ func _ready():
 			buttons_container.top_padding = 100
 			time_line.left_alignment = true
 			time_line.padding = Vector2(20, 552)
+			subwindow_title.padding = Vector2(292.0, 580.0)
+			subwindow_title.left_alignment = false
+			looky_back.top_padding = 584.0
+			place_image.top_bott_padding= Vector2(100, 80)
+			place_image.side_padding = 20
 			add_buttons(art_buttons, row_container, 6)
 		"Films":
 			title.content = "[b]Filmography[/b]"

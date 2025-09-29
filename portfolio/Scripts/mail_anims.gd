@@ -41,7 +41,7 @@ func _toggle_contact():
 		return
 	if open == true:
 		open = false
-		print("click")
+		#print("click")
 		anim_tree.set("parameters/conditions/Close", true)
 		await get_tree().create_timer(.6).timeout
 		anim_tree.set("parameters/conditions/Close", false)

@@ -10,15 +10,19 @@ extends TextureButton
 @export var time : String = ""
 @export var body : String
 
+@export var pic_file : String
+
 #hide when window
 @onready var button_container = %"Button Container"
 @onready var subwindow_title = %"Subwindow title"
 @onready var place_image = %PlaceImage
+@onready var looky_back = %"Looky Back"
 
 @onready var default_title
 
 signal set_body(body : String)
 signal set_hover(content : String)
+signal send_pic_file (file : String)
 
 func _ready():
 	default_title = title_label.content
@@ -49,14 +53,22 @@ func _on_pressed():
 			#hide prev window
 			_toggle_buttons(false)
 			_toggle_window(true)
+			emit_signal("send_pic_file", pic_file)
 			return
 
 func _toggle_buttons(visiblity : bool):
 	title_label.visible = visiblity
 	time_label.visible = visiblity
-	body_label.visible = visiblity
+	if body_label:
+		body_label.visible = visiblity
 	button_container.visible = visiblity
 
 func _toggle_window(visiblity : bool):
 	subwindow_title.visible = visiblity
 	place_image.visible = visiblity
+	looky_back.visible = visiblity
+
+
+func _on_back_pressed():
+	_toggle_buttons(true)
+	_toggle_window(false)

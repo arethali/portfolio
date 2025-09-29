@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=72 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dmjtrbdbrbpgx" path="res://Assets/UI/Projects/Basline_hovered.png" id="13_7p8p1"]
 [ext_resource type="Texture2D" uid="uid://dck4jhgd1rg7g" path="res://Assets/UI/Projects/CoAS_hovered.png" id="13_dw7sr"]
 [ext_resource type="Texture2D" uid="uid://bem8lhkowx0hr" path="res://Assets/UI/Projects/TRW_normal.png" id="14_6v0q4"]
+[ext_resource type="Script" uid="uid://boktsii5j15sa" path="res://Scripts/place_image.gd" id="14_jnqrh"]
 [ext_resource type="Texture2D" uid="uid://c05r48hfx2rys" path="res://Assets/UI/Projects/TRW_pressed.png" id="15_jjry7"]
 [ext_resource type="Script" uid="uid://cnqkkm3ny15q2" path="res://Scripts/project_buttons.gd" id="16_6v0q4"]
 [ext_resource type="Texture2D" uid="uid://dwdn1r0vnvyy4" path="res://Assets/UI/Projects/TRW_hovered.png" id="16_sp3od"]
@@ -58,6 +59,9 @@
 [ext_resource type="Texture2D" uid="uid://4170p7f2xexj" path="res://Assets/UI/Contact/BlueSkyButton1.png" id="56_x1kxa"]
 [ext_resource type="Texture2D" uid="uid://b77ne1yoyrty2" path="res://Assets/UI/Contact/BlueSkyButton3.png" id="57_x3ji6"]
 [ext_resource type="Texture2D" uid="uid://rkrslxrjitff" path="res://Assets/UI/Contact/BlueSkyButton2.png" id="58_u2u5r"]
+[ext_resource type="Texture2D" uid="uid://i6b4scs67pjf" path="res://Assets/UI/Global/Back/Back_normal_v2.png" id="59_1u7cx"]
+[ext_resource type="Texture2D" uid="uid://d0wobbbxfall" path="res://Assets/UI/Global/Back/Back_pressed_v2.png" id="60_jnqrh"]
+[ext_resource type="Script" uid="uid://dxdn8g31matrn" path="res://Scripts/place_button.gd" id="61_1u7cx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i73k"]
 bg_color = Color(0.792157, 0.803922, 0.705882, 1)
@@ -290,14 +294,21 @@ theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 horizontal_alignment = 2
 script = ExtResource("8_c010p")
-content = "Title"
+content = "See full picture"
 
 [node name="PlaceImage" type="TextureRect" parent="Buttons"]
 unique_name_in_owner = true
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+script = ExtResource("14_jnqrh")
+pic_file = "res://Assets/Birbs/Leo/Hair/Leo Hair2.png"
 
 [node name="Body" type="RichTextLabel" parent="Buttons"]
 texture_filter = 1
@@ -624,10 +635,12 @@ texture_normal = ExtResource("37_07gwf")
 texture_pressed = ExtResource("38_l77b0")
 texture_hover = ExtResource("39_tvm31")
 script = ExtResource("16_6v0q4")
+button_type = "Window"
 title_label = NodePath("../Project Name")
 time_label = NodePath("../TimeLine")
 title = "Drawing"
 time = "Date"
+pic_file = "res://Assets/UI/Camera/Photo18.png"
 
 [node name="PixelArt1" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
 visible = false
@@ -711,6 +724,19 @@ texture_normal = ExtResource("56_x1kxa")
 texture_pressed = ExtResource("57_x3ji6")
 texture_hover = ExtResource("58_u2u5r")
 
+[node name="Looky Back" type="TextureButton" parent="Buttons"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("59_1u7cx")
+texture_pressed = ExtResource("60_jnqrh")
+texture_hover = ExtResource("60_jnqrh")
+script = ExtResource("61_1u7cx")
+side_padding = 20
+
 [node name="Bios" type="Control" parent="."]
 unique_name_in_owner = true
 process_mode = 4
@@ -738,8 +764,10 @@ offset_bottom = 40.0
 [connection signal="top_left" from="Panel" to="Buttons/Title" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Project Name" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/TimeLine" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Buttons/PlaceImage" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Body" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Button Container" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Buttons/Looky Back" method="_on_panel_top_left"]
 [connection signal="top_right" from="Panel" to="Exit" method="_on_panel_top_right"]
 [connection signal="top_right" from="Panel" to="Text/VScrollBar" method="_on_panel_top_right"]
 [connection signal="top_right" from="Panel" to="Buttons/TimeLine" method="_on_panel_top_right"]
@@ -748,16 +776,20 @@ offset_bottom = 40.0
 [connection signal="x_size" from="Panel" to="Buttons/Title" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Project Name" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/TimeLine" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Buttons/PlaceImage" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Body" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Button Container" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Buttons/Looky Back" method="_on_panel_x_size"]
 [connection signal="y_size" from="Panel" to="." method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Text/VScrollBar" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Text/Body" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Title" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Project Name" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/TimeLine" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Buttons/PlaceImage" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Body" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Button Container" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Buttons/Looky Back" method="_on_panel_y_size"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="value_changed" from="Text/VScrollBar" to="Text/VScrollBar" method="_on_value_changed"]
 [connection signal="overide_panel_size" from="Buttons" to="Panel" method="_on_overide_panel_size"]
@@ -828,6 +860,8 @@ offset_bottom = 40.0
 [connection signal="set_hover" from="Buttons/Film10" to="Buttons/TimeLine" method="set_on_hover"]
 [connection signal="mouse_entered" from="Buttons/DigiArt1" to="Buttons/DigiArt1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/DigiArt1" to="Buttons/DigiArt1" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/DigiArt1" to="Buttons/DigiArt1" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/DigiArt1" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
 [connection signal="set_hover" from="Buttons/DigiArt1" to="Buttons/TimeLine" method="set_on_hover"]
 [connection signal="mouse_entered" from="Buttons/PixelArt1" to="Buttons/PixelArt1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/PixelArt1" to="Buttons/PixelArt1" method="_on_mouse_exited"]
@@ -835,3 +869,4 @@ offset_bottom = 40.0
 [connection signal="mouse_entered" from="Buttons/TradArt1" to="Buttons/TradArt1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/TradArt1" to="Buttons/TradArt1" method="_on_mouse_exited"]
 [connection signal="set_hover" from="Buttons/TradArt1" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="pressed" from="Buttons/Looky Back" to="Buttons/DigiArt1" method="_on_back_pressed"]

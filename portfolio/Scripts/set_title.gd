@@ -35,6 +35,7 @@ func set_on_hover(content : String):
 	text = content
 	var text_size_x = get_content_width()
 	var text_size_y = get_content_height()
+	#size = Vector2i(text_size_x, text_size_y)
 	#$"../../ColorRect".size = Vector2i(text_size_x, text_size_y)
 	#$"../../ColorRect".position = position
 
