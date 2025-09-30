@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=74 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
@@ -24,8 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://bem8lhkowx0hr" path="res://Assets/UI/Projects/TRW_normal.png" id="14_6v0q4"]
 [ext_resource type="Script" uid="uid://boktsii5j15sa" path="res://Scripts/place_image.gd" id="14_jnqrh"]
 [ext_resource type="Texture2D" uid="uid://c05r48hfx2rys" path="res://Assets/UI/Projects/TRW_pressed.png" id="15_jjry7"]
+[ext_resource type="Script" uid="uid://dku6ddapa34x7" path="res://Scripts/set_song_label.gd" id="16_0utnw"]
 [ext_resource type="Script" uid="uid://cnqkkm3ny15q2" path="res://Scripts/project_buttons.gd" id="16_6v0q4"]
 [ext_resource type="Texture2D" uid="uid://dwdn1r0vnvyy4" path="res://Assets/UI/Projects/TRW_hovered.png" id="16_sp3od"]
+[ext_resource type="Script" uid="uid://csgwnhnnwm4s" path="res://Scripts/set_song_title.gd" id="16_yych5"]
 [ext_resource type="Texture2D" uid="uid://d3tuhbhwfpcs2" path="res://Assets/UI/Projects/portfolio_normal.png" id="17_v4qw7"]
 [ext_resource type="Texture2D" uid="uid://bfv8w67ntq5q6" path="res://Assets/UI/Projects/portfolio_pressed.png" id="18_03ihb"]
 [ext_resource type="Texture2D" uid="uid://d0j7tt141ojwu" path="res://Assets/UI/Projects/portfolio_hovered.png" id="19_lbclf"]
@@ -144,7 +146,6 @@ width = 16
 override = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -216,7 +217,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
 script = ExtResource("10_7vdy2")
-button_format = "Contact"
+button_format = "Music"
 project_buttons = [NodePath("Project_TCOAS"), NodePath("Project_Portfolio"), NodePath("Project_TRW"), NodePath("Project_Ecotime"), NodePath("Project_grocery"), NodePath("Project_Basline")]
 film_buttons = [NodePath("Film1"), NodePath("Film2"), NodePath("Film3"), NodePath("Film4"), NodePath("Film5"), NodePath("Film6"), NodePath("Film7"), NodePath("Film8"), NodePath("Film9"), NodePath("Film10")]
 art_buttons = [NodePath("DigiArt1"), NodePath("PixelArt1"), NodePath("TradArt1")]
@@ -311,6 +312,7 @@ script = ExtResource("14_jnqrh")
 pic_file = "res://Assets/Birbs/Leo/Hair/Leo Hair2.png"
 
 [node name="Body" type="RichTextLabel" parent="Buttons"]
+visible = false
 texture_filter = 1
 layout_mode = 0
 offset_right = 455.0
@@ -325,6 +327,30 @@ bbcode_enabled = true
 script = ExtResource("12_jjry7")
 padding = Vector2(20, 388)
 padding_bottom = 20
+
+[node name="Song Box" type="VBoxContainer" parent="Buttons"]
+clip_contents = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+script = ExtResource("16_yych5")
+padding_sides = Vector2(20, 40)
+padding_top = 36
+
+[node name="Song Name" type="RichTextLabel" parent="Buttons/Song Box"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.521569, 0.552941, 0.368627, 1)
+theme_override_fonts/normal_font = ExtResource("6_v7ar0")
+theme_override_font_sizes/normal_font_size = 40
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+script = ExtResource("16_0utnw")
 
 [node name="Button Container" type="VBoxContainer" parent="Buttons"]
 unique_name_in_owner = true
@@ -768,6 +794,7 @@ offset_bottom = 40.0
 [connection signal="top_left" from="Panel" to="Buttons/Body" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Button Container" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Looky Back" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Buttons/Song Box" method="_on_panel_top_left"]
 [connection signal="top_right" from="Panel" to="Exit" method="_on_panel_top_right"]
 [connection signal="top_right" from="Panel" to="Text/VScrollBar" method="_on_panel_top_right"]
 [connection signal="top_right" from="Panel" to="Buttons/TimeLine" method="_on_panel_top_right"]
@@ -780,6 +807,7 @@ offset_bottom = 40.0
 [connection signal="x_size" from="Panel" to="Buttons/Body" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Button Container" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Looky Back" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Buttons/Song Box" method="_on_panel_x_size"]
 [connection signal="y_size" from="Panel" to="." method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Text/VScrollBar" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Text/Body" method="_on_panel_y_size"]

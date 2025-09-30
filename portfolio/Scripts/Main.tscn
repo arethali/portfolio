@@ -6503,6 +6503,16 @@ format = "Buttons"
 panel = NodePath("../Panel")
 click_box = NodePath("../Mail Box")
 
+[node name="Music" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
+visible = false
+offset_left = 612.0
+offset_top = 848.0
+offset_right = -1308.0
+offset_bottom = -232.0
+format = "Buttons"
+panel = NodePath("../Panel")
+click_box = NodePath("../BoomBox Area")
+
 [node name="Outline Text" type="RichTextLabel" parent="Buttons"]
 visible = false
 texture_filter = 1
@@ -6665,6 +6675,7 @@ autostart = true
 [connection signal="mouse_exited" from="Buttons/Resume" to="." method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="Buttons/Resume" to="Buttons/Resume" method="_on_mouse_exited"]
 [connection signal="input_event" from="Buttons/BoomBox Area" to="Personal/BoomBox" method="_on_area_input_event"]
+[connection signal="input_event" from="Buttons/BoomBox Area" to="Buttons/Music" method="_on_input_event"]
 [connection signal="mouse_entered" from="Buttons/BoomBox Area" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/BoomBox Area" to="Buttons/BoomBox Area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/BoomBox Area" to="." method="_on_mouse_exited"]
@@ -6716,12 +6727,14 @@ autostart = true
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Films" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Notebook" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Contact" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Buttons/Music" method="_on_panel_gui_input"]
 [connection signal="pressed" from="Buttons/Projects/Exit" to="Personal/Film" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Projects/Exit" to="Projects/Laptop" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Films/Exit" to="Personal/Film" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Notebook/Exit" to="Personal/Notebook" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Contact/Exit" to="Home/Mail Shadow" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Contact/Exit" to="Home/Mail" method="_on_exit_pressed"]
+[connection signal="resized" from="Buttons/Music/Buttons/Song Name" to="Buttons/Music/Buttons/Song Name" method="_on_resized"]
 [connection signal="timeout" from="Timer" to="Background" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Head" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Legs" method="_on_timer_timeout"]
@@ -6743,3 +6756,4 @@ autostart = true
 [editable path="Buttons/Films"]
 [editable path="Buttons/Notebook"]
 [editable path="Buttons/Contact"]
+[editable path="Buttons/Music"]

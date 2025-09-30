@@ -19,8 +19,8 @@ func _ready():
 	texture = load(pic_file)
 	position = panel_top + Vector2(side_padding, top_bott_padding.x)
 	size = Vector2(panel_x_size - side_padding * 2, panel_y_size - top_bott_padding.x - top_bott_padding.y )
-	$"../../ColorRect".size = Vector2(panel_x_size - side_padding * 2, panel_y_size - top_bott_padding.x - top_bott_padding.y )
-	$"../../ColorRect".position = position
+	#$"../../ColorRect".size = Vector2(panel_x_size - side_padding * 2, panel_y_size - top_bott_padding.x - top_bott_padding.y )
+	#$"../../ColorRect".position = position
 
 func _on_panel_x_size(size):
 	panel_x_size = size

@@ -1,6 +1,6 @@
 extends Control
 
-@export_enum("Projects", "Camera", "Contact", "Art", "Films") var button_format: String = ""
+@export_enum("Projects", "Camera", "Contact", "Art", "Films", "Music") var button_format: String = ""
 @export var project_buttons : Array[TextureButton]
 @export var film_buttons : Array[TextureButton]
 @export var art_buttons : Array[TextureButton]
@@ -14,6 +14,7 @@ extends Control
 @onready var subwindow_title = %"Subwindow title"
 @onready var looky_back = %"Looky Back"
 @onready var place_image = %PlaceImage
+@onready var song_name = %"Song Name"
 
 signal overide_panel_size(h, w)
 
@@ -25,10 +26,12 @@ func _ready():
 			buttons_container.top_padding = 120
 			time_line.padding = Vector2(-600.0, 332.0)
 			time_line.left_alignment = false
+			body.visible = true
 			body.padding = Vector2(20, 388)
 			emit_signal("overide_panel_size", 20, 40)
 			add_buttons(project_buttons , row_container, 6)
 		"Camera":
+			print("camera")
 			pass
 		"Contact":
 			title.content = "[b]Contact Me[/b]"
@@ -57,8 +60,15 @@ func _ready():
 			buttons_container.top_padding = 100
 			time_line.left_alignment = true
 			time_line.padding = Vector2(20, 336)
+			body.visible = true
 			body.padding = Vector2(20, 388)
 			add_buttons(film_buttons, row_container, 6)
+		"Music":
+			title.visible = false
+			project_name.visible = false
+			emit_signal("overide_panel_size", 7, 16)
+			song_name.visible = true
+			pass
 		_:
 			print_debug("No button Layout choosen.")
 			return
