@@ -19,7 +19,6 @@ func _ready():
 	await get_tree().process_frame
 	var text_size_x = get_content_width()
 	var text_size_y = get_content_height()
-	print(size)
 	if text_size_x > song_box.max_size.x:
 		#print("scroll")
 		# Text is too long, start the marquee effect
@@ -37,8 +36,6 @@ func _ready():
 
 func animate_marquee(start_pos: Vector2, end_pos: Vector2):
 	tween = create_tween().set_loops()
-	print("animate")
-	
 	#await get_tree().process_frame
 	# Scroll right to left
 	var duration_forward = abs(end_pos.x - start_pos.x) / scroll_speed

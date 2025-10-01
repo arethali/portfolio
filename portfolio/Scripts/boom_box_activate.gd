@@ -19,3 +19,22 @@ func _ready():
 				#anim_player.stop()
 				#anim_player.play(off_anim)
 				#on_off = !on_off
+
+
+func _on_play_pressed():
+	if on_off == false:
+		anim_player.play(on_anim)
+		on_off = !on_off
+	else:
+		anim_player.stop()
+		anim_player.play(off_anim)
+		on_off = !on_off
+
+
+func _on_paused():
+	anim_player.stop()
+	anim_player.play(off_anim)
+
+
+func _on_played():
+	anim_player.play(on_anim)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=89 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
@@ -26,17 +26,32 @@
 [ext_resource type="Texture2D" uid="uid://c05r48hfx2rys" path="res://Assets/UI/Projects/TRW_pressed.png" id="15_jjry7"]
 [ext_resource type="Script" uid="uid://dku6ddapa34x7" path="res://Scripts/set_song_label.gd" id="16_0utnw"]
 [ext_resource type="Script" uid="uid://cnqkkm3ny15q2" path="res://Scripts/project_buttons.gd" id="16_6v0q4"]
+[ext_resource type="Script" uid="uid://bpk1tkta264lh" path="res://Scripts/place_h_box.gd" id="16_hgb13"]
 [ext_resource type="Texture2D" uid="uid://dwdn1r0vnvyy4" path="res://Assets/UI/Projects/TRW_hovered.png" id="16_sp3od"]
+[ext_resource type="Texture2D" uid="uid://daory887xnrrh" path="res://Assets/UI/Music/Backward.png" id="16_x3ji6"]
 [ext_resource type="Script" uid="uid://csgwnhnnwm4s" path="res://Scripts/set_song_title.gd" id="16_yych5"]
+[ext_resource type="Texture2D" uid="uid://bhkv2brtmcnnx" path="res://Assets/UI/Music/Backward Pressed.png" id="17_u2u5r"]
 [ext_resource type="Texture2D" uid="uid://d3tuhbhwfpcs2" path="res://Assets/UI/Projects/portfolio_normal.png" id="17_v4qw7"]
 [ext_resource type="Texture2D" uid="uid://bfv8w67ntq5q6" path="res://Assets/UI/Projects/portfolio_pressed.png" id="18_03ihb"]
+[ext_resource type="Texture2D" uid="uid://dr7pmd3jgqbbo" path="res://Assets/UI/Music/Play.png" id="18_4mfqt"]
+[ext_resource type="Texture2D" uid="uid://cehc0rghj0rks" path="res://Assets/UI/Music/Play pressed.png" id="19_hgb13"]
 [ext_resource type="Texture2D" uid="uid://d0j7tt141ojwu" path="res://Assets/UI/Projects/portfolio_hovered.png" id="19_lbclf"]
 [ext_resource type="Texture2D" uid="uid://b4yxtumsuw182" path="res://Assets/UI/Projects/Grocery_normal.png" id="20_jay7j"]
+[ext_resource type="Texture2D" uid="uid://cuqvii42roqr3" path="res://Assets/UI/Music/Forward.png" id="21_4mfqt"]
+[ext_resource type="Script" uid="uid://cw7l78naivlpy" path="res://Scripts/play_pause_music.gd" id="21_imjl0"]
 [ext_resource type="Texture2D" uid="uid://bhaxyovl6j2yr" path="res://Assets/UI/Projects/Grocery_pressed.png" id="21_n78kt"]
 [ext_resource type="Texture2D" uid="uid://dp2sy6cstbyvk" path="res://Assets/UI/Projects/Grocery_hovered.png" id="22_07gwf"]
+[ext_resource type="Texture2D" uid="uid://bo2b4qufmig4l" path="res://Assets/UI/Music/Forward pressed.png" id="22_hgb13"]
+[ext_resource type="Texture2D" uid="uid://c3hx28osutlbg" path="res://Assets/UI/Music/Stop.png" id="22_ojqv6"]
+[ext_resource type="Texture2D" uid="uid://bxlsdoxxjdh5m" path="res://Assets/UI/Music/Stop pressed.png" id="23_4bhlj"]
 [ext_resource type="Texture2D" uid="uid://bthbyth2kf6r7" path="res://Assets/UI/Projects/Ecotime_normal.png" id="23_l77b0"]
 [ext_resource type="Texture2D" uid="uid://4g3ts2mbp5ex" path="res://Assets/UI/Projects/Ecotime_pressed.png" id="24_tvm31"]
 [ext_resource type="Texture2D" uid="uid://bae4d2aeb607k" path="res://Assets/UI/Projects/Ecotime_hovered.png" id="25_7yh8u"]
+[ext_resource type="Texture2D" uid="uid://k6cysm2c2dv5" path="res://Assets/UI/Music/Mute.png" id="26_lfcan"]
+[ext_resource type="Texture2D" uid="uid://b67756bm5yk6r" path="res://Assets/UI/Music/Mute Pressed.png" id="27_hqdk0"]
+[ext_resource type="Script" uid="uid://cuurj5qjm0yjs" path="res://Scripts/mute_unmute.gd" id="28_ymxdp"]
+[ext_resource type="Texture2D" uid="uid://b5q3edgtltubg" path="res://Assets/UI/Music/Unmute.png" id="29_vxxpi"]
+[ext_resource type="Texture2D" uid="uid://sindimmlc7m5" path="res://Assets/UI/Music/Unmute Pressed.png" id="30_yoeib"]
 [ext_resource type="Texture2D" uid="uid://d2do4pnir6005" path="res://Assets/UI/Film/Video Button Normal.png" id="34_lbclf"]
 [ext_resource type="Texture2D" uid="uid://dhoqxoknqhmly" path="res://Assets/UI/Film/Video Button Pressed.png" id="35_jay7j"]
 [ext_resource type="Texture2D" uid="uid://dglacirtehkhk" path="res://Assets/UI/Film/Video Button hovered.png" id="36_n78kt"]
@@ -146,6 +161,7 @@ width = 16
 override = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -328,6 +344,68 @@ script = ExtResource("12_jjry7")
 padding = Vector2(20, 388)
 padding_bottom = 20
 
+[node name="Music Buttons" type="HBoxContainer" parent="Buttons"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("16_hgb13")
+side_padding = 40
+
+[node name="Back" type="TextureButton" parent="Buttons/Music Buttons"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("16_x3ji6")
+texture_pressed = ExtResource("17_u2u5r")
+texture_hover = ExtResource("17_u2u5r")
+
+[node name="Play" type="TextureButton" parent="Buttons/Music Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("18_4mfqt")
+texture_pressed = ExtResource("19_hgb13")
+texture_hover = ExtResource("19_hgb13")
+script = ExtResource("21_imjl0")
+
+[node name="Pause" type="TextureButton" parent="Buttons/Music Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("22_ojqv6")
+texture_pressed = ExtResource("23_4bhlj")
+texture_hover = ExtResource("23_4bhlj")
+
+[node name="Forward" type="TextureButton" parent="Buttons/Music Buttons"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("21_4mfqt")
+texture_pressed = ExtResource("22_hgb13")
+texture_hover = ExtResource("22_hgb13")
+
+[node name="Mute" type="TextureButton" parent="Buttons"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("26_lfcan")
+texture_pressed = ExtResource("27_hqdk0")
+texture_hover = ExtResource("27_hqdk0")
+script = ExtResource("28_ymxdp")
+
+[node name="Unmute" type="TextureButton" parent="Buttons"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("29_vxxpi")
+texture_pressed = ExtResource("30_yoeib")
+texture_hover = ExtResource("30_yoeib")
+
 [node name="Song Box" type="VBoxContainer" parent="Buttons"]
 clip_contents = true
 layout_mode = 0
@@ -335,15 +413,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 alignment = 1
 script = ExtResource("16_yych5")
-padding_sides = Vector2(20, 40)
+padding_sides = Vector2(20, 48)
 padding_top = 36
 
 [node name="Song Name" type="RichTextLabel" parent="Buttons/Song Box"]
 unique_name_in_owner = true
+visible = false
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.521569, 0.552941, 0.368627, 1)
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
 theme_override_fonts/normal_font = ExtResource("6_v7ar0")
 theme_override_font_sizes/normal_font_size = 40
 scroll_active = false
@@ -351,6 +430,7 @@ autowrap_mode = 0
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 script = ExtResource("16_0utnw")
+song_name = "jkjhlasdfjaldbjjkjhlasdfjaldbjjkjhlasdfjaldbjjkjhlasdfjaldbjjkjhlasdfjaldbj"
 
 [node name="Button Container" type="VBoxContainer" parent="Buttons"]
 unique_name_in_owner = true
@@ -787,14 +867,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[connection signal="bot_right" from="Panel" to="Buttons/Mute" method="_on_panel_bot_right"]
 [connection signal="top_left" from="Panel" to="Buttons/Title" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Project Name" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/TimeLine" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/PlaceImage" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Body" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Buttons/Music Buttons" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Buttons/Song Box" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Button Container" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Looky Back" method="_on_panel_top_left"]
-[connection signal="top_left" from="Panel" to="Buttons/Song Box" method="_on_panel_top_left"]
 [connection signal="top_right" from="Panel" to="Exit" method="_on_panel_top_right"]
 [connection signal="top_right" from="Panel" to="Text/VScrollBar" method="_on_panel_top_right"]
 [connection signal="top_right" from="Panel" to="Buttons/TimeLine" method="_on_panel_top_right"]
@@ -805,9 +887,10 @@ offset_bottom = 40.0
 [connection signal="x_size" from="Panel" to="Buttons/TimeLine" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/PlaceImage" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Body" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Buttons/Music Buttons" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Buttons/Song Box" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Button Container" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Looky Back" method="_on_panel_x_size"]
-[connection signal="x_size" from="Panel" to="Buttons/Song Box" method="_on_panel_x_size"]
 [connection signal="y_size" from="Panel" to="." method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Text/VScrollBar" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Text/Body" method="_on_panel_y_size"]
@@ -816,11 +899,16 @@ offset_bottom = 40.0
 [connection signal="y_size" from="Panel" to="Buttons/TimeLine" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/PlaceImage" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Body" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Buttons/Music Buttons" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Button Container" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Looky Back" method="_on_panel_y_size"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="value_changed" from="Text/VScrollBar" to="Text/VScrollBar" method="_on_value_changed"]
 [connection signal="overide_panel_size" from="Buttons" to="Panel" method="_on_overide_panel_size"]
+[connection signal="pressed" from="Buttons/Music Buttons/Play" to="Buttons/Music Buttons/Play" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Music Buttons/Pause" to="Buttons/Music Buttons/Play" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Mute" to="Buttons/Mute" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Unmute" to="Buttons/Mute" method="_on_pressed"]
 [connection signal="mouse_entered" from="Buttons/Project_Basline" to="Buttons/Project_Basline" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Project_Basline" to="Buttons/Project_Basline" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Project_Basline" to="Buttons/Project_Basline" method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=638 format=3 uid="uid://dfhro4he33mwe"]
+[gd_scene load_steps=639 format=3 uid="uid://dfhro4he33mwe"]
 
 [ext_resource type="Texture2D" uid="uid://bldgwkrwu0770" path="res://Stylized outline.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://Scripts/PortNav.gd" id="1_uu6xs"]
@@ -223,6 +223,7 @@
 [ext_resource type="Texture2D" uid="uid://ck8c67a5s1aav" path="res://Assets/Music Box/Box_short.png" id="207_yto63"]
 [ext_resource type="Script" uid="uid://c7qr8t5o6btmg" path="res://Scripts/personal_anims.gd" id="208_tvijt"]
 [ext_resource type="Texture2D" uid="uid://cisvkje5hvuj5" path="res://Assets/Camera/Camera shadow.png" id="209_6gvty"]
+[ext_resource type="Script" uid="uid://ecky6vytdce8" path="res://Scripts/music_player.gd" id="210_1st7y"]
 [ext_resource type="Texture2D" uid="uid://xjods8pyxcnh" path="res://Assets/Camera/Camera2.png" id="210_xlpjy"]
 [ext_resource type="Texture2D" uid="uid://cp746bdw1ruxw" path="res://Assets/Camera/Camera3.png" id="211_inxc5"]
 [ext_resource type="Texture2D" uid="uid://c5o4oxnpg53r3" path="res://Assets/Camera/Camera4.png" id="212_xpnqb"]
@@ -5721,6 +5722,14 @@ texture_filter = 1
 position = Vector2(704, 924)
 texture = ExtResource("197_mr67e")
 
+[node name="Music Player" type="AudioStreamPlayer2D" parent="Personal"]
+position = Vector2(608, 869)
+volume_db = -12.0
+max_distance = 4096.0
+attenuation = 0.353554
+script = ExtResource("210_1st7y")
+playlist_files = Array[String](["res://HALAZIA.mp3", "res://Best Frenz - The Adirondacks (Audio).mp3", "res://It Doesn't Have To Change.mp3"])
+
 [node name="BoomBox" type="AnimatedSprite2D" parent="Personal" node_paths=PackedStringArray("anim_player")]
 texture_filter = 1
 position = Vector2(610, 896)
@@ -6612,6 +6621,7 @@ autostart = true
 [connection signal="pressed" from="Home/Personal" to="VFX" method="_on_personal_pressed"]
 [connection signal="pressed" from="Home/Projects" to="." method="_on_projects_pressed"]
 [connection signal="pressed" from="Home/Projects" to="VFX" method="_on_projects_pressed"]
+[connection signal="autoplay_start" from="Personal/Music Player" to="Personal/Music Player" method="_on_played"]
 [connection signal="pressed" from="Personal/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Personal/Back" to="VFX" method="_on_back_pressed"]
 [connection signal="pressed" from="Projects/Back" to="." method="_on_back_pressed"]
@@ -6734,7 +6744,12 @@ autostart = true
 [connection signal="pressed" from="Buttons/Notebook/Exit" to="Personal/Notebook" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Contact/Exit" to="Home/Mail Shadow" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Contact/Exit" to="Home/Mail" method="_on_exit_pressed"]
-[connection signal="resized" from="Buttons/Music/Buttons/Song Name" to="Buttons/Music/Buttons/Song Name" method="_on_resized"]
+[connection signal="paused" from="Buttons/Music/Buttons/Music Buttons/Play" to="Personal/BoomBox" method="_on_paused"]
+[connection signal="played" from="Buttons/Music/Buttons/Music Buttons/Play" to="Personal/BoomBox" method="_on_played"]
+[connection signal="pressed" from="Buttons/Music/Buttons/Music Buttons/Play" to="Personal/Music Player" method="_on_played"]
+[connection signal="pressed" from="Buttons/Music/Buttons/Music Buttons/Pause" to="Personal/Music Player" method="_on_paused"]
+[connection signal="paused" from="Buttons/Music/Buttons/Mute" to="Personal/BoomBox" method="_on_paused"]
+[connection signal="played" from="Buttons/Music/Buttons/Mute" to="Personal/BoomBox" method="_on_played"]
 [connection signal="timeout" from="Timer" to="Background" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Head" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Legs" method="_on_timer_timeout"]

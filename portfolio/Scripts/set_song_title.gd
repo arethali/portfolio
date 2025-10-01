@@ -14,8 +14,6 @@ func _ready():
 	custom_minimum_size =  max_size
 	size = max_size
 	
-	$"../../ColorRect".size = size
-	$"../../ColorRect".position = position
 
 func _on_panel_x_size(size):
 	panel_length = size

@@ -1,4 +1,4 @@
-extends VBoxContainer 
+extends HBoxContainer
 
 @export var side_padding : int
 @export var top_padding : int
@@ -12,7 +12,7 @@ func _on_panel_top_left(dimes):
 
 func _ready():
 	await get_tree().process_frame
-	position = panel_top_left_corner + Vector2(side_padding, top_padding)
+	position = panel_top_left_corner + Vector2(panel_x_size/2 - size.x/2, top_padding)
 
 func _on_panel_x_size(size):
 	panel_x_size = size

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crsafgr3v7a5m"
+path="res://.godot/imported/It Doesn't Have To Change.mp3-51dc762b6e3d40334de5675a3d01a3ad.mp3str"
+
+[deps]
+
+source_file="res://It Doesn't Have To Change.mp3"
+dest_files=["res://.godot/imported/It Doesn't Have To Change.mp3-51dc762b6e3d40334de5675a3d01a3ad.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

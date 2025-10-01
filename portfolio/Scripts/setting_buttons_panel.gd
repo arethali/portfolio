@@ -15,6 +15,8 @@ extends Control
 @onready var looky_back = %"Looky Back"
 @onready var place_image = %PlaceImage
 @onready var song_name = %"Song Name"
+@onready var music_buttons = $"Music Buttons"
+@onready var mute = $Mute
 
 signal overide_panel_size(h, w)
 
@@ -66,8 +68,11 @@ func _ready():
 		"Music":
 			title.visible = false
 			project_name.visible = false
-			emit_signal("overide_panel_size", 7, 16)
+			emit_signal("overide_panel_size", 5, 14)
 			song_name.visible = true
+			music_buttons.visible = true
+			music_buttons.top_padding = 92
+			mute.visible = true
 			pass
 		_:
 			print_debug("No button Layout choosen.")
