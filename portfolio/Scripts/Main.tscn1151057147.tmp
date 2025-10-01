@@ -5726,7 +5726,6 @@ texture = ExtResource("197_mr67e")
 volume_db = -12.0
 script = ExtResource("210_1st7y")
 playlist_files = Array[String](["res://HALAZIA.mp3", "res://Best Frenz - The Adirondacks (Audio).mp3", "res://It Doesn't Have To Change.mp3"])
-song_title = Array[String](["Halazia - Ateez", "The Adirondacks - Best Frenz", "It Doesn't Have To Change - benches"])
 
 [node name="BoomBox" type="AnimatedSprite2D" parent="Personal" node_paths=PackedStringArray("anim_player")]
 texture_filter = 1
@@ -6614,7 +6613,6 @@ autostart = true
 [connection signal="panel_offset" from="." to="Buttons/Films" method="_on_panel_offset"]
 [connection signal="panel_offset" from="." to="Buttons/Notebook" method="_on_panel_offset"]
 [connection signal="panel_offset" from="." to="Buttons/Contact" method="_on_panel_offset"]
-[connection signal="panel_offset" from="." to="Buttons/Music" method="_on_panel_offset"]
 [connection signal="timeout" from="Background/Clouds/Timer_1" to="Background/Clouds" method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_2" to="Background/Clouds" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_3" to="Background/Clouds" method="_on_timer_3_timeout"]
@@ -6623,8 +6621,8 @@ autostart = true
 [connection signal="pressed" from="Home/Personal" to="VFX" method="_on_personal_pressed"]
 [connection signal="pressed" from="Home/Projects" to="." method="_on_projects_pressed"]
 [connection signal="pressed" from="Home/Projects" to="VFX" method="_on_projects_pressed"]
+[connection signal="autoplay_start" from="Personal/Music Player" to="Personal/Music Player" method="_on_played"]
 [connection signal="finished" from="Personal/Music Player" to="Personal/Music Player" method="_on_finished"]
-[connection signal="set_song_title" from="Personal/Music Player" to="Buttons/Music/Buttons/Song Box/Song Name" method="_on_music_player_set_song_title"]
 [connection signal="pressed" from="Personal/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Personal/Back" to="VFX" method="_on_back_pressed"]
 [connection signal="pressed" from="Projects/Back" to="." method="_on_back_pressed"]
@@ -6741,6 +6739,7 @@ autostart = true
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Notebook" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Contact" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Music" method="_on_panel_gui_input"]
+[connection signal="pressed" from="Buttons/Projects/Exit" to="Personal/Film" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Projects/Exit" to="Projects/Laptop" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Films/Exit" to="Personal/Film" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Notebook/Exit" to="Personal/Notebook" method="_on_exit_pressed"]

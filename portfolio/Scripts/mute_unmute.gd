@@ -1,6 +1,6 @@
 extends TextureButton
 
-var padding : Vector2 = Vector2(40, 40)
+var padding : Vector2 = Vector2(52, 40)
 
 var panel_bot_right
 var on : bool

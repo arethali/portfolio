@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr7pmd3jgqbbo"
-path="res://.godot/imported/Play.png-0cbfbb369719c7212d7ac99deb87e8ef.ctex"
+uid="uid://c4e8lvww75jao"
+path="res://.godot/imported/Play hovered.png-fa04db58279d2cd973a797ec7b8091b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Music/Play.png"
-dest_files=["res://.godot/imported/Play.png-0cbfbb369719c7212d7ac99deb87e8ef.ctex"]
+source_file="res://Assets/UI/Music/Play hovered.png"
+dest_files=["res://.godot/imported/Play hovered.png-fa04db58279d2cd973a797ec7b8091b3.ctex"]
 
 [params]
 

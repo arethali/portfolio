@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3hx28osutlbg"
-path="res://.godot/imported/Stop.png-a1a587152cb2186a3566a4b78d79298b.ctex"
+uid="uid://cimb4dvd10yws"
+path="res://.godot/imported/Back_hovered_v2.png-18549bd947b27dc267b1f76883bd1fab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Music/Stop.png"
-dest_files=["res://.godot/imported/Stop.png-a1a587152cb2186a3566a4b78d79298b.ctex"]
+source_file="res://Assets/UI/Global/Back/Back_hovered_v2.png"
+dest_files=["res://.godot/imported/Back_hovered_v2.png-18549bd947b27dc267b1f76883bd1fab.ctex"]
 
 [params]
 

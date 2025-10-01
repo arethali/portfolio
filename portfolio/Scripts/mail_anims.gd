@@ -5,6 +5,7 @@ extends AnimatedSprite2D
 @export var open_input : CollisionShape2D
 @onready var first_open = false
 @onready var open = false
+@onready var interact_area = $"../../Buttons/Mail Box"
 
 @export var paper : Sprite2D
 
@@ -26,7 +27,8 @@ func _on_exit_pressed():
 func _on_panel_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			_toggle_contact()
+			if interact_area.visible == false:
+				_toggle_contact()
 
 func _toggle_contact():
 	if first_open == false:

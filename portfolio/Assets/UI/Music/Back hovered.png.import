@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h3b4smrc4igb"
-path="res://.godot/imported/Panel.png-36e0068b374cb10bab70bc82ac11cffd.ctex"
+uid="uid://dc6b6t86umgn1"
+path="res://.godot/imported/Back hovered.png-15518c6b4d3bc0f124ea1ab1b6ab3531.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Music/Panel.png"
-dest_files=["res://.godot/imported/Panel.png-36e0068b374cb10bab70bc82ac11cffd.ctex"]
+source_file="res://Assets/UI/Music/Back hovered.png"
+dest_files=["res://.godot/imported/Back hovered.png-15518c6b4d3bc0f124ea1ab1b6ab3531.ctex"]
 
 [params]
 

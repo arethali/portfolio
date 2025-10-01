@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxsqkp4pocqwc"
-path="res://.godot/imported/Back_Pressed_v1.png-5993bfec377934e1db75a625919fea84.ctex"
+uid="uid://lli01syi4832"
+path="res://.godot/imported/Unmute Hovered.png-cfad6194ba4962fc9fe52b14822fd715.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Global/Back/Back_Pressed_v1.png"
-dest_files=["res://.godot/imported/Back_Pressed_v1.png-5993bfec377934e1db75a625919fea84.ctex"]
+source_file="res://Assets/UI/Music/Unmute Hovered.png"
+dest_files=["res://.godot/imported/Unmute Hovered.png-cfad6194ba4962fc9fe52b14822fd715.ctex"]
 
 [params]
 

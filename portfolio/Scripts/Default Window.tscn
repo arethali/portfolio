@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=96 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
@@ -28,31 +28,37 @@
 [ext_resource type="Script" uid="uid://cnqkkm3ny15q2" path="res://Scripts/project_buttons.gd" id="16_6v0q4"]
 [ext_resource type="Script" uid="uid://bpk1tkta264lh" path="res://Scripts/place_h_box.gd" id="16_hgb13"]
 [ext_resource type="Texture2D" uid="uid://dwdn1r0vnvyy4" path="res://Assets/UI/Projects/TRW_hovered.png" id="16_sp3od"]
-[ext_resource type="Texture2D" uid="uid://daory887xnrrh" path="res://Assets/UI/Music/Backward.png" id="16_x3ji6"]
 [ext_resource type="Script" uid="uid://csgwnhnnwm4s" path="res://Scripts/set_song_title.gd" id="16_yych5"]
-[ext_resource type="Texture2D" uid="uid://bhkv2brtmcnnx" path="res://Assets/UI/Music/Backward Pressed.png" id="17_u2u5r"]
 [ext_resource type="Texture2D" uid="uid://d3tuhbhwfpcs2" path="res://Assets/UI/Projects/portfolio_normal.png" id="17_v4qw7"]
+[ext_resource type="Texture2D" uid="uid://cm5q4j5j10gpg" path="res://Assets/UI/Music/Back Normal.png" id="17_ymxdp"]
 [ext_resource type="Texture2D" uid="uid://bfv8w67ntq5q6" path="res://Assets/UI/Projects/portfolio_pressed.png" id="18_03ihb"]
-[ext_resource type="Texture2D" uid="uid://dr7pmd3jgqbbo" path="res://Assets/UI/Music/Play.png" id="18_4mfqt"]
+[ext_resource type="Texture2D" uid="uid://b5q4muauwsm3l" path="res://Assets/UI/Music/Back pressed.png" id="18_vxxpi"]
 [ext_resource type="Texture2D" uid="uid://cehc0rghj0rks" path="res://Assets/UI/Music/Play pressed.png" id="19_hgb13"]
 [ext_resource type="Texture2D" uid="uid://d0j7tt141ojwu" path="res://Assets/UI/Projects/portfolio_hovered.png" id="19_lbclf"]
+[ext_resource type="Texture2D" uid="uid://dc6b6t86umgn1" path="res://Assets/UI/Music/Back hovered.png" id="19_yoeib"]
+[ext_resource type="Texture2D" uid="uid://cfg400rqs12xv" path="res://Assets/UI/Music/Play normal.png" id="20_7tmeu"]
 [ext_resource type="Texture2D" uid="uid://b4yxtumsuw182" path="res://Assets/UI/Projects/Grocery_normal.png" id="20_jay7j"]
-[ext_resource type="Texture2D" uid="uid://cuqvii42roqr3" path="res://Assets/UI/Music/Forward.png" id="21_4mfqt"]
 [ext_resource type="Script" uid="uid://cw7l78naivlpy" path="res://Scripts/play_pause_music.gd" id="21_imjl0"]
 [ext_resource type="Texture2D" uid="uid://bhaxyovl6j2yr" path="res://Assets/UI/Projects/Grocery_pressed.png" id="21_n78kt"]
 [ext_resource type="Texture2D" uid="uid://dp2sy6cstbyvk" path="res://Assets/UI/Projects/Grocery_hovered.png" id="22_07gwf"]
 [ext_resource type="Texture2D" uid="uid://bo2b4qufmig4l" path="res://Assets/UI/Music/Forward pressed.png" id="22_hgb13"]
-[ext_resource type="Texture2D" uid="uid://c3hx28osutlbg" path="res://Assets/UI/Music/Stop.png" id="22_ojqv6"]
+[ext_resource type="Texture2D" uid="uid://c4e8lvww75jao" path="res://Assets/UI/Music/Play hovered.png" id="22_yoeib"]
 [ext_resource type="Texture2D" uid="uid://bxlsdoxxjdh5m" path="res://Assets/UI/Music/Stop pressed.png" id="23_4bhlj"]
 [ext_resource type="Texture2D" uid="uid://bthbyth2kf6r7" path="res://Assets/UI/Projects/Ecotime_normal.png" id="23_l77b0"]
+[ext_resource type="Texture2D" uid="uid://bqtjbim8dhacb" path="res://Assets/UI/Music/Stop normal.png" id="24_7tmeu"]
 [ext_resource type="Texture2D" uid="uid://4g3ts2mbp5ex" path="res://Assets/UI/Projects/Ecotime_pressed.png" id="24_tvm31"]
 [ext_resource type="Texture2D" uid="uid://bae4d2aeb607k" path="res://Assets/UI/Projects/Ecotime_hovered.png" id="25_7yh8u"]
-[ext_resource type="Texture2D" uid="uid://k6cysm2c2dv5" path="res://Assets/UI/Music/Mute.png" id="26_lfcan"]
+[ext_resource type="Texture2D" uid="uid://dnx6opq76jws1" path="res://Assets/UI/Music/Forward Normal.png" id="25_pab4p"]
+[ext_resource type="Texture2D" uid="uid://c8ty0lveowx6y" path="res://Assets/UI/Music/Stop hovered.png" id="26_pab4p"]
 [ext_resource type="Texture2D" uid="uid://b67756bm5yk6r" path="res://Assets/UI/Music/Mute Pressed.png" id="27_hqdk0"]
+[ext_resource type="Texture2D" uid="uid://kh3ywuo1wglo" path="res://Assets/UI/Music/Mute normal.png" id="27_je1nb"]
 [ext_resource type="Script" uid="uid://cuurj5qjm0yjs" path="res://Scripts/mute_unmute.gd" id="28_ymxdp"]
-[ext_resource type="Texture2D" uid="uid://b5q3edgtltubg" path="res://Assets/UI/Music/Unmute.png" id="29_vxxpi"]
-[ext_resource type="Texture2D" uid="uid://sindimmlc7m5" path="res://Assets/UI/Music/Unmute Pressed.png" id="30_yoeib"]
+[ext_resource type="Texture2D" uid="uid://kt8ffuxijtu3" path="res://Assets/UI/Music/Forward Hovered.png" id="29_pab4p"]
+[ext_resource type="Texture2D" uid="uid://dhbn3d2ib7kal" path="res://Assets/UI/Music/Unmute Pressed.png" id="30_yoeib"]
+[ext_resource type="Texture2D" uid="uid://5qeydq40ldm3" path="res://Assets/UI/Music/Unmute normal.png" id="32_7tmeu"]
+[ext_resource type="Texture2D" uid="uid://cp8kgcqyjoj3j" path="res://Assets/UI/Music/Mute hovered.png" id="32_je1nb"]
 [ext_resource type="Texture2D" uid="uid://d2do4pnir6005" path="res://Assets/UI/Film/Video Button Normal.png" id="34_lbclf"]
+[ext_resource type="Texture2D" uid="uid://lli01syi4832" path="res://Assets/UI/Music/Unmute Hovered.png" id="34_pab4p"]
 [ext_resource type="Texture2D" uid="uid://dhoqxoknqhmly" path="res://Assets/UI/Film/Video Button Pressed.png" id="35_jay7j"]
 [ext_resource type="Texture2D" uid="uid://dglacirtehkhk" path="res://Assets/UI/Film/Video Button hovered.png" id="36_n78kt"]
 [ext_resource type="Texture2D" uid="uid://6mh6yire2i1b" path="res://Assets/UI/Notebook/Digital Draw2.png" id="37_07gwf"]
@@ -79,6 +85,7 @@
 [ext_resource type="Texture2D" uid="uid://i6b4scs67pjf" path="res://Assets/UI/Global/Back/Back_normal_v2.png" id="59_1u7cx"]
 [ext_resource type="Texture2D" uid="uid://d0wobbbxfall" path="res://Assets/UI/Global/Back/Back_pressed_v2.png" id="60_jnqrh"]
 [ext_resource type="Script" uid="uid://dxdn8g31matrn" path="res://Scripts/place_button.gd" id="61_1u7cx"]
+[ext_resource type="Texture2D" uid="uid://cimb4dvd10yws" path="res://Assets/UI/Global/Back/Back_hovered_v2.png" id="80_0gux7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i73k"]
 bg_color = Color(0.792157, 0.803922, 0.705882, 1)
@@ -355,56 +362,64 @@ script = ExtResource("16_hgb13")
 side_padding = 40
 
 [node name="Back" type="TextureButton" parent="Buttons/Music Buttons"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("16_x3ji6")
-texture_pressed = ExtResource("17_u2u5r")
-texture_hover = ExtResource("17_u2u5r")
+texture_normal = ExtResource("17_ymxdp")
+texture_pressed = ExtResource("18_vxxpi")
+texture_hover = ExtResource("19_yoeib")
 
 [node name="Play" type="TextureButton" parent="Buttons/Music Buttons"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("18_4mfqt")
+texture_normal = ExtResource("20_7tmeu")
 texture_pressed = ExtResource("19_hgb13")
-texture_hover = ExtResource("19_hgb13")
+texture_hover = ExtResource("22_yoeib")
 script = ExtResource("21_imjl0")
 
 [node name="Pause" type="TextureButton" parent="Buttons/Music Buttons"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("22_ojqv6")
+texture_normal = ExtResource("24_7tmeu")
 texture_pressed = ExtResource("23_4bhlj")
-texture_hover = ExtResource("23_4bhlj")
+texture_hover = ExtResource("26_pab4p")
 
 [node name="Forward" type="TextureButton" parent="Buttons/Music Buttons"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("21_4mfqt")
+texture_normal = ExtResource("25_pab4p")
 texture_pressed = ExtResource("22_hgb13")
-texture_hover = ExtResource("22_hgb13")
+texture_hover = ExtResource("29_pab4p")
 
 [node name="Mute" type="TextureButton" parent="Buttons"]
 visible = false
+texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("26_lfcan")
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("27_je1nb")
 texture_pressed = ExtResource("27_hqdk0")
-texture_hover = ExtResource("27_hqdk0")
+texture_hover = ExtResource("32_je1nb")
 script = ExtResource("28_ymxdp")
 
 [node name="Unmute" type="TextureButton" parent="Buttons"]
 visible = false
+texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("29_vxxpi")
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("32_7tmeu")
 texture_pressed = ExtResource("30_yoeib")
-texture_hover = ExtResource("30_yoeib")
+texture_hover = ExtResource("34_pab4p")
 
 [node name="Song Box" type="VBoxContainer" parent="Buttons"]
 clip_contents = true
@@ -566,6 +581,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("34_lbclf")
 texture_pressed = ExtResource("35_jay7j")
 texture_hover = ExtResource("36_n78kt")
@@ -583,6 +599,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("34_lbclf")
 texture_pressed = ExtResource("35_jay7j")
 texture_hover = ExtResource("36_n78kt")
@@ -600,6 +617,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("34_lbclf")
 texture_pressed = ExtResource("35_jay7j")
 texture_hover = ExtResource("36_n78kt")
@@ -617,6 +635,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("34_lbclf")
 texture_pressed = ExtResource("35_jay7j")
 texture_hover = ExtResource("36_n78kt")
@@ -634,6 +653,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("34_lbclf")
 texture_pressed = ExtResource("35_jay7j")
 texture_hover = ExtResource("36_n78kt")
@@ -651,6 +671,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 72.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("34_lbclf")
 texture_pressed = ExtResource("35_jay7j")
 texture_hover = ExtResource("36_n78kt")
@@ -668,6 +689,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("34_lbclf")
 texture_pressed = ExtResource("35_jay7j")
 texture_hover = ExtResource("36_n78kt")
@@ -685,6 +707,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("34_lbclf")
 texture_pressed = ExtResource("35_jay7j")
 texture_hover = ExtResource("36_n78kt")
@@ -702,6 +725,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("34_lbclf")
 texture_pressed = ExtResource("35_jay7j")
 texture_hover = ExtResource("36_n78kt")
@@ -719,6 +743,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 72.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("34_lbclf")
 texture_pressed = ExtResource("35_jay7j")
 texture_hover = ExtResource("36_n78kt")
@@ -756,8 +781,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("40_5tn1p")
-texture_pressed = ExtResource("41_8iyxp")
-texture_hover = ExtResource("42_jqdcr")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
 script = SubResource("GDScript_kwql2")
 title_label = NodePath("../Project Name")
 time_label = NodePath("../TimeLine")
@@ -786,6 +811,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("47_adwo7")
 texture_pressed = ExtResource("48_k3mck")
 texture_hover = ExtResource("49_r6nmg")
@@ -796,6 +822,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = SubResource("CompressedTexture2D_4mfqt")
 texture_pressed = SubResource("CompressedTexture2D_hgb13")
 texture_hover = SubResource("CompressedTexture2D_pp1yn")
@@ -806,6 +833,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("50_1u7cx")
 texture_pressed = ExtResource("51_jnqrh")
 texture_hover = ExtResource("52_0utnw")
@@ -816,6 +844,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("53_66sfg")
 texture_pressed = ExtResource("54_yych5")
 texture_hover = ExtResource("55_4ctlj")
@@ -826,6 +855,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("56_x1kxa")
 texture_pressed = ExtResource("57_x3ji6")
 texture_hover = ExtResource("58_u2u5r")
@@ -839,7 +869,7 @@ offset_bottom = 40.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("59_1u7cx")
 texture_pressed = ExtResource("60_jnqrh")
-texture_hover = ExtResource("60_jnqrh")
+texture_hover = ExtResource("80_0gux7")
 script = ExtResource("61_1u7cx")
 side_padding = 20
 

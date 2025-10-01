@@ -40,6 +40,7 @@ func _ready():
 	await get_tree().process_frame
 	position = Vector2(position.x - (panel_size_x/2), position.y - panel_size_y)
 	defaullt_pos = position.y
+
 func _on_exit_pressed():
 	if visible == true:
 		visible = false

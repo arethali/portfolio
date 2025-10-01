@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhkv2brtmcnnx"
-path="res://.godot/imported/Backward Pressed.png-d32e23a34d89e038a1d8e49b18589b78.ctex"
+uid="uid://b5q4muauwsm3l"
+path="res://.godot/imported/Back pressed.png-2053cdcaa7847da52e12207d0bb4a066.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Music/Backward Pressed.png"
-dest_files=["res://.godot/imported/Backward Pressed.png-d32e23a34d89e038a1d8e49b18589b78.ctex"]
+source_file="res://Assets/UI/Music/Back pressed.png"
+dest_files=["res://.godot/imported/Back pressed.png-2053cdcaa7847da52e12207d0bb4a066.ctex"]
 
 [params]
 

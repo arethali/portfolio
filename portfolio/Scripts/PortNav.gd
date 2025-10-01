@@ -68,6 +68,6 @@ func _on_mouse_exited():
 
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
-	label.position = mouse_pos + Vector2(-1,-1) + Vector2(8 ,8)
-	color_block.position = mouse_pos + Vector2(-1,-1) + Vector2(4 ,4)
+	label.position = mouse_pos + Vector2(-1,-1) + Vector2(12 ,12)
+	color_block.position = mouse_pos + Vector2(-1,-1) + Vector2(8 ,8)
 	

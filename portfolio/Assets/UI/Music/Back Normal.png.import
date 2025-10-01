@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbn3d2ib7kal"
-path="res://.godot/imported/Unmute Pressed.png-29ee312e73ecfc3e4aabadbef1a3e3b8.ctex"
+uid="uid://cm5q4j5j10gpg"
+path="res://.godot/imported/Back Normal.png-bddc0b6bd56193361d16f97ea3d979ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Music/Unmute Pressed.png"
-dest_files=["res://.godot/imported/Unmute Pressed.png-29ee312e73ecfc3e4aabadbef1a3e3b8.ctex"]
+source_file="res://Assets/UI/Music/Back Normal.png"
+dest_files=["res://.godot/imported/Back Normal.png-bddc0b6bd56193361d16f97ea3d979ec.ctex"]
 
 [params]
 
