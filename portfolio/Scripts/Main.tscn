@@ -1,4 +1,4 @@
-[gd_scene load_steps=639 format=3 uid="uid://dfhro4he33mwe"]
+[gd_scene load_steps=646 format=3 uid="uid://dfhro4he33mwe"]
 
 [ext_resource type="Texture2D" uid="uid://bldgwkrwu0770" path="res://Stylized outline.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://Scripts/PortNav.gd" id="1_uu6xs"]
@@ -52,7 +52,11 @@
 [ext_resource type="Texture2D" uid="uid://b3fm1yd45sarm" path="res://Assets/Background/Below/Dead Pixel/dp8.png" id="35_rchyr"]
 [ext_resource type="Texture2D" uid="uid://c35cblvf5yod2" path="res://Assets/Background/Below/Dead Pixel/dp9.png" id="36_pljue"]
 [ext_resource type="Script" uid="uid://d0o8gt22ua3na" path="res://Scripts/dead_pixel.gd" id="37_nx4yo"]
+[ext_resource type="Texture2D" uid="uid://demx8m03tdpuc" path="res://Assets/Background/Below/Dead Pixel/dp_fade1.png" id="39_lboh7"]
+[ext_resource type="Texture2D" uid="uid://cobxcpkwwmj0o" path="res://Assets/Background/Below/Dead Pixel/dp_fade2.png" id="40_meayg"]
+[ext_resource type="Texture2D" uid="uid://bpol84c5uopf7" path="res://Assets/Background/Below/Dead Pixel/dp_fade3.png" id="41_8nkan"]
 [ext_resource type="Texture2D" uid="uid://bgj2xy7fw6noq" path="res://Assets/Background/Below/Lever/Box.png" id="42_ac6pf"]
+[ext_resource type="Texture2D" uid="uid://dptpkt6y22uu1" path="res://Assets/Background/Below/Dead Pixel/dp_fade4.png" id="42_qcpgi"]
 [ext_resource type="Texture2D" uid="uid://bf5hf8ioh5vo" path="res://Assets/Background/Below/Lever/Spark 1/S_1.png" id="43_ek63v"]
 [ext_resource type="Texture2D" uid="uid://bbep5phbw7v7k" path="res://Assets/Background/Below/Lever/Spark 1/S_2.png" id="44_oaklg"]
 [ext_resource type="Texture2D" uid="uid://mj3u6wlj61l7" path="res://Assets/Background/Below/Lever/Spark 1/S_3.png" id="45_4bst2"]
@@ -66,6 +70,7 @@
 [ext_resource type="Texture2D" uid="uid://t0w2dwcvrfxy" path="res://Assets/Background/Below/Lever/Spark 3/S_3.png" id="53_mplfx"]
 [ext_resource type="Texture2D" uid="uid://bx2jgi6u7vgl" path="res://Assets/Background/Below/Lever/Spark 3/S_4.png" id="54_gyych"]
 [ext_resource type="Texture2D" uid="uid://cmkis42ecef6f" path="res://Assets/Background/Below/Lever/Spark 3/S_5.png" id="55_xncey"]
+[ext_resource type="Texture2D" uid="uid://cbo3kb0owfm2d" path="res://Assets/Background/Below/Posters/pal.png" id="55_yep5p"]
 [ext_resource type="Texture2D" uid="uid://bgtyrrkag2xiv" path="res://Assets/Background/Below/Lever/Spark 3/S_6.png" id="56_skfvt"]
 [ext_resource type="Texture2D" uid="uid://bjjwhtc1ggki1" path="res://Assets/Background/Below/Lever/Spark 3/S_7.png" id="57_nn00d"]
 [ext_resource type="Texture2D" uid="uid://3e0t4lglti1y" path="res://Assets/Background/Below/Lever/Spark 3/S_8.png" id="58_oy6xi"]
@@ -508,6 +513,23 @@ _data = {
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("39_lboh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_meayg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_8nkan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_qcpgi")
+}],
+"loop": true,
+"name": &"crunch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("28_1w2xm")
 }, {
 "duration": 1.0,
@@ -606,6 +628,9 @@ _data = {
 &"Idle": SubResource("Animation_38apo"),
 &"RESET": SubResource("Animation_gngx1")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0eng"]
+size = Vector2(35, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a43ws"]
 animations = [{
@@ -5093,6 +5118,9 @@ size = Vector2(64.5, 100.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1st7y"]
 size = Vector2(52.5, 82.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi0hl"]
+size = Vector2(52, 76)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhavo"]
 size = Vector2(52.5, 102.125)
 
@@ -5140,10 +5168,10 @@ camera = NodePath("Camera2D")
 label = NodePath("Buttons/HoverLabel")
 color_block = NodePath("Buttons/ColorRect")
 
-[node name="Background" type="Node" parent="." node_paths=PackedStringArray("crashed_anim", "dp_anim", "sparks")]
+[node name="Background" type="Node" parent="." node_paths=PackedStringArray("crashed_anim", "dp", "sparks")]
 script = ExtResource("2_oye8v")
 crashed_anim = NodePath("Crashed Anim")
-dp_anim = NodePath("Dead Pixel/AnimationPlayer")
+dp = NodePath("Dead Pixel")
 sparks = NodePath("Lever/AnimationPlayer")
 
 [node name="Sky" type="TextureRect" parent="Background"]
@@ -5349,16 +5377,25 @@ position = Vector2(5378, 2034)
 texture = ExtResource("30_yf3a2")
 
 [node name="Dead Pixel" type="AnimatedSprite2D" parent="Background"]
+visible = false
 texture_filter = 1
-position = Vector2(1603, 1912)
+position = Vector2(162, 1004)
 sprite_frames = SubResource("SpriteFrames_5tfui")
-frame = 8
+animation = &"crunch"
+frame = 3
+centered = false
 script = ExtResource("37_nx4yo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Dead Pixel"]
 libraries = {
 &"": SubResource("AnimationLibrary_g4yo4")
 }
+
+[node name="Dp click" type="Area2D" parent="Background/Dead Pixel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Dead Pixel/Dp click"]
+position = Vector2(8.5, 8.5)
+shape = SubResource("RectangleShape2D_d0eng")
 
 [node name="Underground1" type="TextureRect" parent="Background"]
 texture_filter = 1
@@ -5388,6 +5425,11 @@ offset_right = 5760.0
 offset_bottom = 15144.0
 mouse_filter = 2
 texture = ExtResource("8_20pc6")
+
+[node name="Pal" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(5262, 1654)
+texture = ExtResource("55_yep5p")
 
 [node name="Nokings" type="Sprite2D" parent="Background"]
 texture_filter = 1
@@ -6364,6 +6406,16 @@ label_name = "Look?"
 position = Vector2(3646.75, 1570.88)
 shape = SubResource("RectangleShape2D_1st7y")
 
+[node name="FreePal Poster" type="Area2D" parent="Buttons" node_paths=PackedStringArray("outline_text", "color_block")]
+script = ExtResource("69_3b7lf")
+outline_text = NodePath("../HoverLabel")
+color_block = NodePath("../ColorRect")
+label_name = "Look?"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/FreePal Poster"]
+position = Vector2(5262, 1654)
+shape = SubResource("RectangleShape2D_xi0hl")
+
 [node name="Clippy" type="Area2D" parent="Buttons" node_paths=PackedStringArray("outline_text", "color_block")]
 position = Vector2(1461, -9)
 script = ExtResource("69_3b7lf")
@@ -6619,6 +6671,9 @@ autostart = true
 [connection signal="timeout" from="Background/Clouds/Timer_2" to="Background/Clouds" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_3" to="Background/Clouds" method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_4" to="Background/Clouds" method="_on_timer_4_timeout"]
+[connection signal="input_event" from="Background/Dead Pixel/Dp click" to="Background/Dead Pixel" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Background/Dead Pixel/Dp click" to="Background/Dead Pixel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/Dead Pixel/Dp click" to="Background/Dead Pixel" method="_on_mouse_exited"]
 [connection signal="pressed" from="Home/Personal" to="." method="_on_personal_pressed"]
 [connection signal="pressed" from="Home/Personal" to="VFX" method="_on_personal_pressed"]
 [connection signal="pressed" from="Home/Projects" to="." method="_on_projects_pressed"]
@@ -6723,6 +6778,8 @@ autostart = true
 [connection signal="mouse_entered" from="Buttons/NokKing Poster" to="Buttons/NokKing Poster" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/NokKing Poster" to="." method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="Buttons/NokKing Poster" to="Buttons/NokKing Poster" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Buttons/FreePal Poster" to="Buttons/FreePal Poster" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/FreePal Poster" to="Buttons/FreePal Poster" method="_on_mouse_exited"]
 [connection signal="input_event" from="Buttons/Clippy" to="Buttons/Clippy Look" method="_on_input_event"]
 [connection signal="mouse_entered" from="Buttons/Clippy" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Clippy" to="Buttons/Clippy" method="_on_mouse_entered"]

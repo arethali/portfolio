@@ -1,8 +1,14 @@
 extends Node
 
 @export var crashed_anim : AnimationPlayer
-@export var dp_anim : AnimationPlayer
+@export var dp : AnimatedSprite2D
 @export var sparks : AnimationPlayer
+
+const X_MULT_MIN : int = 88
+const X_MULTI_MAX : int = 1478
+const Y_MULT_MIN : int = 4
+const Y_MULTI_MAX : int = 240
+const MULTIPLIER : int = 4
 
 func _ready():
 	crashed_anim.play("Smoke")
@@ -38,9 +44,13 @@ func _handle_spark_anims(dice : int):
 	await sparks.animation_finished
 
 func _handle_dead_pixel(dice : int):
-	if dice % 5 != 0:
+	if dice % 20 != 0 or dp.visible == true:
 		return
-	dp_anim.play("Explode")
-	await dp_anim.animation_finished
-	dp_anim.play_backwards("Explode")
-		
+	#dp_anim.play("Explode")
+	#await dp_anim.animation_finished
+	#dp_anim.play_backwards("Explode")
+	dp.visible = true
+	dp.frame = 0
+	var x_pos : int = randi_range(X_MULT_MIN, X_MULTI_MAX) * MULTIPLIER
+	var y_pos : int = randi_range(Y_MULT_MIN, Y_MULTI_MAX) * MULTIPLIER
+	dp.position = Vector2(x_pos, y_pos)
