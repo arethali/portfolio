@@ -19,18 +19,38 @@ func _ready():
 		"Text":
 			text.process_mode = Node.PROCESS_MODE_INHERIT
 			text.visible = true
+			buttons.queue_free()
+			resume.queue_free()
+			skills.queue_free()
+			bios.queue_free()
 		"Buttons":
 			buttons.process_mode = Node.PROCESS_MODE_INHERIT
 			buttons.visible = true
+			text.queue_free()
+			resume.queue_free()
+			skills.queue_free()
+			bios.queue_free()
 		"Resume":
 			resume.process_mode = Node.PROCESS_MODE_INHERIT
 			resume.visible = true
+			text.queue_free()
+			buttons.queue_free()
+			skills.queue_free()
+			bios.queue_free()
 		"Skills":
 			skills.process_mode = Node.PROCESS_MODE_INHERIT
 			skills.visible = true
+			text.queue_free()
+			buttons.queue_free()
+			resume.queue_free()
+			bios.queue_free()
 		"Bios":
 			bios.process_mode = Node.PROCESS_MODE_INHERIT
 			bios.visible = true
+			text.queue_free()
+			buttons.queue_free()
+			resume.queue_free()
+			skills.queue_free()
 		_:
 			print_debug("No format selected.")
 			return
