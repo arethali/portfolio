@@ -1,6 +1,5 @@
-[gd_scene load_steps=650 format=3 uid="uid://dfhro4he33mwe"]
+[gd_scene load_steps=641 format=3 uid="uid://dfhro4he33mwe"]
 
-[ext_resource type="Texture2D" uid="uid://bldgwkrwu0770" path="res://Stylized outline.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://Scripts/PortNav.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://cegd5obta3j67" path="res://Assets/Background/Origin/Sky + Mountains/Sky.png" id="2_3dxm6"]
 [ext_resource type="Script" uid="uid://bgy6aeryatwd5" path="res://Scripts/background_anims.gd" id="2_oye8v"]
@@ -362,15 +361,12 @@
 [ext_resource type="Texture2D" uid="uid://c880x7xc06fpi" path="res://Assets/Desk Stuff/Cup/Cup_steam7.png" id="329_b47ui"]
 [ext_resource type="Texture2D" uid="uid://dy318prthnr1a" path="res://Assets/Barriers/Right/R_Barrier.png" id="330_vgoi8"]
 [ext_resource type="Texture2D" uid="uid://re8aqwmkfv8v" path="res://Assets/Barriers/Right/R_Barrier_shadow.png" id="331_rb3cd"]
-[ext_resource type="Texture2D" uid="uid://6ycivjxovio4" path="res://Font outline.png" id="356_m6ggt"]
 [ext_resource type="Script" uid="uid://ccijqkmwxdmwc" path="res://Scripts/exit_panel.gd" id="358_4hi06"]
 [ext_resource type="PackedScene" uid="uid://cgd2k7ycmvr22" path="res://Scripts/Default Window.tscn" id="358_4i1ne"]
 [ext_resource type="FontFile" uid="uid://dsy7a4r455j54" path="res://Fonts/Default.ttf" id="358_4oqqu"]
 [ext_resource type="FontFile" uid="uid://db0nxlp577mr6" path="res://Fonts/Display.ttf" id="359_28u1i"]
 [ext_resource type="Texture2D" uid="uid://b5lolbyvi3d43" path="res://Assets/Particles/Big Particle.png" id="360_28u1i"]
-[ext_resource type="Texture2D" uid="uid://cbkukryxh5xi0" path="res://Assets/UI/Global/Cursor/Arrow_green.png" id="360_pbhej"]
 [ext_resource type="Script" uid="uid://buttteguaeg23" path="res://Scripts/pos_parts.gd" id="360_ypv7r"]
-[ext_resource type="Texture2D" uid="uid://b5xccs31gtrjx" path="res://Assets/UI/Global/Cursor/Pointing Hand.png" id="361_4i1ne"]
 [ext_resource type="Texture2D" uid="uid://ncql886xovtu" path="res://Assets/Particles/Small Particle.png" id="361_ypv7r"]
 [ext_resource type="Texture2D" uid="uid://dokpj5j233u37" path="res://Assets/About Me/portrait.png" id="366_meayg"]
 [ext_resource type="FontFile" uid="uid://2xexbg02phv6" path="res://Fonts/Bold Display.ttf" id="367_8nkan"]
@@ -512,129 +508,6 @@ _data = {
 &"RESET": SubResource("Animation_5tfui"),
 &"Smoke": SubResource("Animation_nx4yo")
 }
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5tfui"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("39_lboh7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_meayg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_8nkan")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_qcpgi")
-}],
-"loop": true,
-"name": &"crunch",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("28_1w2xm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_gngx1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_jt61w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_v8qla")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_y1tbi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_c2s76")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_f4ese")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_rchyr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_pljue")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Animation" id="Animation_1w2xm"]
-resource_name = "Explode"
-length = 0.9
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [8, 7, 6, 5, 4, 3, 2, 1, 0]
-}
-
-[sub_resource type="Animation" id="Animation_38apo"]
-resource_name = "Idle"
-length = 0.8
-loop_mode = 1
-step = 0.2
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1.49012e-08, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"values": [{
-"args": [],
-"method": &"_idle_down"
-}, {
-"args": [],
-"method": &"_idle_down"
-}, {
-"args": [],
-"method": &"_idle_up"
-}, {
-"args": [],
-"method": &"_idle_up"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_gngx1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_g4yo4"]
-_data = {
-&"Explode": SubResource("Animation_1w2xm"),
-&"Idle": SubResource("Animation_38apo"),
-&"RESET": SubResource("Animation_gngx1")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0eng"]
-size = Vector2(35, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a43ws"]
 animations = [{
@@ -5128,6 +5001,58 @@ size = Vector2(52, 76)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhavo"]
 size = Vector2(52.5, 102.125)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tfui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_lboh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_meayg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_8nkan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_qcpgi")
+}],
+"loop": true,
+"name": &"crunch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_1w2xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_gngx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_jt61w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_v8qla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_y1tbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_c2s76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_f4ese")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_rchyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pljue")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Curve" id="Curve_m6ggt"]
 _data = [Vector2(0.0927419, 0.0634649), 0.0, 0.0, 0, 0, Vector2(0.870968, 0.498285), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -5175,7 +5100,7 @@ color_block = NodePath("Buttons/ColorRect")
 [node name="Background" type="Node" parent="." node_paths=PackedStringArray("crashed_anim", "dp", "sparks")]
 script = ExtResource("2_oye8v")
 crashed_anim = NodePath("Crashed Anim")
-dp = NodePath("Dead Pixel")
+dp = NodePath("../VFX/Dead Pixel")
 sparks = NodePath("Lever/AnimationPlayer")
 
 [node name="Sky" type="TextureRect" parent="Background"]
@@ -5379,27 +5304,6 @@ stretch_mode = 2
 texture_filter = 1
 position = Vector2(5378, 2034)
 texture = ExtResource("30_yf3a2")
-
-[node name="Dead Pixel" type="AnimatedSprite2D" parent="Background"]
-visible = false
-texture_filter = 1
-position = Vector2(162, 1004)
-sprite_frames = SubResource("SpriteFrames_5tfui")
-animation = &"crunch"
-frame = 3
-centered = false
-script = ExtResource("37_nx4yo")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Dead Pixel"]
-libraries = {
-&"": SubResource("AnimationLibrary_g4yo4")
-}
-
-[node name="Dp click" type="Area2D" parent="Background/Dead Pixel"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Dead Pixel/Dp click"]
-position = Vector2(8.5, 8.5)
-shape = SubResource("RectangleShape2D_d0eng")
 
 [node name="Underground1" type="TextureRect" parent="Background"]
 texture_filter = 1
@@ -6212,19 +6116,6 @@ texture_hover = ExtResource("276_4jki6")
 
 [node name="Buttons" type="Node" parent="."]
 
-[node name="FontOutline" type="Sprite2D" parent="Buttons"]
-visible = false
-texture_filter = 1
-position = Vector2(2706, 672)
-texture = ExtResource("356_m6ggt")
-
-[node name="StylizedOutline" type="Sprite2D" parent="Buttons"]
-visible = false
-modulate = Color(1, 1, 1, 0.380392)
-texture_filter = 1
-texture = ExtResource("1_glv2v")
-centered = false
-
 [node name="Leo Area" type="Area2D" parent="Buttons" node_paths=PackedStringArray("outline_text", "color_block")]
 position = Vector2(2922, 790)
 script = ExtResource("69_3b7lf")
@@ -6472,6 +6363,12 @@ margin_top = 32
 [node name="VScrollBar" parent="Buttons/AI Poster Look/Bios" index="1"]
 offset_bottom = 8.0
 
+[node name="VScrollBar" parent="Buttons/AI Poster Look/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/AI Poster Look/Skills" index="1"]
+offset_bottom = 8.0
+
 [node name="No King Look" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 3646.0
@@ -6495,6 +6392,12 @@ right_margin = 28
 margin_top = 32
 
 [node name="VScrollBar" parent="Buttons/No King Look/Bios" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/No King Look/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/No King Look/Skills" index="1"]
 offset_bottom = 8.0
 
 [node name="Clippy Look" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
@@ -6522,6 +6425,12 @@ margin_top = 32
 [node name="VScrollBar" parent="Buttons/Clippy Look/Bios" index="1"]
 offset_bottom = 8.0
 
+[node name="VScrollBar" parent="Buttons/Clippy Look/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Clippy Look/Skills" index="1"]
+offset_bottom = 8.0
+
 [node name="Gaza" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 5262.0
@@ -6547,6 +6456,12 @@ margin_top = 32
 [node name="VScrollBar" parent="Buttons/Gaza/Bios" index="1"]
 offset_bottom = 8.0
 
+[node name="VScrollBar" parent="Buttons/Gaza/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Gaza/Skills" index="1"]
+offset_bottom = 8.0
+
 [node name="Projects" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 4750.0
@@ -6567,6 +6482,12 @@ button_format = "Projects"
 [node name="VScrollBar" parent="Buttons/Projects/Bios" index="1"]
 offset_bottom = 8.0
 
+[node name="VScrollBar" parent="Buttons/Projects/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Projects/Skills" index="1"]
+offset_bottom = 8.0
+
 [node name="Films" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 900.0
@@ -6581,6 +6502,12 @@ click_box = NodePath("../Film Area")
 button_format = "Films"
 
 [node name="VScrollBar" parent="Buttons/Films/Bios" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Films/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Films/Skills" index="1"]
 offset_bottom = 8.0
 
 [node name="Notebook" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
@@ -6599,6 +6526,12 @@ button_format = "Art"
 [node name="VScrollBar" parent="Buttons/Notebook/Bios" index="1"]
 offset_bottom = 8.0
 
+[node name="VScrollBar" parent="Buttons/Notebook/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Notebook/Skills" index="1"]
+offset_bottom = 8.0
+
 [node name="Contact" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 2598.0
@@ -6615,6 +6548,12 @@ button_format = "Contact"
 [node name="VScrollBar" parent="Buttons/Contact/Bios" index="1"]
 offset_bottom = 8.0
 
+[node name="VScrollBar" parent="Buttons/Contact/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Contact/Skills" index="1"]
+offset_bottom = 8.0
+
 [node name="Music" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 612.0
@@ -6628,6 +6567,12 @@ click_box = NodePath("../BoomBox Area")
 [node name="VScrollBar" parent="Buttons/Music/Bios" index="1"]
 offset_bottom = 8.0
 
+[node name="VScrollBar" parent="Buttons/Music/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Music/Skills" index="1"]
+offset_bottom = 8.0
+
 [node name="Phone" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 2822.0
@@ -6639,7 +6584,7 @@ panel = NodePath("../Panel")
 click_box = NodePath("../Phone Area")
 
 [node name="Panel" parent="Buttons/Phone" index="0"]
-height = 16
+height = 18
 width = 13
 override = false
 
@@ -6647,14 +6592,23 @@ override = false
 padding_y_top = 56
 
 [node name="Body" parent="Buttons/Phone/Text" index="1"]
-margin_bottom = 20
+theme_override_constants/line_separation = 8
+left_margin = 40
+margin_top = 40
+margin_bottom = 40
+
+[node name="VScrollBar" parent="Buttons/Phone/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Phone/Skills" index="1"]
+offset_bottom = 8.0
 
 [node name="About Me" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 2930.0
-offset_top = 774.0
+offset_top = 762.0
 offset_right = 1010.0
-offset_bottom = -306.0
+offset_bottom = -318.0
 format = "Bios"
 panel = NodePath("../Panel")
 click_box = NodePath("../Body Area")
@@ -6689,6 +6643,12 @@ theme_override_fonts/bold_font = ExtResource("367_8nkan")
 theme_override_fonts/bold_font = ExtResource("367_8nkan")
 
 [node name="VScrollBar" parent="Buttons/About Me/Bios" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/About Me/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/About Me/Skills" index="1"]
 offset_bottom = 8.0
 
 [node name="Leo" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
@@ -6733,6 +6693,12 @@ theme_override_fonts/bold_font = ExtResource("367_8nkan")
 [node name="VScrollBar" parent="Buttons/Leo/Bios" index="1"]
 offset_bottom = 8.0
 
+[node name="VScrollBar" parent="Buttons/Leo/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Leo/Skills" index="1"]
+offset_bottom = 8.0
+
 [node name="Alvis" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 3054.0
@@ -6775,6 +6741,147 @@ theme_override_fonts/bold_font = ExtResource("367_8nkan")
 [node name="VScrollBar" parent="Buttons/Alvis/Bios" index="1"]
 offset_bottom = 8.0
 
+[node name="VScrollBar" parent="Buttons/Alvis/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Alvis/Skills" index="1"]
+offset_bottom = 8.0
+
+[node name="Experience" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
+visible = false
+offset_left = 5142.0
+offset_top = 866.0
+offset_right = 3222.0
+offset_bottom = -214.0
+format = "Resume"
+panel = NodePath("../Panel")
+click_box = NodePath("../Resume")
+
+[node name="Panel" parent="Buttons/Experience" index="0"]
+height = 20
+width = 26
+override = false
+
+[node name="Resume" parent="Buttons/Experience" index="6"]
+padding_sides = Vector2(40, 40)
+padding_vert = Vector2(40, 40)
+
+[node name="Experience" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="1"]
+type = "Experience"
+
+[node name="Experience2" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="2"]
+type = "Experience"
+
+[node name="Experience3" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="3"]
+type = "Experience"
+
+[node name="Experience4" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="4"]
+type = "Experience"
+
+[node name="Experience5" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="5"]
+type = "Experience"
+
+[node name="Experience6" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="6"]
+type = "Experience"
+
+[node name="Education" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="8"]
+type = "Education"
+
+[node name="Education2" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="9"]
+type = "Education"
+
+[node name="VScrollBar" parent="Buttons/Experience/Resume" index="1"]
+offset_bottom = 8.0
+
+[node name="VScrollBar" parent="Buttons/Experience/Skills" index="1"]
+offset_bottom = 8.0
+
+[node name="Skills" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
+visible = false
+offset_left = 5134.0
+offset_top = 806.0
+offset_right = 3214.0
+offset_bottom = -274.0
+format = "Skills"
+panel = NodePath("../Panel")
+click_box = NodePath("../Tool Box")
+
+[node name="Panel" parent="Buttons/Skills" index="0"]
+height = 20
+width = 26
+override = false
+
+[node name="Skills" parent="Buttons/Skills" index="7"]
+padding_sides = Vector2(40, 40)
+padding_vert = Vector2(40, 40)
+
+[node name="VScrollBar" parent="Buttons/Skills/Skills" index="1"]
+offset_bottom = 8.0
+
+[node name="KeyboardPanel" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
+visible = false
+offset_left = 4870.0
+offset_top = 810.0
+offset_right = 2950.0
+offset_bottom = -270.0
+format = "Text"
+need_exit = false
+panel = NodePath("../Panel")
+click_box = NodePath("../Keyboard")
+
+[node name="Panel" parent="Buttons/KeyboardPanel" index="0"]
+override = false
+
+[node name="Body" parent="Buttons/KeyboardPanel/Text" index="1"]
+body_text = "[center]Keydous NJ98 with 
+TTC Silent Bluish White (V2)[/center]"
+left_margin = 40
+margin_top = 32
+
+[node name="Booklist" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
+visible = false
+offset_left = 4630.0
+offset_top = 774.0
+offset_right = 2710.0
+offset_bottom = -306.0
+format = "Text"
+panel = NodePath("../Panel")
+click_box = NodePath("../Book")
+
+[node name="Panel" parent="Buttons/Booklist" index="0"]
+height = 14
+width = 17
+override = false
+
+[node name="VScrollBar" parent="Buttons/Booklist/Text" index="0"]
+padding_y_top = 56
+
+[node name="Body" parent="Buttons/Booklist/Text" index="1"]
+body_text = "[b]To Read:[/b]
+- Book 1
+- Book 2
+- Book 3
+- Book 4
+[b]Favs:[/b]
+- Book 1
+- Book 2"
+left_margin = 40
+margin_top = 40
+margin_bottom = 40
+
+[node name="CameraPhotos" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
+visible = false
+offset_left = 610.0
+offset_top = 922.0
+offset_right = -1310.0
+offset_bottom = -158.0
+format = "Buttons"
+panel = NodePath("../Panel")
+click_box = NodePath("../Camera Area")
+
+[node name="Buttons" parent="Buttons/CameraPhotos" index="4"]
+button_format = "Camera"
+
 [node name="Outline Text" type="RichTextLabel" parent="Buttons"]
 visible = false
 texture_filter = 1
@@ -6814,16 +6921,6 @@ text = "y"
 fit_content = true
 autowrap_mode = 0
 
-[node name="ArrowGreen" type="Sprite2D" parent="Buttons"]
-visible = false
-position = Vector2(102, 214)
-texture = ExtResource("360_pbhej")
-
-[node name="PointingHand" type="Sprite2D" parent="Buttons"]
-visible = false
-position = Vector2(177, 187)
-texture = ExtResource("361_4i1ne")
-
 [node name="VFX" type="Node" parent="." node_paths=PackedStringArray("big_particles", "small_particles")]
 script = ExtResource("360_ypv7r")
 big_particles = NodePath("Big Particles")
@@ -6831,6 +6928,22 @@ small_particles = NodePath("Smol Particles")
 home_pos = Vector2(3925, 642)
 projects_pos = Vector2(5825, 642)
 personal_pos = Vector2(1945, 642)
+
+[node name="Dead Pixel" type="AnimatedSprite2D" parent="VFX"]
+texture_filter = 1
+position = Vector2(188, 1081)
+sprite_frames = SubResource("SpriteFrames_5tfui")
+animation = &"crunch"
+centered = false
+script = ExtResource("37_nx4yo")
+
+[node name="Panel" type="Panel" parent="VFX/Dead Pixel"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 26.0
+offset_bottom = 21.0
+mouse_default_cursor_shape = 2
 
 [node name="Big Particles" type="GPUParticles2D" parent="VFX"]
 modulate = Color(1, 1, 1, 0.698039)
@@ -6868,17 +6981,19 @@ autostart = true
 [connection signal="panel_offset" from="." to="Buttons/Notebook" method="_on_panel_offset"]
 [connection signal="panel_offset" from="." to="Buttons/Contact" method="_on_panel_offset"]
 [connection signal="panel_offset" from="." to="Buttons/Music" method="_on_panel_offset"]
-[connection signal="panel_offset" from="." to="Buttons/About Me" method="_on_panel_offset"]
 [connection signal="panel_offset" from="." to="Buttons/Phone" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/About Me" method="_on_panel_offset"]
 [connection signal="panel_offset" from="." to="Buttons/Leo" method="_on_panel_offset"]
 [connection signal="panel_offset" from="." to="Buttons/Alvis" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/Experience" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/Skills" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/KeyboardPanel" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/Booklist" method="_on_panel_offset"]
+[connection signal="panel_offset" from="." to="Buttons/CameraPhotos" method="_on_panel_offset"]
 [connection signal="timeout" from="Background/Clouds/Timer_1" to="Background/Clouds" method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_2" to="Background/Clouds" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_3" to="Background/Clouds" method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_4" to="Background/Clouds" method="_on_timer_4_timeout"]
-[connection signal="input_event" from="Background/Dead Pixel/Dp click" to="Background/Dead Pixel" method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Background/Dead Pixel/Dp click" to="Background/Dead Pixel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Background/Dead Pixel/Dp click" to="Background/Dead Pixel" method="_on_mouse_exited"]
 [connection signal="pressed" from="Home/Personal" to="." method="_on_personal_pressed"]
 [connection signal="pressed" from="Home/Personal" to="VFX" method="_on_personal_pressed"]
 [connection signal="pressed" from="Home/Projects" to="." method="_on_projects_pressed"]
@@ -6926,6 +7041,7 @@ autostart = true
 [connection signal="mouse_exited" from="Buttons/Chair Area" to="." method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="Buttons/Chair Area" to="Buttons/Chair Area" method="_on_mouse_exited"]
 [connection signal="input_event" from="Buttons/Book" to="Projects/Book" method="_on_area_input_event"]
+[connection signal="input_event" from="Buttons/Book" to="Buttons/Booklist" method="_on_input_event"]
 [connection signal="mouse_entered" from="Buttons/Book" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Book" to="Buttons/Book" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Book" to="." method="_on_mouse_exited"]
@@ -6937,16 +7053,19 @@ autostart = true
 [connection signal="mouse_exited" from="Buttons/Laptop" to="." method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="Buttons/Laptop" to="Buttons/Laptop" method="_on_mouse_exited"]
 [connection signal="input_event" from="Buttons/Keyboard" to="Projects/Keyboard" method="_on_area_input_event"]
+[connection signal="input_event" from="Buttons/Keyboard" to="Buttons/KeyboardPanel" method="_on_input_event"]
 [connection signal="mouse_entered" from="Buttons/Keyboard" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Keyboard" to="Buttons/Keyboard" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Keyboard" to="." method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="Buttons/Keyboard" to="Buttons/Keyboard" method="_on_mouse_exited"]
 [connection signal="input_event" from="Buttons/Tool Box" to="Projects/Tool" method="_on_area_input_event"]
+[connection signal="input_event" from="Buttons/Tool Box" to="Buttons/Skills" method="_on_input_event"]
 [connection signal="mouse_entered" from="Buttons/Tool Box" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Tool Box" to="Buttons/Tool Box" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Tool Box" to="." method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="Buttons/Tool Box" to="Buttons/Tool Box" method="_on_mouse_exited"]
 [connection signal="input_event" from="Buttons/Resume" to="Projects/Resume" method="_on_area_input_event"]
+[connection signal="input_event" from="Buttons/Resume" to="Buttons/Experience" method="_on_input_event"]
 [connection signal="mouse_entered" from="Buttons/Resume" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Resume" to="Buttons/Resume" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Resume" to="." method="_on_mouse_exited"]
@@ -6958,6 +7077,7 @@ autostart = true
 [connection signal="mouse_exited" from="Buttons/BoomBox Area" to="." method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="Buttons/BoomBox Area" to="Buttons/BoomBox Area" method="_on_mouse_exited"]
 [connection signal="input_event" from="Buttons/Camera Area" to="Personal/Camera" method="_on_area_input_event"]
+[connection signal="input_event" from="Buttons/Camera Area" to="Buttons/CameraPhotos" method="_on_input_event"]
 [connection signal="mouse_entered" from="Buttons/Camera Area" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Camera Area" to="Buttons/Camera Area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Camera Area" to="." method="_on_mouse_exited"]
@@ -7002,7 +7122,10 @@ autostart = true
 [connection signal="gui_input" from="Buttons/Panel" to="Home/Phone" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Personal/Notebook" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Personal/Film" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Projects/Tool" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Projects/Resume" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Projects/Laptop" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Projects/Book" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/AI Poster Look" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/No King Look" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Clippy Look" method="_on_panel_gui_input"]
@@ -7012,10 +7135,15 @@ autostart = true
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Notebook" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Contact" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Music" method="_on_panel_gui_input"]
-[connection signal="gui_input" from="Buttons/Panel" to="Buttons/About Me" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Phone" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Buttons/About Me" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Leo" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Alvis" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Buttons/Experience" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Buttons/Skills" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Buttons/KeyboardPanel" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Buttons/Booklist" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="Buttons/Panel" to="Buttons/CameraPhotos" method="_on_panel_gui_input"]
 [connection signal="pressed" from="Buttons/Projects/Exit" to="Projects/Laptop" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Films/Exit" to="Personal/Film" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Notebook/Exit" to="Personal/Notebook" method="_on_exit_pressed"]
@@ -7032,6 +7160,10 @@ autostart = true
 [connection signal="pressed" from="Buttons/Music/Buttons/Mute" to="Personal/Music Player" method="_on_mute"]
 [connection signal="pressed" from="Buttons/Music/Buttons/Unmute" to="Personal/Music Player" method="_on_unmute"]
 [connection signal="pressed" from="Buttons/Phone/Exit" to="Home/Phone" method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons/Experience/Exit" to="Projects/Resume" method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons/Skills/Exit" to="Projects/Tool" method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons/Booklist/Exit" to="Projects/Book" method="_on_exit_pressed"]
+[connection signal="gui_input" from="VFX/Dead Pixel/Panel" to="VFX/Dead Pixel" method="_on_panel_gui_input"]
 [connection signal="timeout" from="Timer" to="Background" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Head" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Home/Legs" method="_on_timer_timeout"]
@@ -7047,15 +7179,38 @@ autostart = true
 [connection signal="timeout" from="Timer" to="Projects/LampLSand_Projects" method="_on_timer_timeout"]
 
 [editable path="Buttons/AI Poster Look"]
+[editable path="Buttons/AI Poster Look/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/No King Look"]
+[editable path="Buttons/No King Look/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/Clippy Look"]
+[editable path="Buttons/Clippy Look/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/Gaza"]
+[editable path="Buttons/Gaza/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/Projects"]
+[editable path="Buttons/Projects/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/Films"]
+[editable path="Buttons/Films/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/Notebook"]
+[editable path="Buttons/Notebook/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/Contact"]
+[editable path="Buttons/Contact/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/Music"]
+[editable path="Buttons/Music/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/Phone"]
+[editable path="Buttons/Phone/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/About Me"]
+[editable path="Buttons/About Me/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/Leo"]
+[editable path="Buttons/Leo/Buttons/CamScroll/VBoxContainer/CamGallery"]
 [editable path="Buttons/Alvis"]
+[editable path="Buttons/Alvis/Buttons/CamScroll/VBoxContainer/CamGallery"]
+[editable path="Buttons/Experience"]
+[editable path="Buttons/Experience/Buttons/CamScroll/VBoxContainer/CamGallery"]
+[editable path="Buttons/Skills"]
+[editable path="Buttons/Skills/Buttons/CamScroll/VBoxContainer/CamGallery"]
+[editable path="Buttons/KeyboardPanel"]
+[editable path="Buttons/KeyboardPanel/Buttons/CamScroll/VBoxContainer/CamGallery"]
+[editable path="Buttons/Booklist"]
+[editable path="Buttons/Booklist/Buttons/CamScroll/VBoxContainer/CamGallery"]
+[editable path="Buttons/CameraPhotos"]
+[editable path="Buttons/CameraPhotos/Buttons/CamScroll/VBoxContainer/CamGallery"]

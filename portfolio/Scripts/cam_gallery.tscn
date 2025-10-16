@@ -1,0 +1,193 @@
+[gd_scene load_steps=22 format=3 uid="uid://c4bovx42w2b7p"]
+
+[ext_resource type="Texture2D" uid="uid://bn1a78n1yt6wl" path="res://Assets/UI/Camera/Photo1.png" id="1_iafwf"]
+[ext_resource type="Texture2D" uid="uid://c3pe2cknbm372" path="res://Assets/UI/Camera/Photo2.png" id="2_imxga"]
+[ext_resource type="Script" uid="uid://d17jh3i54esu1" path="res://Scripts/press_photo.gd" id="2_yn2i3"]
+[ext_resource type="Texture2D" uid="uid://beqa0mrli7m64" path="res://Assets/UI/Camera/Photo12.png" id="3_yn2i3"]
+[ext_resource type="Texture2D" uid="uid://d3atks4hhw5ax" path="res://Assets/UI/Camera/Photo3.png" id="4_qgg8l"]
+[ext_resource type="Texture2D" uid="uid://bo3wg266j1m8" path="res://Assets/UI/Camera/Photo17.png" id="5_jj8m7"]
+[ext_resource type="Texture2D" uid="uid://barnjtjvxoaa0" path="res://Assets/UI/Camera/Photo4.png" id="6_8emy2"]
+[ext_resource type="Texture2D" uid="uid://b426xk4nj37x6" path="res://Assets/UI/Camera/Photo13.png" id="7_4tw8t"]
+[ext_resource type="Texture2D" uid="uid://c17lk8g4f0ikj" path="res://Assets/UI/Camera/Photo5.png" id="8_o237h"]
+[ext_resource type="Texture2D" uid="uid://cqvq5o6n0wbx2" path="res://Assets/UI/Camera/Photo6.png" id="9_2bhwk"]
+[ext_resource type="Texture2D" uid="uid://c1cqqssxhdfss" path="res://Assets/UI/Camera/Photo16.png" id="10_jiho4"]
+[ext_resource type="Texture2D" uid="uid://bxr31rkybgqf3" path="res://Assets/UI/Camera/Photo7.png" id="11_kftga"]
+[ext_resource type="Texture2D" uid="uid://c7iaeo737jih2" path="res://Assets/UI/Camera/Photo8.png" id="12_ay3fs"]
+[ext_resource type="Texture2D" uid="uid://ccj47skoaxtcf" path="res://Assets/UI/Camera/Photo15.png" id="13_a74ga"]
+[ext_resource type="Texture2D" uid="uid://cp4vnmr5ba8la" path="res://Assets/UI/Camera/Photo9.png" id="14_3g8t0"]
+[ext_resource type="Texture2D" uid="uid://dy5vkdxfb1bkk" path="res://Assets/UI/Camera/Photo11.png" id="15_5edq8"]
+[ext_resource type="Texture2D" uid="uid://qiwkl4poapuq" path="res://Assets/UI/Camera/Photo10.png" id="16_qgv7x"]
+[ext_resource type="Texture2D" uid="uid://3v71pw542ede" path="res://Assets/UI/Camera/Photo14.png" id="17_o6cqn"]
+[ext_resource type="Texture2D" uid="uid://cls7yfpse4e1e" path="res://Assets/UI/Camera/Photo19.png" id="18_wd2xp"]
+[ext_resource type="Texture2D" uid="uid://dwdh42nfmj76k" path="res://Assets/UI/Camera/Photo20.png" id="19_nnnch"]
+[ext_resource type="Texture2D" uid="uid://l48jk2elri3n" path="res://Assets/UI/Camera/Photo18.png" id="20_mdu5n"]
+
+[node name="CamGallery" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Row1" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Photo1" type="TextureButton" parent="Row1"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("1_iafwf")
+texture_pressed = ExtResource("1_iafwf")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo2" type="TextureButton" parent="Row1"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("2_imxga")
+texture_pressed = ExtResource("2_imxga")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo12" type="TextureButton" parent="Row1"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("3_yn2i3")
+texture_pressed = ExtResource("3_yn2i3")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo3" type="TextureButton" parent="Row1"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("4_qgg8l")
+texture_pressed = ExtResource("4_qgg8l")
+script = ExtResource("2_yn2i3")
+
+[node name="Row2" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Photo17" type="TextureButton" parent="Row2"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("5_jj8m7")
+texture_pressed = ExtResource("5_jj8m7")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo4" type="TextureButton" parent="Row2"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("6_8emy2")
+texture_pressed = ExtResource("6_8emy2")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo13" type="TextureButton" parent="Row2"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("7_4tw8t")
+texture_pressed = ExtResource("7_4tw8t")
+script = ExtResource("2_yn2i3")
+
+[node name="Row3" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Photo5" type="TextureButton" parent="Row3"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("8_o237h")
+texture_pressed = ExtResource("8_o237h")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo6" type="TextureButton" parent="Row3"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("9_2bhwk")
+texture_pressed = ExtResource("9_2bhwk")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo16" type="TextureButton" parent="Row3"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("10_jiho4")
+texture_pressed = ExtResource("10_jiho4")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo7" type="TextureButton" parent="Row3"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("11_kftga")
+texture_pressed = ExtResource("11_kftga")
+script = ExtResource("2_yn2i3")
+
+[node name="Row4" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Photo8" type="TextureButton" parent="Row4"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("12_ay3fs")
+texture_pressed = ExtResource("12_ay3fs")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo15" type="TextureButton" parent="Row4"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("13_a74ga")
+texture_pressed = ExtResource("13_a74ga")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo9" type="TextureButton" parent="Row4"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("14_3g8t0")
+texture_pressed = ExtResource("14_3g8t0")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo11" type="TextureButton" parent="Row4"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("15_5edq8")
+texture_pressed = ExtResource("15_5edq8")
+script = ExtResource("2_yn2i3")
+
+[node name="Row5" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Photo10" type="TextureButton" parent="Row5"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("16_qgv7x")
+texture_pressed = ExtResource("16_qgv7x")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo14" type="TextureButton" parent="Row5"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("17_o6cqn")
+texture_pressed = ExtResource("17_o6cqn")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo19" type="TextureButton" parent="Row5"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("18_wd2xp")
+texture_pressed = ExtResource("18_wd2xp")
+script = ExtResource("2_yn2i3")
+
+[node name="Row6" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Photo20" type="TextureButton" parent="Row6"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("19_nnnch")
+texture_pressed = ExtResource("19_nnnch")
+script = ExtResource("2_yn2i3")
+
+[node name="Photo18" type="TextureButton" parent="Row6"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("20_mdu5n")
+texture_pressed = ExtResource("20_mdu5n")
+script = ExtResource("2_yn2i3")

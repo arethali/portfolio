@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bedbr83bv8o57"]
+
+[ext_resource type="Script" uid="uid://gmfiuv5m3t10" path="res://set_skills.gd" id="1_4tqyc"]
+[ext_resource type="Texture2D" uid="uid://bnqd52k1suayi" path="res://Assets/UI/Skills/Skill1_updated.png" id="2_1gqug"]
+[ext_resource type="FontFile" uid="uid://dsy7a4r455j54" path="res://Fonts/Default.ttf" id="3_e885t"]
+[ext_resource type="FontFile" uid="uid://db0nxlp577mr6" path="res://Fonts/Display.ttf" id="4_o3000"]
+
+[node name="Skill Container" type="HBoxContainer"]
+unique_name_in_owner = true
+offset_right = 188.0
+offset_bottom = 41.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 36
+script = ExtResource("1_4tqyc")
+
+[node name="Skill Level" type="TextureRect" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_1gqug")
+stretch_mode = 2
+
+[node name="Skill Name" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.521569, 0.552941, 0.368627, 1)
+theme_override_fonts/normal_font = ExtResource("3_e885t")
+theme_override_fonts/bold_font = ExtResource("4_o3000")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "Hello"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2

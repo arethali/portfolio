@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=103 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
@@ -87,6 +87,12 @@
 [ext_resource type="Script" uid="uid://dxdn8g31matrn" path="res://Scripts/place_button.gd" id="61_1u7cx"]
 [ext_resource type="Texture2D" uid="uid://cimb4dvd10yws" path="res://Assets/UI/Global/Back/Back_hovered_v2.png" id="80_0gux7"]
 [ext_resource type="Script" uid="uid://bvs4nkaxpaee8" path="res://Scripts/bios_placement.gd" id="87_0gux7"]
+[ext_resource type="PackedScene" uid="uid://c4bovx42w2b7p" path="res://Scripts/cam_gallery.tscn" id="87_4rep7"]
+[ext_resource type="Script" uid="uid://8qsw3g8b4akj" path="res://Scripts/set_cam_scroll.gd" id="87_rx4bi"]
+[ext_resource type="Script" uid="uid://0atuiwpt0iw2" path="res://Scripts/resume_placement.gd" id="88_623il"]
+[ext_resource type="PackedScene" uid="uid://vubv2j0fpa5d" path="res://Scripts/experience.tscn" id="89_dkevx"]
+[ext_resource type="Script" uid="uid://daryvn5ab6idc" path="res://Scripts/skills_placement.gd" id="90_5g45q"]
+[ext_resource type="PackedScene" uid="uid://bedbr83bv8o57" path="res://Scripts/skills.tscn" id="90_jtk41"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i73k"]
 bg_color = Color(0.792157, 0.803922, 0.705882, 1)
@@ -201,6 +207,7 @@ mouse_filter = 1
 layout_mode = 0
 offset_right = 8.0
 mouse_filter = 1
+mouse_default_cursor_shape = 2
 theme_override_styles/scroll = SubResource("StyleBoxFlat_0i73k")
 theme_override_styles/scroll_focus = SubResource("StyleBoxFlat_0i73k")
 theme_override_styles/grabber = SubResource("StyleBoxFlat_xjxqa")
@@ -874,6 +881,236 @@ texture_hover = ExtResource("80_0gux7")
 script = ExtResource("61_1u7cx")
 side_padding = 20
 
+[node name="Cam Back" type="TextureButton" parent="Buttons"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("59_1u7cx")
+texture_pressed = ExtResource("60_jnqrh")
+texture_hover = ExtResource("80_0gux7")
+script = ExtResource("61_1u7cx")
+side_padding = 20
+
+[node name="CamScroll" type="ScrollContainer" parent="Buttons"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("87_rx4bi")
+padding_sides = Vector2(20, 20)
+padding_vert = Vector2(100, 40)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/CamScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CamGallery" parent="Buttons/CamScroll/VBoxContainer" instance=ExtResource("87_4rep7")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Photo1" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row1" index="0" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo1.png"
+
+[node name="Photo2" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row1" index="1" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo2.png"
+
+[node name="Photo12" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row1" index="2" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo12.png"
+
+[node name="Photo3" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row1" index="3" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo3.png"
+
+[node name="Photo17" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row2" index="0" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo17.png"
+
+[node name="Photo4" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row2" index="1" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo4.png"
+
+[node name="Photo13" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row2" index="2" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo13.png"
+
+[node name="Photo5" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row3" index="0" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo5.png"
+
+[node name="Photo6" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row3" index="1" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo6.png"
+
+[node name="Photo16" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row3" index="2" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo16.png"
+
+[node name="Photo7" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row3" index="3" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo7.png"
+
+[node name="Photo8" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row4" index="0" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo8.png"
+
+[node name="Photo15" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row4" index="1" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo15.png"
+
+[node name="Photo9" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row4" index="2" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo9.png"
+
+[node name="Photo11" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row4" index="3" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo11.png"
+
+[node name="Photo10" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row5" index="0" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo10.png"
+
+[node name="Photo14" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row5" index="1" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo14.png"
+
+[node name="Photo19" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row5" index="2" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo19.png"
+
+[node name="Photo20" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row6" index="0" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo20.png"
+
+[node name="Photo18" parent="Buttons/CamScroll/VBoxContainer/CamGallery/Row6" index="1" node_paths=PackedStringArray("cam_scroll", "cam_scroll_bar", "subwindow_title", "place_image", "looky_back")]
+mouse_default_cursor_shape = 2
+cam_scroll = NodePath("../../../..")
+cam_scroll_bar = NodePath("../../../../../CamScrollBar")
+subwindow_title = NodePath("../../../../../Subwindow title")
+place_image = NodePath("../../../../../PlaceImage")
+looky_back = NodePath("../../../../../Cam Back")
+pic_file = "res://Assets/UI/Camera/Photo18.png"
+
+[node name="CamScrollBar" type="VScrollBar" parent="Buttons" node_paths=PackedStringArray("scroll_container")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_right = 8.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_styles/scroll = SubResource("StyleBoxFlat_0i73k")
+theme_override_styles/scroll_focus = SubResource("StyleBoxFlat_0i73k")
+theme_override_styles/grabber = SubResource("StyleBoxFlat_xjxqa")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_xjxqa")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxFlat_xjxqa")
+script = ExtResource("6_c010p")
+scroll_container = NodePath("../CamScroll")
+padding_x = 8
+padding_y_top = 56
+padding_y_bott = 40
+
 [node name="Bios" type="Control" parent="."]
 unique_name_in_owner = true
 process_mode = 4
@@ -991,6 +1228,7 @@ scroll_active = false
 layout_mode = 0
 offset_right = 8.0
 mouse_filter = 1
+mouse_default_cursor_shape = 2
 theme_override_styles/scroll = SubResource("StyleBoxFlat_0i73k")
 theme_override_styles/scroll_focus = SubResource("StyleBoxFlat_0i73k")
 theme_override_styles/grabber = SubResource("StyleBoxFlat_xjxqa")
@@ -1009,6 +1247,86 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("88_623il")
+
+[node name="ResumeScroll" type="ScrollContainer" parent="Resume"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Experience Container" type="VBoxContainer" parent="Resume/ResumeScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="ExpTitle" type="RichTextLabel" parent="Resume/ResumeScroll/Experience Container"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
+theme_override_constants/line_separation = 24
+theme_override_fonts/normal_font = ExtResource("7_63ls6")
+theme_override_fonts/bold_font = ExtResource("11_sp3od")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Experiences[/b]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Experience" parent="Resume/ResumeScroll/Experience Container" instance=ExtResource("89_dkevx")]
+layout_mode = 2
+
+[node name="Experience2" parent="Resume/ResumeScroll/Experience Container" instance=ExtResource("89_dkevx")]
+layout_mode = 2
+
+[node name="Experience3" parent="Resume/ResumeScroll/Experience Container" instance=ExtResource("89_dkevx")]
+layout_mode = 2
+
+[node name="Experience4" parent="Resume/ResumeScroll/Experience Container" instance=ExtResource("89_dkevx")]
+layout_mode = 2
+
+[node name="Experience5" parent="Resume/ResumeScroll/Experience Container" instance=ExtResource("89_dkevx")]
+layout_mode = 2
+
+[node name="Experience6" parent="Resume/ResumeScroll/Experience Container" instance=ExtResource("89_dkevx")]
+layout_mode = 2
+
+[node name="EduTitle" type="RichTextLabel" parent="Resume/ResumeScroll/Experience Container"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
+theme_override_constants/line_separation = 24
+theme_override_fonts/normal_font = ExtResource("7_63ls6")
+theme_override_fonts/bold_font = ExtResource("11_sp3od")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Education[/b]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Education" parent="Resume/ResumeScroll/Experience Container" instance=ExtResource("89_dkevx")]
+layout_mode = 2
+
+[node name="Education2" parent="Resume/ResumeScroll/Experience Container" instance=ExtResource("89_dkevx")]
+layout_mode = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="Resume" node_paths=PackedStringArray("scroll_container")]
+layout_mode = 0
+offset_right = 8.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_styles/scroll = SubResource("StyleBoxFlat_0i73k")
+theme_override_styles/scroll_focus = SubResource("StyleBoxFlat_0i73k")
+theme_override_styles/grabber = SubResource("StyleBoxFlat_xjxqa")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_xjxqa")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxFlat_xjxqa")
+script = ExtResource("6_c010p")
+scroll_container = NodePath("../ResumeScroll")
+padding_x = 8
+padding_y_top = 56
+padding_y_bott = 40
 
 [node name="Skills" type="Control" parent="."]
 unique_name_in_owner = true
@@ -1017,6 +1335,197 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("90_5g45q")
+
+[node name="SkillsScroll" type="ScrollContainer" parent="Skills"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Full" type="VBoxContainer" parent="Skills/SkillsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="ToolsTitle" type="RichTextLabel" parent="Skills/SkillsScroll/Full"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("7_63ls6")
+theme_override_fonts/bold_font = ExtResource("11_sp3od")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Tools[/b]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Row1" type="HBoxContainer" parent="Skills/SkillsScroll/Full"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container3" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container4" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container5" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Column2" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row1/Column2" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row1/Column2" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container3" parent="Skills/SkillsScroll/Full/Row1/Column2" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container4" parent="Skills/SkillsScroll/Full/Row1/Column2" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container5" parent="Skills/SkillsScroll/Full/Row1/Column2" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="General" type="RichTextLabel" parent="Skills/SkillsScroll/Full"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("7_63ls6")
+theme_override_fonts/bold_font = ExtResource("11_sp3od")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]General[/b]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Row2" type="HBoxContainer" parent="Skills/SkillsScroll/Full"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container3" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Column2" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row2/Column2" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row2/Column2" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Personal" type="RichTextLabel" parent="Skills/SkillsScroll/Full"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("7_63ls6")
+theme_override_fonts/bold_font = ExtResource("11_sp3od")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]General[/b]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Row3" type="HBoxContainer" parent="Skills/SkillsScroll/Full"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container3" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Column2" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row3/Column2" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row3/Column2" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container3" parent="Skills/SkillsScroll/Full/Row3/Column2" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="Skills" node_paths=PackedStringArray("scroll_container")]
+layout_mode = 0
+offset_right = 8.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_styles/scroll = SubResource("StyleBoxFlat_0i73k")
+theme_override_styles/scroll_focus = SubResource("StyleBoxFlat_0i73k")
+theme_override_styles/grabber = SubResource("StyleBoxFlat_xjxqa")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_xjxqa")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxFlat_xjxqa")
+script = ExtResource("6_c010p")
+scroll_container = NodePath("../SkillsScroll")
+padding_x = 8
+padding_y_top = 56
+padding_y_bott = 40
 
 [connection signal="bot_right" from="Panel" to="Buttons/Mute" method="_on_panel_bot_right"]
 [connection signal="top_left" from="Panel" to="Buttons/Title" method="_on_panel_top_left"]
@@ -1028,11 +1537,19 @@ offset_bottom = 40.0
 [connection signal="top_left" from="Panel" to="Buttons/Song Box" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Button Container" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Looky Back" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Buttons/Cam Back" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Buttons/CamScroll" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Buttons/CamScroll/VBoxContainer/CamGallery" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Bios" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Resume" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Skills" method="_on_panel_top_left"]
 [connection signal="top_right" from="Panel" to="Exit" method="_on_panel_top_right"]
 [connection signal="top_right" from="Panel" to="Text/VScrollBar" method="_on_panel_top_right"]
 [connection signal="top_right" from="Panel" to="Buttons/TimeLine" method="_on_panel_top_right"]
+[connection signal="top_right" from="Panel" to="Buttons/CamScrollBar" method="_on_panel_top_right"]
 [connection signal="top_right" from="Panel" to="Bios/VScrollBar" method="_on_panel_top_right"]
+[connection signal="top_right" from="Panel" to="Resume/VScrollBar" method="_on_panel_top_right"]
+[connection signal="top_right" from="Panel" to="Skills/VScrollBar" method="_on_panel_top_right"]
 [connection signal="x_size" from="Panel" to="." method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Text/Body" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Title" method="_on_panel_x_size"]
@@ -1044,7 +1561,12 @@ offset_bottom = 40.0
 [connection signal="x_size" from="Panel" to="Buttons/Song Box" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Button Container" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Looky Back" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Buttons/Cam Back" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Buttons/CamScroll" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Buttons/CamScroll/VBoxContainer/CamGallery" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Bios" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Resume" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Skills" method="_on_panel_x_size"]
 [connection signal="y_size" from="Panel" to="." method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Text/VScrollBar" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Text/Body" method="_on_panel_y_size"]
@@ -1056,8 +1578,16 @@ offset_bottom = 40.0
 [connection signal="y_size" from="Panel" to="Buttons/Music Buttons" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Button Container" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Looky Back" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Buttons/Cam Back" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Buttons/CamScroll" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Buttons/CamScroll/VBoxContainer/CamGallery" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Buttons/CamScrollBar" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Bios" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Bios/VScrollBar" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Resume" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Resume/VScrollBar" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Skills" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Skills/VScrollBar" method="_on_panel_y_size"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="value_changed" from="Text/VScrollBar" to="Text/VScrollBar" method="_on_value_changed"]
 [connection signal="overide_panel_size" from="Buttons" to="Panel" method="_on_overide_panel_size"]
@@ -1144,7 +1674,58 @@ offset_bottom = 40.0
 [connection signal="mouse_exited" from="Buttons/TradArt1" to="Buttons/TradArt1" method="_on_mouse_exited"]
 [connection signal="set_hover" from="Buttons/TradArt1" to="Buttons/TimeLine" method="set_on_hover"]
 [connection signal="pressed" from="Buttons/Looky Back" to="Buttons/DigiArt1" method="_on_back_pressed"]
-[connection signal="overide_panel_size" from="Bios" to="Panel" method="_on_overide_panel_size"]
-[connection signal="set_scroll" from="Bios" to="Bios/VScrollBar" method="_on_bios_set_scroll"]
+[connection signal="pressed" from="Buttons/Cam Back" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo1" method="_on_cam_back_pressed"]
+[connection signal="set_scroll" from="Buttons/CamScroll" to="Buttons/CamScrollBar" method="_on_set_scroll"]
+[connection signal="resized" from="Buttons/CamScroll/VBoxContainer" to="Buttons/CamScroll" method="_on_container_resized"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo1" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo1" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo1" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo2" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo2" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo2" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo12" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo12" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo12" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo3" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo3" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo3" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row2/Photo17" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row2/Photo17" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row2/Photo17" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row2/Photo4" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row2/Photo4" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row2/Photo4" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row2/Photo13" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row2/Photo13" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row2/Photo13" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo5" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo5" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo5" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo6" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo6" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo6" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo16" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo16" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo16" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo7" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo7" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row3/Photo7" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo8" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo8" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo8" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo15" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo15" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo15" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo9" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo9" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo9" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo11" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo11" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row4/Photo11" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row5/Photo10" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row5/Photo10" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row5/Photo10" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row5/Photo14" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row5/Photo14" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row5/Photo14" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row5/Photo19" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row5/Photo19" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row5/Photo19" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row6/Photo20" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row6/Photo20" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row6/Photo20" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="pressed" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row6/Photo18" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row6/Photo18" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/CamScroll/VBoxContainer/CamGallery/Row6/Photo18" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="value_changed" from="Buttons/CamScrollBar" to="Buttons/CamScrollBar" method="_on_value_changed"]
+[connection signal="set_scroll" from="Bios" to="Bios/VScrollBar" method="_on_set_scroll"]
 [connection signal="resized" from="Bios/ScrollContainer/Container" to="Bios" method="_on_container_resized"]
 [connection signal="value_changed" from="Bios/VScrollBar" to="Bios/VScrollBar" method="_on_value_changed"]
+[connection signal="set_scroll" from="Resume" to="Resume/VScrollBar" method="_on_set_scroll"]
+[connection signal="resized" from="Resume/ResumeScroll/Experience Container" to="Resume" method="_on_container_resized"]
+[connection signal="value_changed" from="Resume/VScrollBar" to="Resume/VScrollBar" method="_on_value_changed"]
+[connection signal="set_scroll" from="Skills" to="Skills/VScrollBar" method="_on_set_scroll"]
+[connection signal="resized" from="Skills/SkillsScroll/Full" to="Skills" method="_on_container_resized"]
+[connection signal="value_changed" from="Skills/VScrollBar" to="Skills/VScrollBar" method="_on_value_changed"]
+
+[editable path="Buttons/CamScroll/VBoxContainer/CamGallery"]

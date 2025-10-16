@@ -11,8 +11,9 @@ extends TextureButton
 @export var body : String
 
 @export var pic_file : String
-
+@export var camera : bool = false
 #hide when window
+@onready var cam_scroll = %CamScroll
 @onready var button_container = %"Button Container"
 @onready var subwindow_title = %"Subwindow title"
 @onready var place_image = %PlaceImage
@@ -25,7 +26,9 @@ signal set_hover(content : String)
 signal send_pic_file (file : String)
 
 func _ready():
-	default_title = title_label.content
+	await get_tree().process_frame
+	if camera == false:
+		default_title = title_label.content
 
 func _on_mouse_entered():
 	title_label.text = title
@@ -57,10 +60,15 @@ func _on_pressed():
 			return
 
 func _toggle_buttons(visiblity : bool):
-	title_label.visible = visiblity
-	time_label.visible = visiblity
+	if title_label:
+		title_label.visible = visiblity
+	if time_label:
+		time_label.visible = visiblity
 	if body_label:
 		body_label.visible = visiblity
+	if camera == true:
+		cam_scroll.visible = visiblity
+		return
 	button_container.visible = visiblity
 
 func _toggle_window(visiblity : bool):

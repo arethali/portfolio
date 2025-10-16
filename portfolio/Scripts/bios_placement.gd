@@ -29,7 +29,6 @@ var min_size : Vector2
 @onready var bios = %Bios
 @onready var panel = $"../Panel"
 
-signal overide_panel_size(h, w)
 signal set_scroll
 func _ready():
 	await get_tree().process_frame
@@ -91,14 +90,6 @@ func _check_overflow():
 		about.text = _stringify_array(0, visible_lines, lines_array)
 		about_overflow.text = _stringify_array(visible_lines, total_lines, lines_array)
 
-#func check_clipping():
-	#var content_height = about.get_content_height()
-	#var node_height = about.size.y
-	#print(content_height)
-	#print(node_height)
-	#if content_height > node_height:
-		#visible_lines -= 1
-
 func _stringify_array(start : int, end : int, array : Array[String]):
 	var string = ""
 	var pos = start
@@ -110,6 +101,8 @@ func _stringify_array(start : int, end : int, array : Array[String]):
 func _on_container_resized():
 	if bios and cont_set == false and visible == true:
 		cont_set = true
-		emit_signal("set_scroll")
+		print("bios")
 		_check_overflow()
+		await get_tree().process_frame
+		emit_signal("set_scroll")
 		return

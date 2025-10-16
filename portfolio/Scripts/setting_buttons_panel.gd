@@ -17,6 +17,10 @@ extends Control
 @onready var song_name = %"Song Name"
 @onready var music_buttons = $"Music Buttons"
 @onready var mute = $Mute
+@onready var cam_gallery = %CamGallery
+@onready var cam_scroll = %CamScroll
+@onready var cam_scroll_bar = %CamScrollBar
+@onready var cam_back = %"Cam Back"
 
 signal overide_panel_size(h, w)
 
@@ -33,8 +37,16 @@ func _ready():
 			emit_signal("overide_panel_size", 20, 40)
 			add_buttons(project_buttons , row_container, 6)
 		"Camera":
-			print("camera")
-			pass
+			title.content = "[b]Photos[/b]"
+			emit_signal("overide_panel_size", 20, 18)
+			project_name.visible = false
+			cam_scroll.visible = true
+			cam_scroll_bar.visible = true
+			place_image.top_bott_padding= Vector2(100, 80)
+			place_image.side_padding = 20
+			subwindow_title.padding = Vector2(100, 580.0)
+			subwindow_title.left_alignment = false
+			cam_back.top_padding = 584.0
 		"Contact":
 			title.content = "[b]Contact Me[/b]"
 			emit_signal("overide_panel_size", 7, 14)

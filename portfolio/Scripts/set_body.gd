@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-@export var body_text : String
+@export_multiline var body_text : String
 @export var left_margin : int
 @export var right_margin : int
 @export var margin_top : int
