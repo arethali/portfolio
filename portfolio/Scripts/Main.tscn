@@ -6654,12 +6654,13 @@ width = 30
 override = false
 
 [node name="Bios" parent="Buttons/About Me" index="5"]
+about_has_bbc = true
 padding_sides = Vector2(40, 40)
 padding_vert = Vector2(40, 40)
 texture = ExtResource("366_meayg")
 Title_text = "[b]Hello! My name is Aretha Li.[/b]"
-about_text = "As a UCSD alum who double majored in cognitive science (with a specialization in design and interaction) and ICAM (Interdisciplinary Computing and the Arts major) with a focus in music, I am a versatile interdisciplinary creative with expertise in UX/UI design, game development, video editing, music production, and photography. With my skills, I aim to blend creativity with technical proficiency to aid in the production of engaging and thought-provoking media that bring awareness to pressing issues within our society. 
-I am currently looking for UX/UI design work. Feel free to reach out to me at aretha0115li@gmail.com."
+about_text = "As a UCSD alum who double majored in [color=#858d5e]Cognitive Science [/color](with a specialization in design and interaction)  and [color=#858d5e]ICAM [/color](Interdisciplinary Computing and the Arts major) with a focus in music, I am a versatile interdisciplinary creative with expertise in [color=#858d5e]UX/UI design, game development, video editing, music production, and photography.[/color]  With my skills, I aim to blend creativity with technical proficiency to aid in the production of [color=#858d5e]engaging and thought-provoking media[/color] that bring awareness to pressing issues within our society. 
+[color=#858d5e]I am currently looking for UX/UI design work. Feel free to reach out to me at aretha0115li@gmail.com.[/color]"
 list_1_text = "[b]Age:[/b] 
 22
 [b]Job Status:[/b] 
