@@ -1,6 +1,7 @@
 extends TextureButton
 
 @export_enum("Link", "Window") var button_type : String
+@export var link_path : String = ""
 
 @export var title_label : RichTextLabel
 @export var time_label : RichTextLabel
@@ -8,7 +9,7 @@ extends TextureButton
 
 @export var title : String
 @export var time : String = ""
-@export var body : String
+@export_multiline var body : String
 
 @export var pic_file : String
 @export var camera : bool = false
@@ -49,7 +50,7 @@ func _on_mouse_exited():
 func _on_pressed():
 	match button_type:
 		"Link":
-			print("go to link")
+			OS.shell_open(link_path)
 			return
 		"Window":
 			print("switch to window")

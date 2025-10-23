@@ -6145,7 +6145,7 @@ script = ExtResource("69_3b7lf")
 outline_text = NodePath("../HoverLabel")
 color_block = NodePath("../ColorRect")
 label_name = "leo"
-text_array = Array[String](["#1 - Despite where he is right now, he is not actually allowed to stay on my head in fear of poops and feeding his growing need for world domination.", "#2 - His nicknames include: Beo, Leo Beo, Lelo, Little birb, Baby bird, Little tiny bird, Leeeeoh, Mr. Leo, EEEOOOEEEOOO, Leon, and Teo.", "#3 - He knows how to say “step up,” but uses it as a threat.", "#4 - I think he is learning how to say “Hello,” but right now it sounds like “eeoww.”", "#5 - Much like his name suggests, he can meow. Occasionally, he barks too.", "#6 - In lieu of waving hello, he bobs his head and flaps his wings.", "#7 - He can shake your hand, spin, and give you a high five, as long as you give him a treat afterwards.", "#8 - He does a war cry every time he takes off.", "#9 - Occasionally, he crawls into my shirt and chills there. He’ll bite you if you disturb him.", "#10 - He is obsessed with phones, much like the rest of us."])
+text_array = Array[String](["#1 - Despite where he is right now, he is not actually allowed to stay on my head in fear of poops and feeding his growing need for world domination.", "#2 - His nicknames include: Beo, Leo Beo, Lelo, Little birb, Baby bird, Little tiny bird, Leeeeoh, Mr. Leo, EEEOOOEEEOOO, Leon, and Teo.", "#3 - He knows how to say “step up,” but uses it as a threat.", "#4 - He is learning how to say “Hello,” but right now it sounds more like “eeoww.”", "#5 - Much like his name suggests, he can meow. Occasionally, he barks too.", "#6 - In lieu of waving hello, he bobs his head and flaps his wings.", "#7 - He can shake your hand, spin, and give you a high five, as long as you give him a treat afterwards.", "#8 - He does a war cry every time he takes off.", "#9 - Occasionally, he crawls into my shirt and chills there. He’ll bite you if you disturb him.", "#10 - He is obsessed with phones, much like the rest of us."])
 title = "Leo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Leo Area"]
@@ -6191,26 +6191,103 @@ Better luck next time :)[/center]", "
 [center][b]Animal fact:[/b]
 
 When attacked by an ostrich, aim for the knees.[/center]", "[b]Super Fun Space Fact:[/b]
-The Sun will expand into a red giant in approximately 5 billion years. This will most likely engulf Earth, erasing all traces of humanity on Earth from the universe.", "
+In approximately 5 billion years, the Sun will expand into a red giant, engulfing Earth, and erasing all traces of humanity on Earth from the universe. ", "
 [center][b]Animal fact:[/b]
 
 A group of hyenas is called a cackle.[/center]", "[color=#858d5e]@midnight_musings:[/color]
-The lips are the buttchecks of the mouth.", "[b]Super Fun Space Fact:[/b]
-The Fermi Paradox posits that despite the high probability that extraterrestrial life should exist given the vastness of the universe, the longer we go without finding reliable and reproducible proof that extraterrestrial life does exist, the more likely we are alone in the universe.", "[color=#858d5e]@midnight_musings:[/color] 
-If the dead internet theory is true, am I alive?", "[b]Super Fun Space Fact:[/b]
+The lips are the buttchecks of the mouth.
+[color=#858d5e]@gamer_goose:[/color]
+Put down the booze lol
+[color=#858d5e]@midnight_musings:[/color]
+neverrrrr
+[color=#858d5e]@eepyweepy1234:[/color]
+would that make your mouth your asshole
+[color=#858d5e]@midnight_musings:[/color]
+exactly. 
+[color=#858d5e]@midnight_musings:[/color]
+we all got two assholes
+[color=#858d5e]@eepyweepy1234:[/color]
+we are all assholes
+[color=#858d5e]@midnight_musings:[/color]
+amen.", "[b]Super Fun Space Fact:[/b]
+The Fermi Paradox posits that despite the high probability that extra- terrestrial life should exist given the vastness of the universe, every second we go without finding reliable and reproducible proof that it exists, the higher the probability we are completely alone in the universe.", "[color=#858d5e]@midnight_musings:[/color]
+If the dead internet theory is true, am I alive?
+[color=#858d5e]@xxx_giggletitch_xxx:[/color]
+I LOVE BIG NOODLES!! LINK IN BIO FOR THE BIGGEST, SOUPIEST NOODLES. =3<3=3<3
+[color=#858d5e]@midnight_musings:[/color]
+i hate this place", "[b]Super Fun Space Fact:[/b]
 The universe can vanish at the speed of light at any moment, via vacuum catastrophe.", "[color=#858d5e]@gamer_goose:[/color] 
 Top 10 reasons you should play Outer Wilds:
 10. The Fermi paradox is debunked.
-9. It does not hold your hand. 
-8. Your death doesn’t matter (kinda).
-7. The art is very pretty. 
-6. You will encounter phobias, all of them.
-5. You can create paradoxes. 
-4. The marshmallows
+9. The marshmallows
+8. It does not hold your hand. 
+7. Your death doesn’t matter (kinda).
+6. The art is very pretty. 
+5. You will encounter phobias, all of them.
+4. You can create paradoxes. 
 3. The MUSICC
 2. The LOREEE 
-1. It will give you the best existential crisis of your entire life.", "[color=#858d5e]@midnight_musings:[/color] 
-If history is written by victors, will we be written?"])
+1. It will give you the best existential crisis of your entire life.", "[color=#858d5e]@midnight_musings:[/color]
+If history is written by victors, will we be written?
+[color=#858d5e]@grinding_grindset:[/color]
+This type of weak mindset is why you’ll never reach the 1%
+[color=#858d5e]@grinding_grindset:[/color]
+Just look at me with my 100 million dollar mansion and 1,000 girlfriends
+[color=#858d5e]@midnight_musings:[/color]
+can i not?
+[color=#858d5e]@grinding_grindset:[/color]
+You’ll never exude the confidence and respect you need to be rolling in riches and bitches with your low status melodramatic musings.
+[color=#858d5e]@grinding_grindset:[/color]
+Bah! Men like you are the reason why the men of this generation are so soft and weak.
+[color=#858d5e]@midnight_musings:[/color]
+I don’t know whether to be insulted or flattered that you think I’m a man.
+[color=#858d5e]@midnight_musings:[/color]
+And what if I don’t want riches, nor bitches. 
+[color=#858d5e]@midnight_musings:[/color]
+And what if I just want to live a comfortable life in a studio apartment with a pet or two. 
+[color=#858d5e]@midnight_musings:[/color]
+What then?
+[color=#858d5e]@grinding_grindset:[/color]
+You are a female?
+[color=#858d5e]@midnight_musings:[/color]
+Oh, fuck off", "[center][b]Animal fact:[/b]
+
+Turtles can breathe with their butts. There is also evidence that mice, rats and pigs can breathe through their butts (but only in emergency situations).[/center]", "LEGS (x2) (White):
+R1: MR, 6sc 
+R2: sc, in (x3) 
+R3: sc (x9)
+- Fasten off and cut first, don’t cut second
+
+BODY (continuously stuff) (White):
+R4: Chain 2 on the second leg, sc into the last stitch on the first leg
+R5 - 31: sc (x24)
+R32: sc, decrease (x8)
+R33: 2sc, decrease (x4)
+R34: sc, decrease (x4)
+R35: Decrease (x4)
+
+ARMS (x2) (White):
+R1: MR, 4sc
+R2: sc, 2in (x2)
+R3: sc, 3in (x3)
+R4-5: sc (x9), stuff and attach to body, position to your liking
+- EYES (Brown): Embroider Vertical (across one stitch) Eyes 4 Stitches above arms, center to body
+
+FISH BAG (Brown):
+R1: Slipknot, ch 7
+R2: Skip first chain, sc, hc, dc, hc, sc
+R3: Ch 3, sc into last chain, then sc, hc, dc, hc, sc (on the other side of the chain, weave in the tail), Slst into the last stitch
+R5: Chain until it can wrap around the body, slst into tail to secure
+- Opt: Embroider eye with Black, position to your liking
+
+Sprout (x2):
+R1: Slip knot, chain 13
+R2: Slst into the second chain , the hdc until the end of the chain
+R3: Chain 1, hdc until the end of the chain, slst into last chain and fasten off
+- Leave long tail for assembly
+- Sew into the top of the body.
+
+* Not tested, attempt at own risk"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Phone Area"]
 position = Vector2(2839, 965)
@@ -6586,6 +6663,59 @@ click_box = NodePath("../Film Area")
 
 [node name="Buttons" parent="Buttons/Films" index="4"]
 button_format = "Films"
+
+[node name="Film1" parent="Buttons/Films/Buttons" index="17"]
+button_type = "Link"
+link_path = "https://www.youtube.com/watch?v=C9mHCJv8SiE"
+body = "An entrance into The Reason Why ARG, a reflective multi-media project exploring the fear of a lack of closure and the seemingly apathetic acceptance of unanswered questions."
+
+[node name="Film2" parent="Buttons/Films/Buttons" index="18"]
+button_type = "Link"
+link_path = "https://www.youtube.com/watch?v=5h-abHSYrTQ"
+body = "After a long day at work, Vesta gets a phone call from the one they want to hear from the most. The end of the world commences."
+
+[node name="Film3" parent="Buttons/Films/Buttons" index="19"]
+button_type = "Link"
+link_path = "https://www.youtube.com/watch?v=_2tDy3Zw2Cg"
+body = "In a world where memories can be sold for profit, one person struggles with a choice and the aftermath."
+
+[node name="Film4" parent="Buttons/Films/Buttons" index="20"]
+button_type = "Link"
+link_path = "https://www.youtube.com/watch?v=jmoD84GCmS8"
+body = "A video essay convincing you that maybe it's not so bad to be doomed by the narrative and to find solace and inspiration in the end of all things."
+
+[node name="Film5" parent="Buttons/Films/Buttons" index="21"]
+button_type = "Link"
+link_path = "https://www.youtube.com/watch?v=OEg8J-J0WMQ"
+body = "(Concept test for The Reason Why)
+A short film tackling the struggle between moving on with the future and the urge to go back and correct the past. "
+
+[node name="Film6" parent="Buttons/Films/Buttons" index="22"]
+button_type = "Link"
+link_path = "https://www.youtube.com/watch?v=euqi7JbTm6E&feature=youtu.be"
+body = "An exploration of the multitude of doubts and uncertainties that plague my mind, including my relationship with eating, family, cultural identity, gender, and body image."
+
+[node name="Film7" parent="Buttons/Films/Buttons" index="23"]
+button_type = "Link"
+link_path = "https://www.youtube.com/watch?v=stzRUc9iNno"
+body = "*2024 UCSD Film Festival Selection*
+The self is always in a constant cyclical cycle of dissociation and combination between real and projected. "
+
+[node name="Film8" parent="Buttons/Films/Buttons" index="24"]
+button_type = "Link"
+link_path = "https://youtu.be/OIF0OBIQyWo"
+body = "Your telephone rings. You answer, \"Hello?\"
+The voice on the other end says, \"You have 24 hours left alive, starting now.\"
+My take on my last 24 hours alive."
+
+[node name="Film9" parent="Buttons/Films/Buttons" index="25"]
+button_type = "Link"
+body = "A discussion between two warring sides of my personality about a choice, made difficult by the uncertainty of the future, and its effect on my career and mental stability."
+
+[node name="Film10" parent="Buttons/Films/Buttons" index="26"]
+button_type = "Link"
+link_path = "https://www.youtube.com/watch?v=eMCOhemTQa8"
+body = "A cover of Astor Piazzolla’s Cafe 1930 for flute and guitar."
 
 [node name="VScrollBar" parent="Buttons/Films/Bios" index="1"]
 offset_bottom = 8.0
@@ -6982,7 +7112,7 @@ click_box = NodePath("../Tool Box")
 
 [node name="Panel" parent="Buttons/Skills" index="0"]
 height = 16
-width = 22
+width = 19
 override = false
 
 [node name="Bios" parent="Buttons/Skills" index="5"]
@@ -6991,7 +7121,7 @@ list_1_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 list_2_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 [node name="Skills" parent="Buttons/Skills" index="7"]
-padding_sides = Vector2(40, 120)
+padding_sides = Vector2(40, 40)
 padding_vert = Vector2(40, 40)
 
 [node name="Title" parent="Buttons/Skills/Skills/SkillsScroll/Full" index="0"]
@@ -7014,7 +7144,7 @@ skill = "UX/UI Research"
 level = "2"
 
 [node name="Skill Container5" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="4"]
-skill = "Game Development (2D)"
+skill = "Game Development"
 level = "3"
 
 [node name="Skill Container6" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="5"]
@@ -7150,7 +7280,7 @@ click_box = NodePath("../Book")
 
 [node name="Panel" parent="Buttons/Booklist" index="0"]
 height = 14
-width = 17
+width = 19
 override = false
 
 [node name="VScrollBar" parent="Buttons/Booklist/Text" index="0"]
@@ -7158,13 +7288,15 @@ padding_y_top = 56
 
 [node name="Body" parent="Buttons/Booklist/Text" index="1"]
 body_text = "[b]To Read:[/b]
-- Book 1
-- Book 2
-- Book 3
-- Book 4
+1. [color=#858d5e]This Is How You Lose the Time War[/color] - Amal El-Mohtar
+2. [color=#858d5e]Goodnight Punpun[/color] - Inio Asano
+3. [color=#858d5e]The 71/2 Deaths of Evelyn Hardcastle[/color] - Stuart Turton
+4. [color=#858d5e]the phone booth at the edge of the world[/color] - Laura Imai Messina
+5. [color=#858d5e]Goodbye, Eri[/color] - Tatsuki Fujimoto
 [b]Favs:[/b]
-- Book 1
-- Book 2"
+1. [color=#858d5e]The Song of Achilles[/color] - 
+Madeline Miller
+2. [color=#858d5e]The Summer Hikaru Died[/color] - Mokumokuren"
 left_margin = 40
 margin_top = 40
 margin_bottom = 40
@@ -7202,7 +7334,7 @@ padding_y_top = 56
 padding_y_bott = 40
 
 [node name="Body" parent="Buttons/Letter1/Text" index="1"]
-body_text = "We are glad to inform you that your transfer has been successful. Please continue to follow the post crash procedure. If you find that something is missing, please do not contact us. We will not be here. If any visual distortions are spotted, poke it a few times. It will go away eventually. Stay safe and farewell."
+body_text = "We are glad to inform you that your transfer has been successful. Please continue to follow the post crash procedure. If you find that something is missing, please do not contact us. We will not be here. If any visual distortions materialize, poke it a few times. It will go away eventually. Stay safe and farewell."
 left_margin = 40
 margin_top = 40
 margin_bottom = 40
@@ -7284,7 +7416,7 @@ personal_pos = Vector2(1945, 642)
 [node name="Dead Pixel" type="AnimatedSprite2D" parent="VFX"]
 visible = false
 texture_filter = 1
-position = Vector2(188, 1081)
+position = Vector2(2920, 872)
 sprite_frames = SubResource("SpriteFrames_5tfui")
 animation = &"crunch"
 centered = false
@@ -7336,6 +7468,8 @@ offset_right = 3840.0
 offset_bottom = 14060.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -7534,6 +7668,16 @@ autostart = true
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Letter2" method="_on_panel_gui_input"]
 [connection signal="pressed" from="Buttons/Projects/Exit" to="Projects/Laptop" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Films/Exit" to="Personal/Film" method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons/Films/Buttons/Film1" to="Buttons/Films/Buttons/Film1" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Films/Buttons/Film2" to="Buttons/Films/Buttons/Film2" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Films/Buttons/Film3" to="Buttons/Films/Buttons/Film3" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Films/Buttons/Film4" to="Buttons/Films/Buttons/Film4" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Films/Buttons/Film5" to="Buttons/Films/Buttons/Film5" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Films/Buttons/Film6" to="Buttons/Films/Buttons/Film6" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Films/Buttons/Film7" to="Buttons/Films/Buttons/Film7" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Films/Buttons/Film8" to="Buttons/Films/Buttons/Film8" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Films/Buttons/Film9" to="Buttons/Films/Buttons/Film9" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Films/Buttons/Film10" to="Buttons/Films/Buttons/Film10" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Notebook/Exit" to="Personal/Notebook" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Contact/Exit" to="Home/Mail Shadow" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Contact/Exit" to="Home/Mail" method="_on_exit_pressed"]

@@ -33,6 +33,7 @@ func _set_scroll():
 		visible = false
 		return
 	visible = true
+	value = 0
 	max_value = scroll.max_value
 	page = scroll.page
 	position = panel_top_right_corner - Vector2(padding_x, padding_y_top * -1)

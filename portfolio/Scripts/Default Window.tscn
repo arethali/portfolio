@@ -416,9 +416,9 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("27_je1nb")
-texture_pressed = ExtResource("27_hqdk0")
-texture_hover = ExtResource("32_je1nb")
+texture_normal = ExtResource("32_7tmeu")
+texture_pressed = ExtResource("30_yoeib")
+texture_hover = ExtResource("34_pab4p")
 script = ExtResource("28_ymxdp")
 
 [node name="Unmute" type="TextureButton" parent="Buttons"]
@@ -426,9 +426,9 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("32_7tmeu")
-texture_pressed = ExtResource("30_yoeib")
-texture_hover = ExtResource("34_pab4p")
+texture_normal = ExtResource("27_je1nb")
+texture_pressed = ExtResource("27_hqdk0")
+texture_hover = ExtResource("32_je1nb")
 
 [node name="Song Box" type="VBoxContainer" parent="Buttons"]
 clip_contents = true
@@ -1369,9 +1369,7 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="Panel" type="Panel" parent="Skills/SkillsScroll/Full/Row1"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-mouse_force_pass_scroll_events = false
 
 [node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row1"]
 layout_mode = 2
@@ -1437,9 +1435,7 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="Panel" type="Panel" parent="Skills/SkillsScroll/Full/Row3"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-mouse_force_pass_scroll_events = false
 
 [node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row3"]
 layout_mode = 2
@@ -1521,9 +1517,7 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="Panel" type="Panel" parent="Skills/SkillsScroll/Full/Row2"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-mouse_filter = 2
 
 [node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row2"]
 layout_mode = 2

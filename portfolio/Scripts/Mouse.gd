@@ -34,7 +34,7 @@ func _on_mouse_exited():
 	color_block.size = Vector2(0,0)
 
 
-
+var pos := 0
 #random text output
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
@@ -42,6 +42,10 @@ func _on_input_event(viewport, event, shape_idx):
 			if text_array.size() == 0:
 				print_debug("Empty text array")
 				return
-			var pos = randi_range(0,text_array.size()-1)
-			print(pos)
+			var curr_pos := pos
+			pos = randi_range(0,text_array.size()-1)
+			if curr_pos == pos:
+				while curr_pos == pos:
+					pos = randi_range(0,text_array.size()-1)
+					await get_tree().process_frame
 			emit_signal("set_rand_text", text_array[pos])
