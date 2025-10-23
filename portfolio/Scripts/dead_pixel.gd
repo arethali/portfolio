@@ -1,10 +1,12 @@
 extends AnimatedSprite2D
 
 @onready var camera_2d = $"../../Camera2D"
+@onready var glitch_layer = $"../Glitch Layer"
 
 var shake_intensity = 4
 func _ready():
 	visible = false
+	glitch_layer.visible = false
 
 #func _on_area_2d_input_event(viewport, event, shape_idx):
 	#if event is InputEventMouseButton and event.pressed:
@@ -29,6 +31,7 @@ func _on_panel_gui_input(event):
 			frame += 1
 			#print(shake_intensity)
 			camera_2d.position.x += shake_intensity
+			glitch_layer.visible = true
 			await get_tree().process_frame
 			camera_2d.position.x -= shake_intensity
 			await get_tree().process_frame
@@ -44,6 +47,7 @@ func _on_panel_gui_input(event):
 			await get_tree().process_frame
 			camera_2d.position.x += shake_intensity
 			shake_intensity += 4
+			glitch_layer.visible = false
 
 
 func _on_visibility_changed():

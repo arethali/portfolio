@@ -1,4 +1,4 @@
-[gd_scene load_steps=642 format=3 uid="uid://dfhro4he33mwe"]
+[gd_scene load_steps=644 format=3 uid="uid://dfhro4he33mwe"]
 
 [ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://Scripts/PortNav.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://cegd5obta3j67" path="res://Assets/Background/Origin/Sky + Mountains/Sky.png" id="2_3dxm6"]
@@ -372,6 +372,7 @@
 [ext_resource type="FontFile" uid="uid://2xexbg02phv6" path="res://Fonts/Bold Display.ttf" id="367_8nkan"]
 [ext_resource type="Texture2D" uid="uid://bpkj8jvi50npr" path="res://Assets/Birbs/Leo/portrait.png" id="368_qcpgi"]
 [ext_resource type="Texture2D" uid="uid://cw2tts70ru46b" path="res://Assets/Birbs/Alvis/portrait.png" id="369_yep5p"]
+[ext_resource type="Shader" uid="uid://bhaqtbf4wx2r0" path="res://Scripts/glitch.gdshader" id="373_meayg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rchyr"]
 animations = [{
@@ -5093,6 +5094,26 @@ turbulence_initial_displacement_min = -26.7
 turbulence_initial_displacement_max = -22.8
 turbulence_influence_over_life = SubResource("CurveTexture_ypv7r")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nkan"]
+shader = ExtResource("373_meayg")
+shader_parameter/exposure = 1.126
+shader_parameter/contrast = 1.069
+shader_parameter/saturation = 1.244
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 4.0
+shader_parameter/enable_posterize = false
+shader_parameter/color_levels = 5.115
+shader_parameter/dither_strength = 0.317
+shader_parameter/chrom_aberration = 0.044
+shader_parameter/vignette_strength = 0.071
+shader_parameter/grain_strength = 0.356
+shader_parameter/tint_strength = 0.096
+shader_parameter/scanline_density = 50.0
+shader_parameter/scanline_strength = 0.0
+shader_parameter/glitch_strength = 0.442
+shader_parameter/glitch_speed = 10.0
+shader_parameter/viewport_size_override = Vector2(0, 0)
+
 [node name="Main" type="Node2D" node_paths=PackedStringArray("camera", "label", "color_block")]
 texture_filter = 1
 script = ExtResource("1_uu6xs")
@@ -6149,16 +6170,47 @@ script = ExtResource("69_3b7lf")
 outline_text = NodePath("../HoverLabel")
 color_block = NodePath("../ColorRect")
 label_name = "scroll?"
-text_array = Array[String](["[color=#858d5e]@midnight_musings:[/color] If you really think about it, most of the world's problems stem from corporate greed.
-[color=#858d5e]@grinding_grindset:[/color] L cope harder 
-[color=#858d5e]@midnight_musings:[/color] This affects you too though…
-[color=#858d5e]@grinding_grindset:[/color] not when I reach my max potential and hang with the elite 1% lmao
-[color=#858d5e]@midnight_musings:[/color] And how’s that going for you?", "[b]Featured Bulletin:  I see two paths[/b]
+text_array = Array[String](["[color=#858d5e]@midnight_musings:[/color] 
+If you really think about it, most of the world's problems stem from corporate greed.
+[color=#858d5e]@grinding_grindset:[/color] 
+L cope harder 
+[color=#858d5e]@midnight_musings:[/color] 
+This affects you too though…
+[color=#858d5e]@grinding_grindset:[/color] 
+not when I reach my max potential and hang with the elite 1% lmao
+[color=#858d5e]@midnight_musings:[/color] 
+And how’s that going for you?", "[b]Featured Bulletin:  I see two paths[/b]
 A case study on the online life-cycle of celebrities and influencers in the modern age. ", "
 [center][b]Breaking News:[/b]
 
 The World is still going to shit. 
-Better luck next time :)[/center]"])
+Better luck next time :)[/center]", "
+[center][b]Animal fact:[/b]
+
+ A group of racoons is called a business.[/center]", "
+[center][b]Animal fact:[/b]
+
+When attacked by an ostrich, aim for the knees.[/center]", "[b]Super Fun Space Fact:[/b]
+The Sun will expand into a red giant in approximately 5 billion years. This will most likely engulf Earth, erasing all traces of humanity on Earth from the universe.", "
+[center][b]Animal fact:[/b]
+
+A group of hyenas is called a cackle.[/center]", "[color=#858d5e]@midnight_musings:[/color]
+The lips are the buttchecks of the mouth.", "[b]Super Fun Space Fact:[/b]
+The Fermi Paradox posits that despite the high probability that extraterrestrial life should exist given the vastness of the universe, the longer we go without finding reliable and reproducible proof that extraterrestrial life does exist, the more likely we are alone in the universe.", "[color=#858d5e]@midnight_musings:[/color] 
+If the dead internet theory is true, am I alive?", "[b]Super Fun Space Fact:[/b]
+The universe can vanish at the speed of light at any moment, via vacuum catastrophe.", "[color=#858d5e]@gamer_goose:[/color] 
+Top 10 reasons you should play Outer Wilds:
+10. The Fermi paradox is debunked.
+9. It does not hold your hand. 
+8. Your death doesn’t matter (kinda).
+7. The art is very pretty. 
+6. You will encounter phobias, all of them.
+5. You can create paradoxes. 
+4. The marshmallows
+3. The MUSICC
+2. The LOREEE 
+1. It will give you the best existential crisis of your entire life.", "[color=#858d5e]@midnight_musings:[/color] 
+If history is written by victors, will we be written?"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Phone Area"]
 position = Vector2(2839, 965)
@@ -6659,7 +6711,7 @@ padding_sides = Vector2(40, 40)
 padding_vert = Vector2(40, 40)
 texture = ExtResource("366_meayg")
 Title_text = "[b]Hello! My name is Aretha Li.[/b]"
-about_text = "As a UCSD alum who double majored in [color=#858d5e]Cognitive Science [/color](with a specialization in design and interaction)  and [color=#858d5e]ICAM [/color](Interdisciplinary Computing and the Arts major) with a focus in music, I am a versatile interdisciplinary creative with expertise in [color=#858d5e]UX/UI design, game development, video editing, music production, and photography.[/color]  With my skills, I aim to blend creativity with technical proficiency to aid in the production of [color=#858d5e]engaging and thought-provoking media[/color] that bring awareness to pressing issues within our society. 
+about_text = "As a UCSD alum who double majored in [color=#858d5e]Cognitive Science [/color](with a specialization in design and interaction)  and [color=#858d5e]ICAM [/color](Interdisciplinary Computing and the Arts major) with a focus in music, I am a versatile interdisciplinary creative with expertise in [color=#858d5e]UX/UI design, game development, video editing, music production, and photography.[/color] With my skills, I aim to blend creativity with technical proficiency to aid in the production of [color=#858d5e]engaging and thought-provoking media[/color] that bring awareness to pressing issues within our society. 
 [color=#858d5e]I am currently looking for UX/UI design work. Feel free to reach out to me at aretha0115li@gmail.com.[/color]"
 list_1_text = "[b]Age:[/b] 
 22
@@ -6755,7 +6807,7 @@ Male
 - Skritches
 - Yelling at his food
 - Pistachios
-- Pooping on my shoulder
+- Pooping on my clothes
 - Grapes
 - Corn
 - Kisses
@@ -6929,8 +6981,8 @@ panel = NodePath("../Panel")
 click_box = NodePath("../Tool Box")
 
 [node name="Panel" parent="Buttons/Skills" index="0"]
-height = 20
-width = 26
+height = 16
+width = 22
 override = false
 
 [node name="Bios" parent="Buttons/Skills" index="5"]
@@ -6939,10 +6991,131 @@ list_1_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 list_2_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 [node name="Skills" parent="Buttons/Skills" index="7"]
-padding_sides = Vector2(40, 40)
+padding_sides = Vector2(40, 120)
 padding_vert = Vector2(40, 40)
 
+[node name="Title" parent="Buttons/Skills/Skills/SkillsScroll/Full" index="0"]
+text = "[b]Technical Skills[/b]"
+
+[node name="Skill Container" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="0"]
+skill = "Film Production"
+level = "2"
+
+[node name="Skill Container2" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="1"]
+skill = "Video Editing"
+level = "3"
+
+[node name="Skill Container3" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="2"]
+skill = "UX/UI Design"
+level = "4"
+
+[node name="Skill Container4" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="3"]
+skill = "UX/UI Research"
+level = "2"
+
+[node name="Skill Container5" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="4"]
+skill = "Game Development (2D)"
+level = "3"
+
+[node name="Skill Container6" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="5"]
+skill = "Digital Illustration"
+level = "2"
+
+[node name="Skill Container7" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="6"]
+skill = "Pixel Art"
+level = "4"
+
+[node name="Skill Container8" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="7"]
+skill = "Music Production"
+level = "3"
+
+[node name="Skill Container9" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="8"]
+skill = "Sound Design"
+level = "2"
+
+[node name="Skill Container10" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row1/Column1" index="9"]
+skill = "Photography"
+level = "3"
+
+[node name="Skill Container" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="0"]
+skill = "Premiere Pro"
+level = "3"
+
+[node name="Skill Container2" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="1"]
+skill = "Lightroom"
+level = "3"
+
+[node name="Skill Container3" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="2"]
+skill = "Illustrator"
+level = "2"
+
+[node name="Skill Container4" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="3"]
+skill = "Figma"
+level = "3"
+
+[node name="Skill Container5" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="4"]
+skill = "Aesprite"
+level = "4"
+
+[node name="Skill Container6" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="5"]
+skill = "Krita"
+level = "4"
+
+[node name="Skill Container7" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="6"]
+skill = "Godot (2D)"
+level = "3"
+
+[node name="Skill Container8" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="7"]
+skill = "Godot (3D)"
+
+[node name="Skill Container9" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="8"]
+skill = "Ableton"
+level = "3"
+
+[node name="Skill Container10" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="9"]
+skill = "Pro Tools"
+level = "2"
+
+[node name="Skill Container11" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="10"]
+skill = "Webflow"
+
+[node name="Skill Container12" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="11"]
+skill = "Gdscript"
+level = "3"
+
+[node name="Skill Container13" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="12"]
+skill = "Python"
+level = "2"
+
+[node name="Skill Container14" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row3/Column1" index="13"]
+skill = "Java"
+
+[node name="Skill Container" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row2/Column1" index="0"]
+skill = "Time Management"
+level = "3"
+
+[node name="Skill Container2" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row2/Column1" index="1"]
+skill = "Collaboration"
+level = "3"
+
+[node name="Skill Container3" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row2/Column1" index="2"]
+skill = "Reliability"
+level = "4"
+
+[node name="Skill Container4" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row2/Column1" index="3"]
+skill = "Project Management"
+level = "3"
+
+[node name="Skill Container5" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row2/Column1" index="4"]
+skill = "Leadership"
+level = "2"
+
+[node name="Skill Container6" parent="Buttons/Skills/Skills/SkillsScroll/Full/Row2/Column1" index="5"]
+skill = "Problem Solving"
+level = "3"
+
 [node name="VScrollBar" parent="Buttons/Skills/Skills" index="1"]
+visible = false
 offset_bottom = 8.0
 
 [node name="KeyboardPanel" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
@@ -7148,6 +7321,21 @@ speed_scale = 4.81
 randomness = 0.47
 fixed_fps = 5
 process_material = SubResource("ParticleProcessMaterial_4cqk1")
+
+[node name="Glitch Layer" type="CanvasLayer" parent="VFX"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="VFX/Glitch Layer"]
+material = SubResource("ShaderMaterial_8nkan")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 7.0
+offset_right = 3840.0
+offset_bottom = 14060.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

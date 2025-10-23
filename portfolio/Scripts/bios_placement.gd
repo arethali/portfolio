@@ -176,7 +176,7 @@ func _on_container_resized():
 			await get_tree().process_frame
 			about_text = non_bbc[2]
 			about.text = about_text
-			await get_tree().process_frame
+			#await get_tree().process_frame
 		_check_overflow()
 		await get_tree().process_frame
 		emit_signal("set_scroll")
@@ -193,4 +193,3 @@ func _on_set_rand_text(rand_text):
 		_check_overflow()
 		await get_tree().process_frame
 		emit_signal("set_scroll")
-		await get_tree().process_frame

@@ -1349,7 +1349,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="ToolsTitle" type="RichTextLabel" parent="Skills/SkillsScroll/Full"]
+[node name="Title" type="RichTextLabel" parent="Skills/SkillsScroll/Full"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
@@ -1368,9 +1368,15 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 40
 
+[node name="Panel" type="Panel" parent="Skills/SkillsScroll/Full/Row1"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_force_pass_scroll_events = false
+
 [node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row1"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 12
 
 [node name="Skill Container" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
 unique_name_in_owner = false
@@ -1392,31 +1398,27 @@ layout_mode = 2
 unique_name_in_owner = false
 layout_mode = 2
 
-[node name="Column2" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row1"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row1/Column2" instance=ExtResource("90_jtk41")]
+[node name="Skill Container6" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
 unique_name_in_owner = false
 layout_mode = 2
 
-[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row1/Column2" instance=ExtResource("90_jtk41")]
+[node name="Skill Container7" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
 unique_name_in_owner = false
 layout_mode = 2
 
-[node name="Skill Container3" parent="Skills/SkillsScroll/Full/Row1/Column2" instance=ExtResource("90_jtk41")]
+[node name="Skill Container8" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
 unique_name_in_owner = false
 layout_mode = 2
 
-[node name="Skill Container4" parent="Skills/SkillsScroll/Full/Row1/Column2" instance=ExtResource("90_jtk41")]
+[node name="Skill Container9" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
 unique_name_in_owner = false
 layout_mode = 2
 
-[node name="Skill Container5" parent="Skills/SkillsScroll/Full/Row1/Column2" instance=ExtResource("90_jtk41")]
+[node name="Skill Container10" parent="Skills/SkillsScroll/Full/Row1/Column1" instance=ExtResource("90_jtk41")]
 unique_name_in_owner = false
 layout_mode = 2
 
-[node name="General" type="RichTextLabel" parent="Skills/SkillsScroll/Full"]
+[node name="Title3" type="RichTextLabel" parent="Skills/SkillsScroll/Full"]
 texture_filter = 1
 layout_mode = 2
 theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
@@ -1426,53 +1428,7 @@ theme_override_fonts/bold_font = ExtResource("11_sp3od")
 theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
-text = "[b]General[/b]"
-fit_content = true
-autowrap_mode = 0
-
-[node name="Row2" type="HBoxContainer" parent="Skills/SkillsScroll/Full"]
-layout_mode = 2
-theme_override_constants/separation = 40
-
-[node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row2"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
-unique_name_in_owner = false
-layout_mode = 2
-
-[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
-unique_name_in_owner = false
-layout_mode = 2
-
-[node name="Skill Container3" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
-unique_name_in_owner = false
-layout_mode = 2
-
-[node name="Column2" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row2"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row2/Column2" instance=ExtResource("90_jtk41")]
-unique_name_in_owner = false
-layout_mode = 2
-
-[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row2/Column2" instance=ExtResource("90_jtk41")]
-unique_name_in_owner = false
-layout_mode = 2
-
-[node name="Personal" type="RichTextLabel" parent="Skills/SkillsScroll/Full"]
-texture_filter = 1
-layout_mode = 2
-theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
-theme_override_constants/line_separation = 8
-theme_override_fonts/normal_font = ExtResource("7_63ls6")
-theme_override_fonts/bold_font = ExtResource("11_sp3od")
-theme_override_font_sizes/normal_font_size = 40
-theme_override_font_sizes/bold_font_size = 40
-bbcode_enabled = true
-text = "[b]General[/b]"
+text = "[b]Tools[/b]"
 fit_content = true
 autowrap_mode = 0
 
@@ -1480,9 +1436,15 @@ autowrap_mode = 0
 layout_mode = 2
 theme_override_constants/separation = 40
 
+[node name="Panel" type="Panel" parent="Skills/SkillsScroll/Full/Row3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_force_pass_scroll_events = false
+
 [node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row3"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 12
 
 [node name="Skill Container" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
 unique_name_in_owner = false
@@ -1496,19 +1458,99 @@ layout_mode = 2
 unique_name_in_owner = false
 layout_mode = 2
 
-[node name="Column2" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row3"]
+[node name="Skill Container4" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container5" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container6" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container7" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container8" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container9" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container10" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container11" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container12" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container13" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container14" parent="Skills/SkillsScroll/Full/Row3/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Title2" type="RichTextLabel" parent="Skills/SkillsScroll/Full"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("7_63ls6")
+theme_override_fonts/bold_font = ExtResource("11_sp3od")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Interpersonal[/b]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Row2" type="HBoxContainer" parent="Skills/SkillsScroll/Full"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Panel" type="Panel" parent="Skills/SkillsScroll/Full/Row2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row2"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 12
 
-[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row3/Column2" instance=ExtResource("90_jtk41")]
+[node name="Skill Container" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
 unique_name_in_owner = false
 layout_mode = 2
 
-[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row3/Column2" instance=ExtResource("90_jtk41")]
+[node name="Skill Container2" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
 unique_name_in_owner = false
 layout_mode = 2
 
-[node name="Skill Container3" parent="Skills/SkillsScroll/Full/Row3/Column2" instance=ExtResource("90_jtk41")]
+[node name="Skill Container3" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container4" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container5" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
+unique_name_in_owner = false
+layout_mode = 2
+
+[node name="Skill Container6" parent="Skills/SkillsScroll/Full/Row2/Column1" instance=ExtResource("90_jtk41")]
 unique_name_in_owner = false
 layout_mode = 2
 

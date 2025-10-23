@@ -43,4 +43,5 @@ func _on_input_event(viewport, event, shape_idx):
 				print_debug("Empty text array")
 				return
 			var pos = randi_range(0,text_array.size()-1)
+			print(pos)
 			emit_signal("set_rand_text", text_array[pos])
