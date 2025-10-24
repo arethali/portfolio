@@ -30,11 +30,11 @@ func _ready():
 			title.content = "[b]Design Projects[/b]"
 			project_name.padding = Vector2(20, 320)
 			buttons_container.top_padding = 120
-			time_line.padding = Vector2(-600.0, 332.0)
+			time_line.padding = Vector2(-492.0, 332.0)
 			time_line.left_alignment = false
 			body.visible = true
 			body.padding = Vector2(20, 388)
-			emit_signal("overide_panel_size", 20, 40)
+			emit_signal("overide_panel_size", 21, 40)
 			add_buttons(project_buttons , row_container, 6)
 		"Camera":
 			title.content = "[b]Photos[/b]"

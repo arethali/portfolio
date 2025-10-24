@@ -33,7 +33,6 @@ func _on_panel_top_left(dimes):
 	
 func _on_container_resized():
 	if skills and cont_set == false and visible == true:
-		print("skill")
 		cont_set = true
 		emit_signal("set_scroll")
 		#_check_overflow()

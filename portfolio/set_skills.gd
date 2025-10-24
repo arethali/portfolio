@@ -2,7 +2,8 @@ extends Control
 
 @export var skill : String = "SKILL"
 @export_enum("1", "2", "3", "4", "5") var level : String = "1"
-@export var separation : int = 80
+@export var separation : int = 60
+
 
 
 @onready var skill_level = %"Skill Level"

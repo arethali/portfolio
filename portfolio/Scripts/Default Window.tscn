@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=104 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
@@ -93,6 +93,7 @@
 [ext_resource type="PackedScene" uid="uid://vubv2j0fpa5d" path="res://Scripts/experience.tscn" id="89_dkevx"]
 [ext_resource type="Script" uid="uid://daryvn5ab6idc" path="res://Scripts/skills_placement.gd" id="90_5g45q"]
 [ext_resource type="PackedScene" uid="uid://bedbr83bv8o57" path="res://Scripts/skills.tscn" id="90_jtk41"]
+[ext_resource type="Script" uid="uid://cgl6b80qpakq1" path="res://Scripts/meta_click.gd" id="92_rk1vu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i73k"]
 bg_color = Color(0.792157, 0.803922, 0.705882, 1)
@@ -1313,6 +1314,34 @@ layout_mode = 2
 [node name="Education2" parent="Resume/ResumeScroll/Experience Container" instance=ExtResource("89_dkevx")]
 layout_mode = 2
 
+[node name="Click" type="RichTextLabel" parent="Resume/ResumeScroll/Experience Container"]
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("7_63ls6")
+theme_override_fonts/bold_font = ExtResource("11_sp3od")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[url=res://Open Files/Aretha Li, Resume.pdf]Click to view PDF version.[/url]"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 2
+meta_underlined = false
+hint_underlined = false
+script = ExtResource("92_rk1vu")
+
+[node name="ColorRect" type="ColorRect" parent="Resume/ResumeScroll/Experience Container/Click"]
+visible = false
+z_as_relative = false
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+color = Color(0.588235, 0.603922, 0.423529, 1)
+
 [node name="VScrollBar" type="VScrollBar" parent="Resume" node_paths=PackedStringArray("scroll_container")]
 layout_mode = 0
 offset_right = 8.0
@@ -1367,9 +1396,6 @@ autowrap_mode = 0
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 40
-
-[node name="Panel" type="Panel" parent="Skills/SkillsScroll/Full/Row1"]
-layout_mode = 2
 
 [node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row1"]
 layout_mode = 2
@@ -1433,9 +1459,6 @@ autowrap_mode = 0
 [node name="Row3" type="HBoxContainer" parent="Skills/SkillsScroll/Full"]
 layout_mode = 2
 theme_override_constants/separation = 40
-
-[node name="Panel" type="Panel" parent="Skills/SkillsScroll/Full/Row3"]
-layout_mode = 2
 
 [node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row3"]
 layout_mode = 2
@@ -1515,9 +1538,6 @@ autowrap_mode = 0
 [node name="Row2" type="HBoxContainer" parent="Skills/SkillsScroll/Full"]
 layout_mode = 2
 theme_override_constants/separation = 40
-
-[node name="Panel" type="Panel" parent="Skills/SkillsScroll/Full/Row2"]
-layout_mode = 2
 
 [node name="Column1" type="VBoxContainer" parent="Skills/SkillsScroll/Full/Row2"]
 layout_mode = 2
@@ -1760,6 +1780,9 @@ padding_y_bott = 40
 [connection signal="value_changed" from="Bios/VScrollBar" to="Bios/VScrollBar" method="_on_value_changed"]
 [connection signal="set_scroll" from="Resume" to="Resume/VScrollBar" method="_on_set_scroll"]
 [connection signal="resized" from="Resume/ResumeScroll/Experience Container" to="Resume" method="_on_container_resized"]
+[connection signal="meta_clicked" from="Resume/ResumeScroll/Experience Container/Click" to="Resume/ResumeScroll/Experience Container/Click" method="_on_meta_clicked"]
+[connection signal="meta_hover_ended" from="Resume/ResumeScroll/Experience Container/Click" to="Resume/ResumeScroll/Experience Container/Click" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Resume/ResumeScroll/Experience Container/Click" to="Resume/ResumeScroll/Experience Container/Click" method="_on_meta_hover_started"]
 [connection signal="value_changed" from="Resume/VScrollBar" to="Resume/VScrollBar" method="_on_value_changed"]
 [connection signal="set_scroll" from="Skills" to="Skills/VScrollBar" method="_on_set_scroll"]
 [connection signal="resized" from="Skills/SkillsScroll/Full" to="Skills" method="_on_container_resized"]

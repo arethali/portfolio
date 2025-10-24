@@ -50,7 +50,9 @@ func _on_mouse_exited():
 func _on_pressed():
 	match button_type:
 		"Link":
-			OS.shell_open(link_path)
+			if link_path:
+				OS.shell_open(link_path)
+				return
 			return
 		"Window":
 			print("switch to window")

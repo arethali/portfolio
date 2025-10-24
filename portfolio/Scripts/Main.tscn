@@ -6180,7 +6180,7 @@ This affects you too though…
 not when I reach my max potential and hang with the elite 1% lmao
 [color=#858d5e]@midnight_musings:[/color] 
 And how’s that going for you?", "[b]Featured Bulletin:  I see two paths[/b]
-A case study on the online life-cycle of celebrities and influencers in the modern age. ", "
+A case study on the online life-cycle of celebrities and influencers in the modern age.", "
 [center][b]Breaking News:[/b]
 
 The World is still going to shit. 
@@ -6287,7 +6287,8 @@ R3: Chain 1, hdc until the end of the chain, slst into last chain and fasten off
 - Leave long tail for assembly
 - Sew into the top of the body.
 
-* Not tested, attempt at own risk"])
+* Not tested, attempt at own risk", "[b]Featured Bulletin:[/b]
+Groundbreaking C02 infusion treatment claims to cure cancer, diabietes, anxiety, depression, and more!"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Phone Area"]
 position = Vector2(2839, 965)
@@ -6636,11 +6637,44 @@ panel = NodePath("../Panel")
 click_box = NodePath("../Laptop")
 
 [node name="Panel" parent="Buttons/Projects" index="0"]
-height = 20
+height = 22
 width = 40
 
 [node name="Buttons" parent="Buttons/Projects" index="4"]
 button_format = "Projects"
+
+[node name="Project_Basline" parent="Buttons/Projects/Buttons" index="11"]
+button_type = "Link"
+body = "A showcase of the work I did for Baseline, 2-month online design course. 
+[color=#858d5e][Case study in progress][/color]"
+
+[node name="Project_TRW" parent="Buttons/Projects/Buttons" index="12"]
+button_type = "Link"
+link_path = "https://arethali.notion.site/The-Reason-Why-Final-ICAM-Project-0a4bbea1547349f8a41654e14646d375"
+body = "The Reason Why is an ARG (alternate reality game) that consists of a series of videos, music, and a video game, all of which were made by me. It explores the fear of a lack of closure and the steady and seemingly apathetic nature of the acceptance that there will always be unanswered questions.
+[color=#858d5e][Click to view case study][/color]"
+
+[node name="Project_Portfolio" parent="Buttons/Projects/Buttons" index="13"]
+button_type = "Link"
+body = "A deep dive into the process of making this portfolio. 
+[color=#858d5e][Case study in progress][/color]"
+
+[node name="Project_grocery" parent="Buttons/Projects/Buttons" index="14"]
+button_type = "Link"
+link_path = "https://arethali.notion.site/GroceryGuide-Kiosk-135020720eb642f98c8169482be784f8"
+body = "A 4-week class group project in which we brainstormed, designed, and constructed a kiosk that helps people with a task. We developed a mobile kiosk that helps people find groceries in a grocery store.
+[color=#858d5e][Click to view case study][/color]"
+
+[node name="Project_Ecotime" parent="Buttons/Projects/Buttons" index="15"]
+button_type = "Link"
+link_path = "https://arethali.notion.site/Ecotime-Redesign-317a675ac0544e5a8b2f6ce4e2a3bf4b"
+body = "A 10-week class group project where we were tasked to improve an existing site or app. We chose to redesign UCSD’s timekeeping application, Ecotime, due to its cluttered and non-intuitive interface.
+[color=#858d5e][Click to view case study][/color]"
+
+[node name="Project_TCOAS" parent="Buttons/Projects/Buttons" index="16"]
+button_type = "Link"
+body = "A short, short-driven, detective-mystery game where you are tasked with solving a deceptively simple break-in case. Meet the citizens of Arcadia Springs, find and follow the clues, make the right choices, and you may unlock a dark secret kept under lock and key.
+[color=#858d5e][Case study in progress][/color]"
 
 [node name="VScrollBar" parent="Buttons/Projects/Bios" index="1"]
 offset_bottom = 8.0
@@ -7063,7 +7097,7 @@ click_box = NodePath("../Resume")
 
 [node name="Panel" parent="Buttons/Experience" index="0"]
 height = 20
-width = 26
+width = 32
 override = false
 
 [node name="Resume" parent="Buttons/Experience" index="6"]
@@ -7072,27 +7106,81 @@ padding_vert = Vector2(40, 40)
 
 [node name="Experience" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="1"]
 type = "Experience"
+role = "Videographer"
+company = "OneBeat Dance Brands"
+time = "Jan 2025 - May 2025"
+location = "Multiple Locations"
+details = "- Record and broadcast professionally-shot footage of each dance routine
+- Promptly set up the camera and livestream equipment
+- Troubleshoot any problems that may arise during setup and performance"
 
 [node name="Experience2" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="2"]
 type = "Experience"
+role = "Video Editing Intern"
+company = "Making It w/ Terry Wollman"
+time = "Oct 2024 - Jan 2025"
+location = "Remote"
+details = "- Edited raw footage to buffer out technical issues and improve the flow of conversation to produce high-quality hour-long episodes
+- Produced minute-long promotional reels for Instagram and TikTok"
 
 [node name="Experience3" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="3"]
 type = "Experience"
+role = "Recording Assistant"
+company = "UCSD Music Department"
+time = "Oct 2022 - Jun 2024"
+location = "La Jolla, CA"
+details = "- Handled livestreams and audio recordings of faculty and department concerts
+- Lead and assisted with numerous microphone hangs for the La Jolla Symphony
+- Mentored incoming assistants and taught them how to operate our equipment"
 
 [node name="Experience4" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="4"]
 type = "Experience"
+role = "Student Media Assistant"
+company = "Qualcomm Institute"
+time = "Jun 2022 - Jun 2024"
+location = "La Jolla, CA"
+details = "- Provided AV support and event photography for many high profile events
+- Operated a variety of video, photography, and audio equipment
+- Utilized various Adobe Suite tools to edit and deliver videos and photos to clients"
 
 [node name="Experience5" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="5"]
 type = "Experience"
+role = "Cashier"
+company = "Rubio’s Coastal Grill"
+time = "Oct 2021 - Jun 2022"
+location = "La Jolla, CA"
+details = "- Maintained good communication between the customers, other cashiers, the chefs and the manager
+- Took customers orders and helped them customize it if needed"
 
 [node name="Experience6" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="6"]
 type = "Experience"
+role = "Cashier"
+company = "Nordstrom Rack"
+time = "Jun 2021 - Sept 2021"
+location = "Brea, CA"
+details = "- Provided great customer service efficiently under pressure
+- Helped customers with their purchases and joining reward programs
+- Handled complicated returns with tact and understanding"
 
 [node name="Education" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="8"]
 type = "Education"
+time = "Class of 2024"
+location = "La Jolla, CA"
+school = "University of California San Diego"
+major = "B.S. in Cognitive Science (spec. in Design and Interaction) 
+B.A. in Interdisciplinary Computing and the Arts (Music)"
+classof = ""
+gpa = "3.94 | Magna Cum Laude"
+details = ""
 
 [node name="Education2" parent="Buttons/Experience/Resume/ResumeScroll/Experience Container" index="9"]
 type = "Education"
+time = "Class of 2020"
+location = "Placentia, CA"
+school = "Valencia High School"
+major = "International Baccalaureate (IB) Diploma 
+AP Scholar with Distinction "
+gpa = "3.81 | Weighted GPA: 4.56"
 
 [node name="VScrollBar" parent="Buttons/Experience/Resume" index="1"]
 offset_bottom = 8.0
@@ -7112,7 +7200,7 @@ click_box = NodePath("../Tool Box")
 
 [node name="Panel" parent="Buttons/Skills" index="0"]
 height = 16
-width = 19
+width = 17
 override = false
 
 [node name="Bios" parent="Buttons/Skills" index="5"]
@@ -7667,6 +7755,11 @@ autostart = true
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Letter1" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="Buttons/Panel" to="Buttons/Letter2" method="_on_panel_gui_input"]
 [connection signal="pressed" from="Buttons/Projects/Exit" to="Projects/Laptop" method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons/Projects/Buttons/Project_TRW" to="Buttons/Projects/Buttons/Project_TRW" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Projects/Buttons/Project_Portfolio" to="Buttons/Projects/Buttons/Project_Portfolio" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Projects/Buttons/Project_grocery" to="Buttons/Projects/Buttons/Project_grocery" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Projects/Buttons/Project_Ecotime" to="Buttons/Projects/Buttons/Project_Ecotime" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Projects/Buttons/Project_TCOAS" to="Buttons/Projects/Buttons/Project_TCOAS" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Films/Exit" to="Personal/Film" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Films/Buttons/Film1" to="Buttons/Films/Buttons/Film1" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Films/Buttons/Film2" to="Buttons/Films/Buttons/Film2" method="_on_pressed"]
