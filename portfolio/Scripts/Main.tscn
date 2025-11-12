@@ -6669,7 +6669,7 @@ button_format = "Projects"
 
 [node name="Project_Basline" parent="Buttons/Projects/Buttons" index="11"]
 button_type = "Link"
-body = "A showcase of the work I did for Baseline, 2-month online design course. 
+body = "A showcase of the work I did for Baseline, 2-month online design course. Includes the design process for 2 branding briefs and 2 infographic briefs.
 [color=#858d5e][Case study in progress][/color]"
 
 [node name="Project_TRW" parent="Buttons/Projects/Buttons" index="12"]
@@ -6680,7 +6680,7 @@ body = "The Reason Why is an ARG (alternate reality game) that consists of a ser
 
 [node name="Project_Portfolio" parent="Buttons/Projects/Buttons" index="13"]
 button_type = "Link"
-body = "A deep dive into the process of making this portfolio. 
+body = "A deep dive into the process of building this portfolio from the ground up. Take a peak behind curtain and learn about the design process and the development of the site you are on.
 [color=#858d5e][Case study in progress][/color]"
 
 [node name="Project_grocery" parent="Buttons/Projects/Buttons" index="14"]
@@ -7800,7 +7800,6 @@ autostart = true
 [connection signal="pressed" from="Buttons/Projects/Buttons/Project_TCOAS" to="Buttons/Projects/Buttons/Project_TCOAS" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Films/Exit" to="Personal/Film" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons/Films/Buttons/Film1" to="Buttons/Films/Buttons/Film1" method="_on_pressed"]
-[connection signal="pressed" from="Buttons/Films/Buttons/Film2" to="Buttons/Films/Buttons/Film2" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Films/Buttons/Film3" to="Buttons/Films/Buttons/Film3" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Films/Buttons/Film4" to="Buttons/Films/Buttons/Film4" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Films/Buttons/Film5" to="Buttons/Films/Buttons/Film5" method="_on_pressed"]

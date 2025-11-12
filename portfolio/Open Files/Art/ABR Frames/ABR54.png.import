@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://et3h3sachglw"
+path="res://.godot/imported/ABR54.png-ce9799f1683db38cdce279147c614959.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Open Files/Art/ABR Frames/ABR54.png"
+dest_files=["res://.godot/imported/ABR54.png-ce9799f1683db38cdce279147c614959.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

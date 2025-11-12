@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=103 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
@@ -116,40 +116,6 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_je1nb")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_0gux7")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_0gux7")
 
-[sub_resource type="GDScript" id="GDScript_kwql2"]
-script/source = "extends TextureButton
-
-@export var title_label : RichTextLabel
-@export var time_label : RichTextLabel
-@export var body_label : RichTextLabel
-
-@export var title : String
-@export var time : String = \"\"
-@export var body : String
-
-@onready var default_title
-
-signal set_body(body : String)
-signal set_hover(content : String)
-
-func _ready():
-	default_title = title_label.content
-
-func _on_mouse_entered():
-	title_label.text = title
-	time_label.visible = true
-	emit_signal(\"set_hover\", time)
-	if body_label:
-		emit_signal(\"set_body\", body)
-
-
-func _on_mouse_exited():
-	title_label.text = default_title
-	time_label.visible = false
-	if body_label:
-		body_label.visible = false
-"
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4mfqt"]
 load_path = "res://.godot/imported/InstaButton1.png-48c25cc32037f2b6be1db8c936b629c7.ctex"
 
@@ -253,9 +219,9 @@ script = ExtResource("10_7vdy2")
 button_format = "Music"
 project_buttons = [NodePath("Project_TCOAS"), NodePath("Project_Portfolio"), NodePath("Project_TRW"), NodePath("Project_Ecotime"), NodePath("Project_grocery"), NodePath("Project_Basline")]
 film_buttons = [NodePath("Film1"), NodePath("Film2"), NodePath("Film3"), NodePath("Film4"), NodePath("Film5"), NodePath("Film6"), NodePath("Film7"), NodePath("Film8"), NodePath("Film9"), NodePath("Film10")]
-art_buttons = [NodePath("DigiArt1"), NodePath("PixelArt1"), NodePath("TradArt1")]
+art_buttons = [NodePath("PixelArt1"), NodePath("PixelArt2"), NodePath("PixelArt3"), NodePath("PixelArt4"), NodePath("PixelArt5"), NodePath("PixelArt6"), NodePath("PixelArt7"), NodePath("PixelArt8"), NodePath("PixelArt10"), NodePath("PixelArt11"), NodePath("PixelArt12"), NodePath("PixelArt13"), NodePath("PixelArt14"), NodePath("PixelArt15"), NodePath("PixelArt16"), NodePath("PixelArt17"), NodePath("PixelArt9"), NodePath("DigiArt1"), NodePath("DigiArt2"), NodePath("TradArt1"), NodePath("DigiArt3"), NodePath("TradArt2"), NodePath("TradArt3")]
 contact_buttons = [NodePath("Contact_Mail"), NodePath("Contact_Insta"), NodePath("Contact_LinkedIn"), NodePath("Contact_Youtube"), NodePath("Contact_BlueSky")]
-row_container = [NodePath("Button Container/Row 1"), NodePath("Button Container/Row 2")]
+row_container = [NodePath("Button Container/Row 1"), NodePath("Button Container/Row 2"), NodePath("Button Container/Row 3"), NodePath("Button Container/Row 4")]
 buttons_container = NodePath("Button Container")
 
 [node name="Title" type="RichTextLabel" parent="Buttons"]
@@ -315,6 +281,7 @@ content = "Dates"
 [node name="Subwindow title" type="RichTextLabel" parent="Buttons"]
 unique_name_in_owner = true
 visible = false
+z_index = 1
 texture_filter = 1
 layout_mode = 0
 offset_right = 455.0
@@ -327,8 +294,19 @@ theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 horizontal_alignment = 2
+meta_underlined = false
+hint_underlined = false
 script = ExtResource("8_c010p")
-content = "See full picture"
+content = "[SEE FULL PICTURE]"
+
+[node name="ColorRect" type="ColorRect" parent="Buttons/Subwindow title"]
+visible = false
+z_as_relative = false
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+color = Color(0.588235, 0.603922, 0.423529, 1)
 
 [node name="PlaceImage" type="TextureRect" parent="Buttons"]
 unique_name_in_owner = true
@@ -340,6 +318,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
 stretch_mode = 5
 script = ExtResource("14_jnqrh")
 pic_file = "res://Assets/Birbs/Leo/Hair/Leo Hair2.png"
@@ -473,6 +452,16 @@ mouse_filter = 0
 theme_override_constants/separation = 16
 
 [node name="Row 2" type="HBoxContainer" parent="Buttons/Button Container"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 16
+
+[node name="Row 3" type="HBoxContainer" parent="Buttons/Button Container"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 16
+
+[node name="Row 4" type="HBoxContainer" parent="Buttons/Button Container"]
 layout_mode = 2
 mouse_filter = 0
 theme_override_constants/separation = 16
@@ -765,6 +754,324 @@ title = "Cafe 1930"
 time = "August 2021"
 body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Cafe"
 
+[node name="PixelArt1" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "One Last Day"
+time = "WIP"
+pic_file = "res://Open Files/Art/One_Last_Day.png"
+
+[node name="PixelArt2" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Salvation"
+time = "WIP"
+pic_file = "res://Open Files/Art/Salvation.png"
+
+[node name="PixelArt3" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+gif = true
+frames = ["res://Open Files/Art/ABR Frames/ABR1.png", "res://Open Files/Art/ABR Frames/ABR2.png", "res://Open Files/Art/ABR Frames/ABR3.png", "res://Open Files/Art/ABR Frames/ABR4.png", "res://Open Files/Art/ABR Frames/ABR5.png", "res://Open Files/Art/ABR Frames/ABR6.png", "res://Open Files/Art/ABR Frames/ABR7.png", "res://Open Files/Art/ABR Frames/ABR8.png", "res://Open Files/Art/ABR Frames/ABR9.png", "res://Open Files/Art/ABR Frames/ABR10.png", "res://Open Files/Art/ABR Frames/ABR11.png", "res://Open Files/Art/ABR Frames/ABR12.png", "res://Open Files/Art/ABR Frames/ABR13.png", "res://Open Files/Art/ABR Frames/ABR14.png", "res://Open Files/Art/ABR Frames/ABR15.png", "res://Open Files/Art/ABR Frames/ABR16.png", "res://Open Files/Art/ABR Frames/ABR17.png", "res://Open Files/Art/ABR Frames/ABR18.png", "res://Open Files/Art/ABR Frames/ABR19.png", "res://Open Files/Art/ABR Frames/ABR20.png", "res://Open Files/Art/ABR Frames/ABR21.png", "res://Open Files/Art/ABR Frames/ABR22.png", "res://Open Files/Art/ABR Frames/ABR23.png", "res://Open Files/Art/ABR Frames/ABR24.png", "res://Open Files/Art/ABR Frames/ABR25.png", "res://Open Files/Art/ABR Frames/ABR26.png", "res://Open Files/Art/ABR Frames/ABR27.png", "res://Open Files/Art/ABR Frames/ABR28.png", "res://Open Files/Art/ABR Frames/ABR29.png", "res://Open Files/Art/ABR Frames/ABR30.png", "res://Open Files/Art/ABR Frames/ABR31.png", "res://Open Files/Art/ABR Frames/ABR32.png", "res://Open Files/Art/ABR Frames/ABR33.png", "res://Open Files/Art/ABR Frames/ABR34.png", "res://Open Files/Art/ABR Frames/ABR35.png", "res://Open Files/Art/ABR Frames/ABR36.png", "res://Open Files/Art/ABR Frames/ABR37.png", "res://Open Files/Art/ABR Frames/ABR38.png", "res://Open Files/Art/ABR Frames/ABR39.png", "res://Open Files/Art/ABR Frames/ABR40.png", "res://Open Files/Art/ABR Frames/ABR41.png", "res://Open Files/Art/ABR Frames/ABR42.png", "res://Open Files/Art/ABR Frames/ABR43.png", "res://Open Files/Art/ABR Frames/ABR44.png", "res://Open Files/Art/ABR Frames/ABR45.png", "res://Open Files/Art/ABR Frames/ABR46.png", "res://Open Files/Art/ABR Frames/ABR47.png", "res://Open Files/Art/ABR Frames/ABR48.png", "res://Open Files/Art/ABR Frames/ABR49.png", "res://Open Files/Art/ABR Frames/ABR50.png", "res://Open Files/Art/ABR Frames/ABR51.png", "res://Open Files/Art/ABR Frames/ABR52.png", "res://Open Files/Art/ABR Frames/ABR53.png", "res://Open Files/Art/ABR Frames/ABR54.png", "res://Open Files/Art/ABR Frames/ABR55.png", "res://Open Files/Art/ABR Frames/ABR56.png", "res://Open Files/Art/ABR Frames/ABR57.png", "res://Open Files/Art/ABR Frames/ABR58.png", "res://Open Files/Art/ABR Frames/ABR59.png", "res://Open Files/Art/ABR Frames/ABR60.png", "res://Open Files/Art/ABR Frames/ABR61.png", "res://Open Files/Art/ABR Frames/ABR62.png", "res://Open Files/Art/ABR Frames/ABR63.png", "res://Open Files/Art/ABR Frames/ABR64.png", "res://Open Files/Art/ABR Frames/ABR65.png"]
+fps = 0.15
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "A Brief Reunion"
+time = "6/7/2025"
+pic_file = "res://Open Files/Art/A_brief_reunion.gif"
+
+[node name="PixelArt4" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Outer Wilds"
+time = "10/10/2024"
+pic_file = "res://Open Files/Art/Pixel poster.png"
+
+[node name="PixelArt5" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "The Case of Arcadia Springs"
+time = "9/29/2025"
+pic_file = "res://Open Files/Art/TCOAS Header.png"
+
+[node name="PixelArt6" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+gif = true
+frames = Array[String](["res://Open Files/Art/Driving Frames/driving1.png", "res://Open Files/Art/Driving Frames/driving2.png", "res://Open Files/Art/Driving Frames/driving3.png", "res://Open Files/Art/Driving Frames/driving4.png", "res://Open Files/Art/Driving Frames/driving5.png", "res://Open Files/Art/Driving Frames/driving6.png", "res://Open Files/Art/Driving Frames/driving7.png", "res://Open Files/Art/Driving Frames/driving8.png"])
+fps = 0.25
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Detectives Driving"
+time = "11/29/2024"
+pic_file = "res://Open Files/Art/driving.gif"
+
+[node name="PixelArt7" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Punisher"
+time = "10/31/2024"
+pic_file = "res://Open Files/Art/Punisher.png"
+
+[node name="PixelArt10" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Small Sierra"
+time = "3/14/2025"
+pic_file = "res://Open Files/Art/SmallSierra.png"
+
+[node name="PixelArt11" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Hartley’s Hearty Cafe and Eatery"
+time = "10/16/2024"
+pic_file = "res://Open Files/Art/Hartley’s Hearty Cafe and Eatery.png"
+
+[node name="PixelArt12" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Welcome to Lodbus"
+time = "09/30/2024"
+pic_file = "res://Open Files/Art/Welcome to Lodbus.png"
+
+[node name="PixelArt13" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "A Broke Raccoon's Affirmation"
+time = "09/05/2025"
+pic_file = "res://Open Files/Art/Affirmation.png"
+
+[node name="PixelArt14" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Of Mice and Toilets"
+time = "02/03/2025"
+pic_file = "res://Open Files/Art/Of Mice and Toilets.png"
+
+[node name="PixelArt15" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Of Mice and Toilets"
+time = "02/03/2025"
+pic_file = "res://Open Files/Art/Of Mice and Toilets.png"
+
+[node name="PixelArt16" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Untethered"
+time = "09/22/2024"
+pic_file = "res://Open Files/Art/Untethered.png"
+
+[node name="PixelArt17" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Micah's Rage"
+time = "09/19/2024"
+pic_file = "res://Open Files/Art/Micah Rage.png"
+
+[node name="PixelArt8" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+gif = true
+frames = Array[String](["res://Open Files/Art/ILYSFM Frames/ILYSFM Poster1.png", "res://Open Files/Art/ILYSFM Frames/ILYSFM Poster2.png", "res://Open Files/Art/ILYSFM Frames/ILYSFM Poster3.png", "res://Open Files/Art/ILYSFM Frames/ILYSFM Poster4.png", "res://Open Files/Art/ILYSFM Frames/ILYSFM Poster5.png", "res://Open Files/Art/ILYSFM Frames/ILYSFM Poster6.png", "res://Open Files/Art/ILYSFM Frames/ILYSFM Poster7.png", "res://Open Files/Art/ILYSFM Frames/ILYSFM Poster8.png"])
+fps = 0.15
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "ILYSFM"
+time = "10/27/2024"
+pic_file = "res://Open Files/Art/ILYSFM Poster.gif"
+
+[node name="PixelArt9" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("40_5tn1p")
+texture_pressed = ExtResource("42_jqdcr")
+texture_hover = ExtResource("41_8iyxp")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+gif = true
+frames = Array[String](["res://Open Files/Art/Theia Frames/Theia1.png", "res://Open Files/Art/Theia Frames/Theia2.png", "res://Open Files/Art/Theia Frames/Theia3.png", "res://Open Files/Art/Theia Frames/Theia4.png", "res://Open Files/Art/Theia Frames/Theia5.png", "res://Open Files/Art/Theia Frames/Theia6.png", "res://Open Files/Art/Theia Frames/Theia7.png", "res://Open Files/Art/Theia Frames/Theia8.png"])
+fps = 0.25
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Theia Luna"
+time = "08/24/2024"
+pic_file = "res://Open Files/Art/Moon_Crash_frames.gif"
+
 [node name="DigiArt1" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
 visible = false
 texture_filter = 1
@@ -779,25 +1086,27 @@ script = ExtResource("16_6v0q4")
 button_type = "Window"
 title_label = NodePath("../Project Name")
 time_label = NodePath("../TimeLine")
-title = "Drawing"
-time = "Date"
-pic_file = "res://Assets/UI/Camera/Photo18.png"
+title = "Where Our Blue Is"
+time = "1/11/2024"
+pic_file = "res://Open Files/Art/WOBI.png"
 
-[node name="PixelArt1" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+[node name="DigiArt2" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
 visible = false
 texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("40_5tn1p")
-texture_pressed = ExtResource("42_jqdcr")
-texture_hover = ExtResource("41_8iyxp")
-script = SubResource("GDScript_kwql2")
+texture_normal = ExtResource("37_07gwf")
+texture_pressed = ExtResource("38_l77b0")
+texture_hover = ExtResource("39_tvm31")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
 title_label = NodePath("../Project Name")
 time_label = NodePath("../TimeLine")
-title = "Pixel"
-time = "Date"
+title = "Outer Wilds"
+time = "2/21/2024"
+pic_file = "res://Open Files/Art/Digi poster.png"
 
 [node name="TradArt1" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
 visible = false
@@ -810,10 +1119,66 @@ texture_normal = ExtResource("43_f7wef")
 texture_pressed = ExtResource("44_icjc7")
 texture_hover = ExtResource("45_f1ohu")
 script = ExtResource("16_6v0q4")
+button_type = "Window"
 title_label = NodePath("../Project Name")
 time_label = NodePath("../TimeLine")
-title = "trad Drawing"
-time = "Date"
+title = "The Last Tomorrow"
+time = "9/5/2023"
+pic_file = "res://Open Files/Art/2025_11_12_trigun-07548.jpg"
+
+[node name="DigiArt3" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("37_07gwf")
+texture_pressed = ExtResource("38_l77b0")
+texture_hover = ExtResource("39_tvm31")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Dead on Arrival"
+time = "2/21/2024"
+pic_file = "res://Open Files/Art/Dead on Arrival.png"
+
+[node name="TradArt2" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("43_f7wef")
+texture_pressed = ExtResource("44_icjc7")
+texture_hover = ExtResource("45_f1ohu")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Photographs and Butterflies"
+time = "09/13/2023"
+pic_file = "res://Open Files/Art/2025_11_12_Link_click-07655.jpg"
+
+[node name="TradArt3" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("43_f7wef")
+texture_pressed = ExtResource("44_icjc7")
+texture_hover = ExtResource("45_f1ohu")
+script = ExtResource("16_6v0q4")
+button_type = "Window"
+title_label = NodePath("../Project Name")
+time_label = NodePath("../TimeLine")
+title = "Le Petite Yuuji"
+time = "01/03/2024"
+pic_file = "res://Open Files/Art/2025_11_12_Port_pic-07567.jpg"
 
 [node name="Contact_Mail" type="TextureButton" parent="Buttons"]
 visible = false
@@ -1325,7 +1690,7 @@ theme_override_fonts/bold_font = ExtResource("11_sp3od")
 theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
-text = "[url=res://Open Files/Aretha Li, Resume.pdf]Click to view PDF version.[/url]"
+text = "[url=res://Open Files/Aretha Li, Resume.pdf]Click to view PDF version[/url]"
 fit_content = true
 autowrap_mode = 0
 vertical_alignment = 2
@@ -1649,6 +2014,9 @@ padding_y_bott = 40
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="value_changed" from="Text/VScrollBar" to="Text/VScrollBar" method="_on_value_changed"]
 [connection signal="overide_panel_size" from="Buttons" to="Panel" method="_on_overide_panel_size"]
+[connection signal="meta_clicked" from="Buttons/Subwindow title" to="Buttons/Subwindow title" method="_on_meta_clicked"]
+[connection signal="meta_hover_ended" from="Buttons/Subwindow title" to="Buttons/Subwindow title" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Buttons/Subwindow title" to="Buttons/Subwindow title" method="_on_meta_hover_started"]
 [connection signal="mouse_entered" from="Buttons/Music Buttons/Back" to="Buttons/Music Buttons" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/Music Buttons/Back" to="Buttons/Music Buttons/Play" method="_on_dir_pressed"]
 [connection signal="mouse_entered" from="Buttons/Music Buttons/Play" to="Buttons/Music Buttons" method="_on_mouse_entered"]
@@ -1692,6 +2060,7 @@ padding_y_bott = 40
 [connection signal="set_hover" from="Buttons/Film1" to="Buttons/TimeLine" method="set_on_hover"]
 [connection signal="mouse_entered" from="Buttons/Film2" to="Buttons/Film2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Film2" to="Buttons/Film2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/Film2" to="Buttons/Film2" method="_on_pressed"]
 [connection signal="set_body" from="Buttons/Film2" to="Buttons/Body" method="_on_set_body"]
 [connection signal="set_hover" from="Buttons/Film2" to="Buttons/TimeLine" method="set_on_hover"]
 [connection signal="mouse_entered" from="Buttons/Film3" to="Buttons/Film3" method="_on_mouse_entered"]
@@ -1726,17 +2095,148 @@ padding_y_bott = 40
 [connection signal="mouse_exited" from="Buttons/Film10" to="Buttons/Film10" method="_on_mouse_exited"]
 [connection signal="set_body" from="Buttons/Film10" to="Buttons/Body" method="_on_set_body"]
 [connection signal="set_hover" from="Buttons/Film10" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="mouse_entered" from="Buttons/PixelArt1" to="Buttons/PixelArt1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt1" to="Buttons/PixelArt1" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt1" to="Buttons/PixelArt1" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt1" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt1" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt1" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt2" to="Buttons/PixelArt2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt2" to="Buttons/PixelArt2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt2" to="Buttons/PixelArt2" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt2" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt2" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt2" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt3" to="Buttons/PixelArt3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt3" to="Buttons/PixelArt3" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt3" to="Buttons/PixelArt3" method="_on_pressed"]
+[connection signal="send_gif_file" from="Buttons/PixelArt3" to="Buttons/PlaceImage" method="_on_send_gif_file"]
+[connection signal="set_hover" from="Buttons/PixelArt3" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt3" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt4" to="Buttons/PixelArt4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt4" to="Buttons/PixelArt4" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt4" to="Buttons/PixelArt4" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt4" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt4" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt4" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt5" to="Buttons/PixelArt5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt5" to="Buttons/PixelArt5" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt5" to="Buttons/PixelArt5" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt5" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt5" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt5" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt6" to="Buttons/PixelArt6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt6" to="Buttons/PixelArt6" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt6" to="Buttons/PixelArt6" method="_on_pressed"]
+[connection signal="send_gif_file" from="Buttons/PixelArt6" to="Buttons/PlaceImage" method="_on_send_gif_file"]
+[connection signal="set_hover" from="Buttons/PixelArt6" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt6" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt7" to="Buttons/PixelArt7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt7" to="Buttons/PixelArt7" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt7" to="Buttons/PixelArt7" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt7" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt7" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt7" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt10" to="Buttons/PixelArt10" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt10" to="Buttons/PixelArt10" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt10" to="Buttons/PixelArt10" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt10" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt10" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt10" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt11" to="Buttons/PixelArt11" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt11" to="Buttons/PixelArt11" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt11" to="Buttons/PixelArt11" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt11" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt11" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt11" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt12" to="Buttons/PixelArt12" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt12" to="Buttons/PixelArt12" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt12" to="Buttons/PixelArt12" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt12" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt12" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt12" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt13" to="Buttons/PixelArt13" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt13" to="Buttons/PixelArt13" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt13" to="Buttons/PixelArt13" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt13" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt13" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt13" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt14" to="Buttons/PixelArt14" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt14" to="Buttons/PixelArt14" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt14" to="Buttons/PixelArt14" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt14" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt14" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt14" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt15" to="Buttons/PixelArt15" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt15" to="Buttons/PixelArt15" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt15" to="Buttons/PixelArt15" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt15" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt15" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt15" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt16" to="Buttons/PixelArt16" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt16" to="Buttons/PixelArt16" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt16" to="Buttons/PixelArt16" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt16" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt16" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt16" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt17" to="Buttons/PixelArt17" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt17" to="Buttons/PixelArt17" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt17" to="Buttons/PixelArt17" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/PixelArt17" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/PixelArt17" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt17" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt8" to="Buttons/PixelArt8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt8" to="Buttons/PixelArt8" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt8" to="Buttons/PixelArt8" method="_on_pressed"]
+[connection signal="send_gif_file" from="Buttons/PixelArt8" to="Buttons/PlaceImage" method="_on_send_gif_file"]
+[connection signal="set_hover" from="Buttons/PixelArt8" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt8" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/PixelArt9" to="Buttons/PixelArt9" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/PixelArt9" to="Buttons/PixelArt9" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/PixelArt9" to="Buttons/PixelArt9" method="_on_pressed"]
+[connection signal="send_gif_file" from="Buttons/PixelArt9" to="Buttons/PlaceImage" method="_on_send_gif_file"]
+[connection signal="set_hover" from="Buttons/PixelArt9" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/PixelArt9" to="Buttons/Subwindow title" method="_on_set_link"]
 [connection signal="mouse_entered" from="Buttons/DigiArt1" to="Buttons/DigiArt1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/DigiArt1" to="Buttons/DigiArt1" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/DigiArt1" to="Buttons/DigiArt1" method="_on_pressed"]
 [connection signal="send_pic_file" from="Buttons/DigiArt1" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
 [connection signal="set_hover" from="Buttons/DigiArt1" to="Buttons/TimeLine" method="set_on_hover"]
-[connection signal="mouse_entered" from="Buttons/PixelArt1" to="Buttons/PixelArt1" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons/PixelArt1" to="Buttons/PixelArt1" method="_on_mouse_exited"]
-[connection signal="set_hover" from="Buttons/PixelArt1" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/DigiArt1" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/DigiArt2" to="Buttons/DigiArt2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/DigiArt2" to="Buttons/DigiArt2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/DigiArt2" to="Buttons/DigiArt2" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/DigiArt2" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/DigiArt2" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/DigiArt2" to="Buttons/Subwindow title" method="_on_set_link"]
 [connection signal="mouse_entered" from="Buttons/TradArt1" to="Buttons/TradArt1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/TradArt1" to="Buttons/TradArt1" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/TradArt1" to="Buttons/TradArt1" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/TradArt1" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
 [connection signal="set_hover" from="Buttons/TradArt1" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/TradArt1" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/DigiArt3" to="Buttons/DigiArt3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/DigiArt3" to="Buttons/DigiArt3" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/DigiArt3" to="Buttons/DigiArt3" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/DigiArt3" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/DigiArt3" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/DigiArt3" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/TradArt2" to="Buttons/TradArt2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/TradArt2" to="Buttons/TradArt2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/TradArt2" to="Buttons/TradArt2" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/TradArt2" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/TradArt2" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/TradArt2" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/TradArt3" to="Buttons/TradArt3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/TradArt3" to="Buttons/TradArt3" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/TradArt3" to="Buttons/TradArt3" method="_on_pressed"]
+[connection signal="send_pic_file" from="Buttons/TradArt3" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
+[connection signal="set_hover" from="Buttons/TradArt3" to="Buttons/TimeLine" method="set_on_hover"]
+[connection signal="set_link" from="Buttons/TradArt3" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="pressed" from="Buttons/Looky Back" to="Buttons/PlaceImage" method="_on_back_pressed"]
+[connection signal="pressed" from="Buttons/Looky Back" to="Buttons/PixelArt1" method="_on_back_pressed"]
+[connection signal="pressed" from="Buttons/Looky Back" to="Buttons/PixelArt2" method="_on_back_pressed"]
+[connection signal="pressed" from="Buttons/Looky Back" to="Buttons/PixelArt3" method="_on_back_pressed"]
 [connection signal="pressed" from="Buttons/Looky Back" to="Buttons/DigiArt1" method="_on_back_pressed"]
 [connection signal="pressed" from="Buttons/Cam Back" to="Buttons/CamScroll/VBoxContainer/CamGallery/Row1/Photo1" method="_on_cam_back_pressed"]
 [connection signal="set_scroll" from="Buttons/CamScroll" to="Buttons/CamScrollBar" method="_on_set_scroll"]

@@ -3,6 +3,9 @@ extends TextureButton
 @export_enum("Link", "Window") var button_type : String
 @export var link_path : String = ""
 
+@export var gif : bool = false
+@export var frames : Array[String]
+@export var fps : float
 @export var title_label : RichTextLabel
 @export var time_label : RichTextLabel
 @export var body_label : RichTextLabel
@@ -25,6 +28,8 @@ extends TextureButton
 signal set_body(body : String)
 signal set_hover(content : String)
 signal send_pic_file (file : String)
+signal send_gif_file (arr : Array, fpsec : int)
+signal set_link (file : String)
 
 func _ready():
 	await get_tree().process_frame
@@ -57,18 +62,22 @@ func _on_pressed():
 				return
 			return
 		"Window":
-			print("switch to window")
+			#print("switch to window")
 			#hide prev window
 			_toggle_buttons(false)
 			_toggle_window(true)
-			emit_signal("send_pic_file", pic_file)
+			if gif:
+				emit_signal("send_gif_file", frames, fps)
+			else:
+				emit_signal("send_pic_file", pic_file)
+			emit_signal("set_link", pic_file)
 			return
 
 func _toggle_buttons(visiblity : bool):
 	if title_label:
 		title_label.visible = visiblity
 	if time_label:
-		time_label.visible = visiblity
+		time_label.visible = false
 	if body_label:
 		body_label.visible = visiblity
 	if camera == true:
