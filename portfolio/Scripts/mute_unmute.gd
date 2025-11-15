@@ -36,8 +36,15 @@ func _on_pressed():
 		mute.visible = false
 		unmute.visible = true
 		emit_signal("paused")
-		
 	else:
+		Audio.fxs_on = true
+		mute.visible = true
+		unmute.visible = false
+		emit_signal("played")
+
+
+func _on_play_pressed():
+	if Audio.fxs_on == false:
 		Audio.fxs_on = true
 		mute.visible = true
 		unmute.visible = false

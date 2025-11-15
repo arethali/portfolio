@@ -1052,7 +1052,7 @@ title_label = NodePath("../Project Name")
 time_label = NodePath("../TimeLine")
 title = "Theia Luna"
 time = "08/24/2024"
-pic_file = "res://Open Files/Art/Moon_Crash_frames.gif"
+pic_file = "res://Open Files/Art/Theia_Luna.gif"
 
 [node name="DigiArt1" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("title_label", "time_label")]
 visible = false
@@ -1162,7 +1162,7 @@ title = "Le Petite Yuuji"
 time = "01/03/2024"
 pic_file = "res://Open Files/Art/2025_11_12_Port_pic-07567.jpg"
 
-[node name="Contact_Mail" type="TextureButton" parent="Buttons"]
+[node name="Contact_Mail" type="TextureButton" parent="Buttons" node_paths=PackedStringArray("body_label")]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -1172,6 +1172,12 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("47_adwo7")
 texture_pressed = ExtResource("48_k3mck")
 texture_hover = ExtResource("49_r6nmg")
+script = ExtResource("16_6v0q4")
+button_type = "Mail"
+link_path = "aretha0115li@gmail.com"
+body_label = NodePath("../Body")
+body = "[font_size=20]EMAIL COPIED TO CLIPBOARD![/font_size]"
+mail = true
 
 [node name="Contact_Insta" type="TextureButton" parent="Buttons"]
 visible = false
@@ -1183,6 +1189,10 @@ mouse_default_cursor_shape = 2
 texture_normal = SubResource("CompressedTexture2D_4mfqt")
 texture_pressed = SubResource("CompressedTexture2D_hgb13")
 texture_hover = SubResource("CompressedTexture2D_pp1yn")
+script = ExtResource("16_6v0q4")
+button_type = "Link"
+link_path = "https://www.instagram.com/aretha.li/"
+mail = true
 
 [node name="Contact_LinkedIn" type="TextureButton" parent="Buttons"]
 visible = false
@@ -1194,6 +1204,10 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("50_1u7cx")
 texture_pressed = ExtResource("51_jnqrh")
 texture_hover = ExtResource("52_0utnw")
+script = ExtResource("16_6v0q4")
+button_type = "Link"
+link_path = "https://www.linkedin.com/in/aretha-li-3751b3270/"
+mail = true
 
 [node name="Contact_Youtube" type="TextureButton" parent="Buttons"]
 visible = false
@@ -1205,6 +1219,10 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("53_66sfg")
 texture_pressed = ExtResource("54_yych5")
 texture_hover = ExtResource("55_4ctlj")
+script = ExtResource("16_6v0q4")
+button_type = "Link"
+link_path = "https://www.youtube.com/@Aretha-Li"
+mail = true
 
 [node name="Contact_BlueSky" type="TextureButton" parent="Buttons"]
 visible = false
@@ -1216,6 +1234,10 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("56_x1kxa")
 texture_pressed = ExtResource("57_x3ji6")
 texture_hover = ExtResource("58_u2u5r")
+script = ExtResource("16_6v0q4")
+button_type = "Link"
+link_path = "https://bsky.app/profile/dead-pixel-mm.bsky.social"
+mail = true
 
 [node name="Looky Back" type="TextureButton" parent="Buttons"]
 unique_name_in_owner = true
@@ -2209,6 +2231,17 @@ padding_y_bott = 40
 [connection signal="send_pic_file" from="Buttons/TradArt3" to="Buttons/PlaceImage" method="_on_recieve_pic_file"]
 [connection signal="set_hover" from="Buttons/TradArt3" to="Buttons/TimeLine" method="set_on_hover"]
 [connection signal="set_link" from="Buttons/TradArt3" to="Buttons/Subwindow title" method="_on_set_link"]
+[connection signal="mouse_entered" from="Buttons/Contact_Mail" to="Buttons/Contact_Mail" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/Contact_Mail" to="Buttons/Contact_Mail" method="_on_pressed"]
+[connection signal="set_body" from="Buttons/Contact_Mail" to="Buttons/Body" method="_on_set_body"]
+[connection signal="mouse_entered" from="Buttons/Contact_Insta" to="Buttons/Contact_Insta" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/Contact_Insta" to="Buttons/Contact_Insta" method="_on_pressed"]
+[connection signal="mouse_entered" from="Buttons/Contact_LinkedIn" to="Buttons/Contact_LinkedIn" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/Contact_LinkedIn" to="Buttons/Contact_LinkedIn" method="_on_pressed"]
+[connection signal="mouse_entered" from="Buttons/Contact_Youtube" to="Buttons/Contact_Youtube" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/Contact_Youtube" to="Buttons/Contact_Youtube" method="_on_pressed"]
+[connection signal="mouse_entered" from="Buttons/Contact_BlueSky" to="Buttons/Contact_BlueSky" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/Contact_BlueSky" to="Buttons/Contact_BlueSky" method="_on_pressed"]
 [connection signal="mouse_entered" from="Buttons/Looky Back" to="Buttons/Looky Back" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/Looky Back" to="Buttons/PlaceImage" method="_on_back_pressed"]
 [connection signal="pressed" from="Buttons/Looky Back" to="Buttons/PixelArt1" method="_on_back_pressed"]

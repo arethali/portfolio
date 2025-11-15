@@ -1,6 +1,6 @@
 extends TextureButton
 
-@export_enum("Link", "Window") var button_type : String
+@export_enum("Link", "Window", "Mail") var button_type : String
 @export var link_path : String = ""
 
 @export var gif : bool = false
@@ -15,7 +15,7 @@ extends TextureButton
 @export_multiline var body : String
 
 @export var pic_file : String
-@export var camera : bool = false
+@export var mail : bool = false
 #hide when window
 @onready var cam_scroll = %CamScroll
 @onready var button_container = %"Button Container"
@@ -33,16 +33,19 @@ signal set_link (file : String)
 
 func _ready():
 	await get_tree().process_frame
-	if camera == false:
+	if mail == false:
 		default_title = title_label.content
 
 func _on_mouse_entered():
 	ButtonsSound.hover()
-	title_label.text = title
-	time_label.visible = true
-	emit_signal("set_hover", time)
-	if body_label:
-		emit_signal("set_body", body)
+	if mail == false:
+		title_label.text = title
+		time_label.visible = true
+		emit_signal("set_hover", time)
+		if body_label:
+			emit_signal("set_body", body)
+		return
+	return
 
 
 func _on_mouse_exited():
@@ -72,6 +75,21 @@ func _on_pressed():
 				emit_signal("send_pic_file", pic_file)
 			emit_signal("set_link", pic_file)
 			return
+		"Mail":
+			if link_path:
+				var email_address = link_path
+				var subject = "Greetings from [Your Name]"
+				var mail_to_uri = "mailto:%s?subject=%s" % [email_address, subject]
+				emit_signal("set_body", body)
+				body_label.visible = true
+				DisplayServer.clipboard_set(link_path)
+				await get_tree().create_timer(.2).timeout
+				OS.shell_open(mail_to_uri)
+				await get_tree().create_timer(3.0).timeout
+				body_label.visible = false
+			
+				return
+			return
 
 func _toggle_buttons(visiblity : bool):
 	if title_label:
@@ -80,7 +98,7 @@ func _toggle_buttons(visiblity : bool):
 		time_label.visible = false
 	if body_label:
 		body_label.visible = visiblity
-	if camera == true:
+	if mail == true:
 		cam_scroll.visible = visiblity
 		return
 	button_container.visible = visiblity

@@ -23,7 +23,6 @@ func _on_pressed():
 		play.visible = true
 		pause.visible = false
 		emit_signal("paused")
-		
 	else:
 		Audio.audio_on = true
 		play.visible = false

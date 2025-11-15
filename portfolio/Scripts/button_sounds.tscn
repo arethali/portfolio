@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://biqko07yiso8t" path="res://Scripts/sound_manager.gd" id="1_devy7"]
 
 [node name="Button Sounds" type="AudioStreamPlayer"]
-volume_db = -3.0
+volume_db = -10.0
 pitch_scale = 0.9
+bus = &"Sfx"
 script = ExtResource("1_devy7")

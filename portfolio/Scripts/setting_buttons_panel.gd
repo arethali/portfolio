@@ -53,6 +53,8 @@ func _ready():
 			project_name.visible  = false
 			buttons_container.top_padding = 112
 			time_line.visible  = false
+			body.padding = Vector2(108, 192)
+			body.padding_bottom = 0
 			add_buttons(contact_buttons, row_container, 5)
 		"Art":
 			title.content = "[b]Illustrations[/b]"

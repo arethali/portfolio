@@ -5408,7 +5408,8 @@ libraries = {
 
 [node name="Wind noises" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("60_8nkan")
-volume_db = -10.0
+volume_db = -12.0
+bus = &"Wind"
 script = ExtResource("61_qcpgi")
 
 [node name="Home" type="Node" parent="." node_paths=PackedStringArray("lamp_R_anim", "lamp_L_anim")]
@@ -5716,10 +5717,10 @@ position = Vector2(704, 924)
 texture = ExtResource("197_mr67e")
 
 [node name="Music Player" type="AudioStreamPlayer" parent="Personal"]
-volume_db = -12.0
+bus = &"Music"
 script = ExtResource("210_1st7y")
-playlist_files = Array[String](["res://HALAZIA.mp3", "res://Best Frenz - The Adirondacks (Audio).mp3", "res://It Doesn't Have To Change.mp3"])
-song_title = Array[String](["Halazia - Ateez", "The Adirondacks - Best Frenz", "It Doesn't Have To Change - benches"])
+playlist_files = Array[String](["res://Music/Office_Mix_+6_boost.wav", "res://Music/Micah_+6.wav", "res://Music/Juniper_+6.wav", "res://Music/Cafe 2 full.wav"])
+song_title = Array[String](["Detective Reynard - Aretha Li", "Chill Lofi Beats to Nap to (Micah's Mix) - Aretha Li", "615 Pinely Street - Aretha Li", "Cafe 1930 - Astor Piazzolla (Guitar and Flute Performed by Aretha Li)"])
 
 [node name="BoomBox" type="AnimatedSprite2D" parent="Personal" node_paths=PackedStringArray("anim_player")]
 texture_filter = 1
@@ -7814,7 +7815,9 @@ autostart = true
 [connection signal="pressed" from="Buttons/Music/Buttons/Music Buttons/Back" to="Personal/Music Player" method="_on_back"]
 [connection signal="paused" from="Buttons/Music/Buttons/Music Buttons/Play" to="Personal/BoomBox" method="_on_paused"]
 [connection signal="played" from="Buttons/Music/Buttons/Music Buttons/Play" to="Personal/BoomBox" method="_on_played"]
+[connection signal="played" from="Buttons/Music/Buttons/Music Buttons/Play" to="Buttons/Music/Buttons/Mute" method="_on_play_played"]
 [connection signal="pressed" from="Buttons/Music/Buttons/Music Buttons/Play" to="Personal/Music Player" method="_on_played"]
+[connection signal="pressed" from="Buttons/Music/Buttons/Music Buttons/Play" to="Buttons/Music/Buttons/Mute" method="_on_play_pressed"]
 [connection signal="pressed" from="Buttons/Music/Buttons/Music Buttons/Pause" to="Personal/Music Player" method="_on_paused"]
 [connection signal="pressed" from="Buttons/Music/Buttons/Music Buttons/Forward" to="Personal/Music Player" method="_on_forward"]
 [connection signal="paused" from="Buttons/Music/Buttons/Mute" to="Background/Wind noises" method="_on_mute_paused"]
