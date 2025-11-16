@@ -6615,6 +6615,21 @@ left_margin = 28
 right_margin = 28
 margin_top = 32
 
+[node name="ProgressBar" parent="Buttons/AI Poster Look/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/AI Poster Look/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="VScrollBar" parent="Buttons/AI Poster Look/Bios" index="1"]
 offset_bottom = 8.0
 
@@ -6645,6 +6660,21 @@ body_text = "[center]sic semper tyrannis[/center]"
 left_margin = 28
 right_margin = 28
 margin_top = 32
+
+[node name="ProgressBar" parent="Buttons/No King Look/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/No King Look/Buttons" index="58"]
+offset_bottom = 8.0
 
 [node name="VScrollBar" parent="Buttons/No King Look/Bios" index="1"]
 offset_bottom = 8.0
@@ -6677,6 +6707,21 @@ left_margin = 28
 right_margin = 28
 margin_top = 32
 
+[node name="ProgressBar" parent="Buttons/Clippy Look/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Clippy Look/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="VScrollBar" parent="Buttons/Clippy Look/Bios" index="1"]
 offset_bottom = 8.0
 
@@ -6708,6 +6753,21 @@ left_margin = 28
 right_margin = 28
 margin_top = 32
 
+[node name="ProgressBar" parent="Buttons/Gaza/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Gaza/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="VScrollBar" parent="Buttons/Gaza/Bios" index="1"]
 offset_bottom = 8.0
 
@@ -6733,6 +6793,18 @@ width = 40
 
 [node name="Buttons" parent="Buttons/Projects" index="4"]
 button_format = "Projects"
+
+[node name="ProgressBar" parent="Buttons/Projects/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Project_Basline" parent="Buttons/Projects/Buttons" index="12"]
 button_type = "Link"
@@ -6768,6 +6840,9 @@ button_type = "Link"
 body = "A short, short-driven, detective-mystery game where you are tasked with solving a deceptively simple break-in case. Meet the citizens of Arcadia Springs, find and follow the clues, make the right choices, and you may unlock a dark secret kept under lock and key.
 [color=#858d5e][Case study in progress][/color]"
 
+[node name="CamScrollBar" parent="Buttons/Projects/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="VScrollBar" parent="Buttons/Projects/Bios" index="1"]
 offset_bottom = 8.0
 
@@ -6789,6 +6864,18 @@ click_box = NodePath("../Film Area")
 
 [node name="Buttons" parent="Buttons/Films" index="4"]
 button_format = "Films"
+
+[node name="ProgressBar" parent="Buttons/Films/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Film1" parent="Buttons/Films/Buttons" index="18"]
 button_type = "Link"
@@ -6843,6 +6930,9 @@ button_type = "Link"
 link_path = "https://www.youtube.com/watch?v=eMCOhemTQa8"
 body = "A cover of Astor Piazzolla’s Cafe 1930 for flute and guitar."
 
+[node name="CamScrollBar" parent="Buttons/Films/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="VScrollBar" parent="Buttons/Films/Bios" index="1"]
 offset_bottom = 8.0
 
@@ -6868,6 +6958,21 @@ light_arrow = true
 [node name="Buttons" parent="Buttons/Notebook" index="4"]
 button_format = "Art"
 
+[node name="ProgressBar" parent="Buttons/Notebook/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Notebook/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="VScrollBar" parent="Buttons/Notebook/Bios" index="1"]
 offset_bottom = 8.0
 
@@ -6890,6 +6995,21 @@ click_box = NodePath("../Mail Box")
 [node name="Buttons" parent="Buttons/Contact" index="4"]
 button_format = "Contact"
 
+[node name="ProgressBar" parent="Buttons/Contact/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Contact/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="VScrollBar" parent="Buttons/Contact/Bios" index="1"]
 offset_bottom = 8.0
 
@@ -6908,6 +7028,21 @@ offset_bottom = -232.0
 format = "Buttons"
 panel = NodePath("../Panel")
 click_box = NodePath("../BoomBox Area")
+
+[node name="ProgressBar" parent="Buttons/Music/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Music/Buttons" index="58"]
+offset_bottom = 8.0
 
 [node name="VScrollBar" parent="Buttons/Music/Bios" index="1"]
 offset_bottom = 8.0
@@ -6944,6 +7079,21 @@ left_margin = 40
 margin_top = 40
 margin_bottom = 40
 
+[node name="ProgressBar" parent="Buttons/Phone/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Phone/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="VScrollBar" parent="Buttons/Phone/Resume" index="1"]
 offset_bottom = 8.0
 
@@ -6964,6 +7114,21 @@ click_box = NodePath("../Body Area")
 height = 20
 width = 34
 override = false
+
+[node name="ProgressBar" parent="Buttons/About Me/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/About Me/Buttons" index="58"]
+offset_bottom = 8.0
 
 [node name="Bios" parent="Buttons/About Me" index="5"]
 about_has_bbc = true
@@ -7052,6 +7217,21 @@ height = 20
 width = 24
 override = false
 
+[node name="ProgressBar" parent="Buttons/Leo/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Leo/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="Bios" parent="Buttons/Leo" index="5"]
 padding_sides = Vector2(40, 40)
 padding_vert = Vector2(40, 40)
@@ -7125,6 +7305,21 @@ width = 24
 override = false
 light_arrow = true
 
+[node name="ProgressBar" parent="Buttons/Alvis/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Alvis/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="Bios" parent="Buttons/Alvis" index="5"]
 padding_sides = Vector2(40, 40)
 padding_vert = Vector2(40, 40)
@@ -7197,6 +7392,21 @@ height = 20
 width = 32
 override = false
 light_arrow = true
+
+[node name="ProgressBar" parent="Buttons/Experience/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Experience/Buttons" index="58"]
+offset_bottom = 8.0
 
 [node name="Resume" parent="Buttons/Experience" index="6"]
 padding_sides = Vector2(40, 40)
@@ -7300,6 +7510,21 @@ click_box = NodePath("../Tool Box")
 height = 16
 width = 17
 override = false
+
+[node name="ProgressBar" parent="Buttons/Skills/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Skills/Buttons" index="58"]
+offset_bottom = 8.0
 
 [node name="Bios" parent="Buttons/Skills" index="5"]
 about_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -7454,6 +7679,21 @@ TTC Silent Bluish White (V2)[/center]"
 left_margin = 40
 margin_top = 32
 
+[node name="ProgressBar" parent="Buttons/KeyboardPanel/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/KeyboardPanel/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="Booklist" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 4630.0
@@ -7487,6 +7727,21 @@ left_margin = 40
 margin_top = 40
 margin_bottom = 40
 
+[node name="ProgressBar" parent="Buttons/Booklist/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Booklist/Buttons" index="58"]
+offset_bottom = 8.0
+
 [node name="CameraPhotos" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
 offset_left = 610.0
@@ -7502,6 +7757,21 @@ light_arrow = true
 
 [node name="Buttons" parent="Buttons/CameraPhotos" index="4"]
 button_format = "Camera"
+
+[node name="ProgressBar" parent="Buttons/CameraPhotos/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/CameraPhotos/Buttons" index="58"]
+offset_bottom = 8.0
 
 [node name="Letter1" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
@@ -7527,6 +7797,21 @@ body_text = "We are glad to inform you that your transfer has been successful. P
 left_margin = 40
 margin_top = 40
 margin_bottom = 40
+
+[node name="ProgressBar" parent="Buttons/Letter1/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Letter1/Buttons" index="58"]
+offset_bottom = 8.0
 
 [node name="Letter2" parent="Buttons" node_paths=PackedStringArray("panel", "click_box") instance=ExtResource("358_4i1ne")]
 visible = false
@@ -7554,6 +7839,21 @@ body_text = "“I know it’s scary now,  but it will get better.” I like tell
 left_margin = 40
 margin_top = 40
 margin_bottom = 40
+
+[node name="ProgressBar" parent="Buttons/Letter2/Buttons" index="9"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 52.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CamScrollBar" parent="Buttons/Letter2/Buttons" index="58"]
+offset_bottom = 8.0
 
 [node name="Outline Text" type="RichTextLabel" parent="Buttons"]
 visible = false

@@ -57,7 +57,7 @@ func _on_meta_clicked(meta):
 func _on_meta_hover_started(meta):
 	ButtonsSound.hover()
 	var text_size_x = get_content_width() - 6
-	var text_size_y = get_content_height() - 30
+	var text_size_y = get_content_height() - 14
 	subwindow_title.add_theme_color_override("default_color", Color(1.0,0.949,0.769,1.0))
 	await get_tree().process_frame
 	meta_rect.size = Vector2(text_size_x, text_size_y)

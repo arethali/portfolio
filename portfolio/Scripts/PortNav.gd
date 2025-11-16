@@ -32,7 +32,7 @@ func _ready():
 	label.hide()
 	color_block.hide()
 	set_process(false)
-	print("Hello There!\nThis portfolio was inspired by Buche.dev. \nGo check it out!\nMade in Aesprite and Godot.\nHosted by Vercel.")
+	print("Hello There!\nThis portfolio was inspired by Buche.dev. \nGo check it out!\nMade in Aesprite and Godot.\nHosted by GitHub Pages.")
 #
 func _on_window_size_changed():
 	var aspect_ratio = float(get_viewport().size.x)/float(get_viewport().size.y)

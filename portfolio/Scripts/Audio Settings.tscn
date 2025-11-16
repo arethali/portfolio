@@ -129,6 +129,7 @@ grow_vertical = 2
 theme = SubResource("Theme_71bew")
 theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
 theme_override_constants/line_separation = 28
+theme_override_constants/paragraph_separation = 28
 theme_override_fonts/normal_font = ExtResource("2_v1nn3")
 theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
