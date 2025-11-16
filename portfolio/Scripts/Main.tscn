@@ -1,4 +1,4 @@
-[gd_scene load_steps=646 format=3 uid="uid://dfhro4he33mwe"]
+[gd_scene load_steps=649 format=3 uid="uid://dfhro4he33mwe"]
 
 [ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://Scripts/PortNav.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://cegd5obta3j67" path="res://Assets/Background/Origin/Sky + Mountains/Sky.png" id="2_3dxm6"]
@@ -731,6 +731,67 @@ _data = {
 &"Spark1": SubResource("Animation_ac6pf"),
 &"Spark2": SubResource("Animation_oaklg"),
 &"Spark3": SubResource("Animation_4bst2")
+}
+
+[sub_resource type="Animation" id="Animation_4ac16"]
+resource_name = "Fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(0.366021, 0.406126),
+"update": 0,
+"values": [-80.0, -12.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_oyd6d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-12.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ib0kn"]
+_data = {
+&"Fade_in": SubResource("Animation_4ac16"),
+&"RESET": SubResource("Animation_oyd6d")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aquj3"]
@@ -5412,6 +5473,11 @@ volume_db = -12.0
 bus = &"Wind"
 script = ExtResource("61_qcpgi")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Wind noises"]
+libraries = {
+&"": SubResource("AnimationLibrary_ib0kn")
+}
+
 [node name="Home" type="Node" parent="." node_paths=PackedStringArray("lamp_R_anim", "lamp_L_anim")]
 script = ExtResource("70_kq445")
 lamp_R_anim = NodePath("LampR/AnimationPlayer")
@@ -5719,7 +5785,7 @@ texture = ExtResource("197_mr67e")
 [node name="Music Player" type="AudioStreamPlayer" parent="Personal"]
 bus = &"Music"
 script = ExtResource("210_1st7y")
-playlist_files = Array[String](["res://Music/Office_Mix_+6_boost.wav", "res://Music/Micah_+6.wav", "res://Music/Juniper_+6.wav", "res://Music/Cafe 2 full.wav"])
+playlist_files = Array[String](["res://Music/Office_Mix_+6_boost.wav", "res://Music/Micah_+6.wav", "res://Music/Juniper_+6.wav", "res://Music/Cafe 2 -3.wav"])
 song_title = Array[String](["Detective Reynard - Aretha Li", "Chill Lofi Beats to Nap to (Micah's Mix) - Aretha Li", "615 Pinely Street - Aretha Li", "Cafe 1930 - Astor Piazzolla (Guitar and Flute Performed by Aretha Li)"])
 
 [node name="BoomBox" type="AnimatedSprite2D" parent="Personal" node_paths=PackedStringArray("anim_player")]
@@ -6668,35 +6734,36 @@ width = 40
 [node name="Buttons" parent="Buttons/Projects" index="4"]
 button_format = "Projects"
 
-[node name="Project_Basline" parent="Buttons/Projects/Buttons" index="11"]
+[node name="Project_Basline" parent="Buttons/Projects/Buttons" index="12"]
 button_type = "Link"
+title = "(WIP) Baseline Bootcamp"
 body = "A showcase of the work I did for Baseline, 2-month online design course. Includes the design process for 2 branding briefs and 2 infographic briefs.
 [color=#858d5e][Case study in progress][/color]"
 
-[node name="Project_TRW" parent="Buttons/Projects/Buttons" index="12"]
+[node name="Project_TRW" parent="Buttons/Projects/Buttons" index="13"]
 button_type = "Link"
 link_path = "https://arethali.notion.site/The-Reason-Why-Final-ICAM-Project-0a4bbea1547349f8a41654e14646d375"
 body = "The Reason Why is an ARG (alternate reality game) that consists of a series of videos, music, and a video game, all of which were made by me. It explores the fear of a lack of closure and the steady and seemingly apathetic nature of the acceptance that there will always be unanswered questions.
 [color=#858d5e][Click to view case study][/color]"
 
-[node name="Project_Portfolio" parent="Buttons/Projects/Buttons" index="13"]
+[node name="Project_Portfolio" parent="Buttons/Projects/Buttons" index="14"]
 button_type = "Link"
 body = "A deep dive into the process of building this portfolio from the ground up. Take a peak behind curtain and learn about the design process and the development of the site you are on.
 [color=#858d5e][Case study in progress][/color]"
 
-[node name="Project_grocery" parent="Buttons/Projects/Buttons" index="14"]
+[node name="Project_grocery" parent="Buttons/Projects/Buttons" index="15"]
 button_type = "Link"
 link_path = "https://arethali.notion.site/GroceryGuide-Kiosk-135020720eb642f98c8169482be784f8"
 body = "A 4-week class group project in which we brainstormed, designed, and constructed a kiosk that helps people with a task. We developed a mobile kiosk that helps people find groceries in a grocery store.
 [color=#858d5e][Click to view case study][/color]"
 
-[node name="Project_Ecotime" parent="Buttons/Projects/Buttons" index="15"]
+[node name="Project_Ecotime" parent="Buttons/Projects/Buttons" index="16"]
 button_type = "Link"
 link_path = "https://arethali.notion.site/Ecotime-Redesign-317a675ac0544e5a8b2f6ce4e2a3bf4b"
 body = "A 10-week class group project where we were tasked to improve an existing site or app. We chose to redesign UCSD’s timekeeping application, Ecotime, due to its cluttered and non-intuitive interface.
 [color=#858d5e][Click to view case study][/color]"
 
-[node name="Project_TCOAS" parent="Buttons/Projects/Buttons" index="16"]
+[node name="Project_TCOAS" parent="Buttons/Projects/Buttons" index="17"]
 button_type = "Link"
 body = "A short, short-driven, detective-mystery game where you are tasked with solving a deceptively simple break-in case. Meet the citizens of Arcadia Springs, find and follow the clues, make the right choices, and you may unlock a dark secret kept under lock and key.
 [color=#858d5e][Case study in progress][/color]"
@@ -6723,55 +6790,55 @@ click_box = NodePath("../Film Area")
 [node name="Buttons" parent="Buttons/Films" index="4"]
 button_format = "Films"
 
-[node name="Film1" parent="Buttons/Films/Buttons" index="17"]
+[node name="Film1" parent="Buttons/Films/Buttons" index="18"]
 button_type = "Link"
 link_path = "https://www.youtube.com/watch?v=C9mHCJv8SiE"
 body = "An entrance into The Reason Why ARG, a reflective multi-media project exploring the fear of a lack of closure and the seemingly apathetic acceptance of unanswered questions."
 
-[node name="Film2" parent="Buttons/Films/Buttons" index="18"]
+[node name="Film2" parent="Buttons/Films/Buttons" index="19"]
 button_type = "Link"
 link_path = "https://www.youtube.com/watch?v=5h-abHSYrTQ"
 body = "After a long day at work, Vesta gets a phone call from the one they want to hear from the most. The end of the world commences."
 
-[node name="Film3" parent="Buttons/Films/Buttons" index="19"]
+[node name="Film3" parent="Buttons/Films/Buttons" index="20"]
 button_type = "Link"
 link_path = "https://www.youtube.com/watch?v=_2tDy3Zw2Cg"
 body = "In a world where memories can be sold for profit, one person struggles with a choice and the aftermath."
 
-[node name="Film4" parent="Buttons/Films/Buttons" index="20"]
+[node name="Film4" parent="Buttons/Films/Buttons" index="21"]
 button_type = "Link"
 link_path = "https://www.youtube.com/watch?v=jmoD84GCmS8"
 body = "A video essay convincing you that maybe it's not so bad to be doomed by the narrative and to find solace and inspiration in the end of all things."
 
-[node name="Film5" parent="Buttons/Films/Buttons" index="21"]
+[node name="Film5" parent="Buttons/Films/Buttons" index="22"]
 button_type = "Link"
 link_path = "https://www.youtube.com/watch?v=OEg8J-J0WMQ"
 body = "(Concept test for The Reason Why)
 A short film tackling the struggle between moving on with the future and the urge to go back and correct the past. "
 
-[node name="Film6" parent="Buttons/Films/Buttons" index="22"]
+[node name="Film6" parent="Buttons/Films/Buttons" index="23"]
 button_type = "Link"
 link_path = "https://www.youtube.com/watch?v=euqi7JbTm6E&feature=youtu.be"
 body = "An exploration of the multitude of doubts and uncertainties that plague my mind, including my relationship with eating, family, cultural identity, gender, and body image."
 
-[node name="Film7" parent="Buttons/Films/Buttons" index="23"]
+[node name="Film7" parent="Buttons/Films/Buttons" index="24"]
 button_type = "Link"
 link_path = "https://www.youtube.com/watch?v=stzRUc9iNno"
 body = "*2024 UCSD Film Festival Selection*
 The self is always in a constant cyclical cycle of dissociation and combination between real and projected. "
 
-[node name="Film8" parent="Buttons/Films/Buttons" index="24"]
+[node name="Film8" parent="Buttons/Films/Buttons" index="25"]
 button_type = "Link"
 link_path = "https://youtu.be/OIF0OBIQyWo"
 body = "Your telephone rings. You answer, \"Hello?\"
 The voice on the other end says, \"You have 24 hours left alive, starting now.\"
 My take on my last 24 hours alive."
 
-[node name="Film9" parent="Buttons/Films/Buttons" index="25"]
+[node name="Film9" parent="Buttons/Films/Buttons" index="26"]
 button_type = "Link"
 body = "A discussion between two warring sides of my personality about a choice, made difficult by the uncertainty of the future, and its effect on my career and mental stability."
 
-[node name="Film10" parent="Buttons/Films/Buttons" index="26"]
+[node name="Film10" parent="Buttons/Films/Buttons" index="27"]
 button_type = "Link"
 link_path = "https://www.youtube.com/watch?v=eMCOhemTQa8"
 body = "A cover of Astor Piazzolla’s Cafe 1930 for flute and guitar."

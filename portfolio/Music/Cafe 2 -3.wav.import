@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://lhsasweg8iga"
-path="res://.godot/imported/Cafe 2 full.wav-86eb92cb1e96482a8868089368532d50.sample"
+uid="uid://dcag8i1aghbd0"
+path="res://.godot/imported/Cafe 2 -3.wav-de8316a0100b3aa6e2428048665129e8.sample"
 
 [deps]
 
-source_file="res://Music/Cafe 2 full.wav"
-dest_files=["res://.godot/imported/Cafe 2 full.wav-86eb92cb1e96482a8868089368532d50.sample"]
+source_file="res://Music/Cafe 2 -3.wav"
+dest_files=["res://.godot/imported/Cafe 2 -3.wav-de8316a0100b3aa6e2428048665129e8.sample"]
 
 [params]
 

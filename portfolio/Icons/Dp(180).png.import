@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6ycivjxovio4"
-path="res://.godot/imported/Font outline.png-faa99e969c28cd37420f848bbf04d388.ctex"
+uid="uid://b7ccrokapxi3i"
+path="res://.godot/imported/Dp(180).png-a3eed0df3b429b26a75b612ae2238376.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Font outline.png"
-dest_files=["res://.godot/imported/Font outline.png-faa99e969c28cd37420f848bbf04d388.ctex"]
+source_file="res://Icons/Dp(180).png"
+dest_files=["res://.godot/imported/Dp(180).png-a3eed0df3b429b26a75b612ae2238376.ctex"]
 
 [params]
 

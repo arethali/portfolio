@@ -1,9 +1,11 @@
 extends AudioStreamPlayer
 
+@onready var fade = $AnimationPlayer
+
 func _ready():
 	if Audio.audio_on != true:
 		return
-	play()
+	fade.play("Fade_in")
 
 
 

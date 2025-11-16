@@ -16,7 +16,6 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(1, 0.94902, 0.768627, 1)
 boot_splash/show_image=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
 
 [audio]
 

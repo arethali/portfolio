@@ -3,6 +3,7 @@ var loading_scene_file = "res://Scripts/loading.tscn"
 var main_scene = "res://Scripts/Main.tscn"
 var prog_bar : ProgressBar
 var percent_label : RichTextLabel
+var head_label : RichTextLabel
 var loaded = false
 var _progress: Array = []
 var load_status = 0
@@ -29,6 +30,7 @@ func load_scene():
 	ResourceLoader.load_threaded_request(main_scene, "", true)
 	prog_bar = scene_instance.get_node("Control/ProgressBar")
 	percent_label = scene_instance.get_node("Control/Label")
+	head_label = scene_instance.get_node("Control/Headphones")
 	fade_anim = scene_instance.get_node("AnimationPlayer")
 	set_process(true)
 	return
@@ -50,6 +52,8 @@ func _process(delta):
 			var progress = _progress[0]
 			percent_label.text = str(int(progress * 100)) + "%"
 			prog_bar.value = progress * 100
+			if Audio.audio_on == true:
+				head_label.visible = true
 		3:
 			loaded = true
 	

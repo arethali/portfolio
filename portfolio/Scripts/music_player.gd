@@ -2,6 +2,7 @@ extends AudioStreamPlayer
 
 @export var playlist_files : Array[String]
 @export var song_title : Array[String]
+@onready var progress_bar = $"../../Buttons/Music/Buttons/ProgressBar"
 
 var playlist : Array
 var playing_music : bool 
@@ -42,10 +43,11 @@ func _on_mute():
 	volume_db = -80
 
 func _on_unmute():
-	volume_db = -12
+	volume_db = 0.0
 
 
 func _on_forward():
+	await get_tree().create_timer(.5)
 	if current >= playlist.size()-1:
 		current = 0
 	else:
@@ -70,3 +72,11 @@ func _on_back():
 
 func _on_finished():
 	_on_forward()
+
+func _process(delta):
+	if playing:
+		var current_time = get_playback_position()
+		var total_time = stream.get_length()
+		
+		progress_bar.max_value = total_time
+		progress_bar.value = current_time

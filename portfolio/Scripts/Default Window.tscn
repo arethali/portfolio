@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://cgd2k7ycmvr22"]
+[gd_scene load_steps=106 format=3 uid="uid://cgd2k7ycmvr22"]
 
 [ext_resource type="PackedScene" uid="uid://kp4lldtw5wvt" path="res://Scripts/Panel.tscn" id="1_4a88q"]
 [ext_resource type="Script" uid="uid://ceydd2wfjf7au" path="res://Scripts/default_window.gd" id="1_u3agq"]
@@ -62,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://dhoqxoknqhmly" path="res://Assets/UI/Film/Video Button Pressed.png" id="35_jay7j"]
 [ext_resource type="Texture2D" uid="uid://dglacirtehkhk" path="res://Assets/UI/Film/Video Button hovered.png" id="36_n78kt"]
 [ext_resource type="Texture2D" uid="uid://6mh6yire2i1b" path="res://Assets/UI/Notebook/Digital Draw2.png" id="37_07gwf"]
+[ext_resource type="Script" uid="uid://b8dtiar5gx6d1" path="res://Scripts/music progress_bar.gd" id="37_owltt"]
 [ext_resource type="Texture2D" uid="uid://htc06mjv44bc" path="res://Assets/UI/Notebook/Digital Draw3.png" id="38_l77b0"]
 [ext_resource type="Texture2D" uid="uid://cotplojg6vmv8" path="res://Assets/UI/Notebook/Digital Draw1.png" id="39_tvm31"]
 [ext_resource type="Texture2D" uid="uid://c1xu67v7y1dkl" path="res://Assets/UI/Notebook/Pixel Draw2.png" id="40_5tn1p"]
@@ -115,6 +116,12 @@ VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_je1nb")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_je1nb")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_0gux7")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_0gux7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0l2t3"]
+bg_color = Color(1, 0.94902, 0.768627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngmdq"]
+bg_color = Color(0.588235, 0.603922, 0.423529, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4mfqt"]
 load_path = "res://.godot/imported/InstaButton1.png-48c25cc32037f2b6be1db8c936b629c7.ctex"
@@ -409,6 +416,27 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("27_je1nb")
 texture_pressed = ExtResource("27_hqdk0")
 texture_hover = ExtResource("32_je1nb")
+
+[node name="ProgressBar" type="ProgressBar" parent="Buttons"]
+visible = false
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -26.0
+offset_right = 300.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_0l2t3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ngmdq")
+step = 1.0
+rounded = true
+show_percentage = false
+script = ExtResource("37_owltt")
+side_padding = 20
 
 [node name="Song Box" type="VBoxContainer" parent="Buttons"]
 clip_contents = true
@@ -1960,6 +1988,7 @@ padding_y_bott = 40
 [connection signal="top_left" from="Panel" to="Buttons/PlaceImage" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Body" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Music Buttons" method="_on_panel_top_left"]
+[connection signal="top_left" from="Panel" to="Buttons/ProgressBar" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Song Box" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Button Container" method="_on_panel_top_left"]
 [connection signal="top_left" from="Panel" to="Buttons/Looky Back" method="_on_panel_top_left"]
@@ -1984,6 +2013,7 @@ padding_y_bott = 40
 [connection signal="x_size" from="Panel" to="Buttons/PlaceImage" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Body" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Music Buttons" method="_on_panel_x_size"]
+[connection signal="x_size" from="Panel" to="Buttons/ProgressBar" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Song Box" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Button Container" method="_on_panel_x_size"]
 [connection signal="x_size" from="Panel" to="Buttons/Looky Back" method="_on_panel_x_size"]
@@ -2002,6 +2032,7 @@ padding_y_bott = 40
 [connection signal="y_size" from="Panel" to="Buttons/PlaceImage" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Body" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Music Buttons" method="_on_panel_y_size"]
+[connection signal="y_size" from="Panel" to="Buttons/ProgressBar" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Button Container" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Looky Back" method="_on_panel_y_size"]
 [connection signal="y_size" from="Panel" to="Buttons/Cam Back" method="_on_panel_y_size"]

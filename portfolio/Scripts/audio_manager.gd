@@ -4,7 +4,7 @@ var audio_on : bool
 var fxs_on : bool = true
 
 var root_window
-
+var anim 
 var arrow = load("res://Assets/UI/Global/Cursor/Arrow_green.png")
 var point = load("res://Assets/UI/Global/Cursor/Pointing Hand small.png")
 var wait = load("res://Assets/UI/Global/Cursor/Wait_v2.png")
@@ -16,7 +16,7 @@ func _ready():
 	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND, Vector2(0, 0))
 	Input.set_custom_mouse_cursor(wait, Input.CURSOR_BUSY, Vector2(0, 0))
 	#await get_tree().create_timer(.5).timeout
-	#$VBoxContainer/Button.grab_focus()
+
 
 func _hide_buttons():
 	$VBoxContainer/Button.hide()

@@ -21,6 +21,7 @@ extends Control
 @onready var cam_scroll = %CamScroll
 @onready var cam_scroll_bar = %CamScrollBar
 @onready var cam_back = %"Cam Back"
+@onready var progress_bar = $ProgressBar
 
 signal overide_panel_size(h, w)
 
@@ -85,7 +86,9 @@ func _ready():
 			emit_signal("overide_panel_size", 5, 14)
 			song_name.visible = true
 			music_buttons.visible = true
-			music_buttons.top_padding = 92
+			music_buttons.top_padding = 96
+			progress_bar.visible = true
+			progress_bar.top_padding = 88
 			mute.visible = true
 			pass
 		_:

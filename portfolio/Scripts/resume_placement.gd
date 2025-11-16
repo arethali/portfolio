@@ -33,7 +33,6 @@ func _on_panel_top_left(dimes):
 func _on_container_resized():
 	if resume and cont_set == false and visible == true:
 		cont_set = true
-		print("resume")
 		emit_signal("set_scroll")
 		#_check_overflow()
 		return
