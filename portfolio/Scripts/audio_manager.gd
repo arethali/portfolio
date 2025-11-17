@@ -15,7 +15,10 @@ func _ready():
 	Input.set_custom_mouse_cursor(arrow, Input.CURSOR_ARROW, Vector2(0,0))
 	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND, Vector2(0, 0))
 	Input.set_custom_mouse_cursor(wait, Input.CURSOR_BUSY, Vector2(0, 0))
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	#var screen_size = DisplayServer.screen_get_size()
+	#DisplayServer.window_set_size(screen_size)
+	_on_window_size_changed()
+	#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	#await get_tree().create_timer(.5).timeout
 
 

@@ -202,6 +202,7 @@ offset_bottom = 135.0
 theme = SubResource("Theme_0i73k")
 theme_override_colors/default_color = Color(0.588235, 0.603922, 0.423529, 1)
 theme_override_constants/line_separation = 16
+theme_override_constants/paragraph_separation = 16
 theme_override_fonts/normal_font = ExtResource("6_v7ar0")
 theme_override_fonts/bold_font = ExtResource("7_63ls6")
 theme_override_font_sizes/normal_font_size = 40

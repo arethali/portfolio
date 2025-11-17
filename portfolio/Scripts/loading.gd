@@ -21,7 +21,7 @@ func _ready():
 	root_window.size_changed.connect(_on_window_size_changed)
 
 func load_scene():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if instantiated == false:
 		var loading_scene = load(loading_scene_file)
 		scene_instance = loading_scene.instantiate()
