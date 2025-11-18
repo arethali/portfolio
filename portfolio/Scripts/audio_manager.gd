@@ -5,8 +5,8 @@ var fxs_on : bool = true
 
 var root_window
 var anim 
-var arrow = load("res://Assets/UI/Global/Cursor/Arrow_green.png")
-var point = load("res://Assets/UI/Global/Cursor/Pointing Hand small.png")
+var arrow = load("res://Assets/UI/Global/Cursor/Arrow_green combined.png")
+var point = load("res://Assets/UI/Global/Cursor/Pointing Hand_combined.png")
 var wait = load("res://Assets/UI/Global/Cursor/Wait_v2.png")
 
 func _ready():

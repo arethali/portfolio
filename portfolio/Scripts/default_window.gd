@@ -13,7 +13,7 @@ extends Control
 
 var panel_size_x 
 var panel_size_y 
-var defaullt_pos 
+var defaullt_pos : Vector2 
 func _ready():
 	match format:
 		"Text":
@@ -59,7 +59,7 @@ func _ready():
 	#Disabled for debugging
 	await get_tree().process_frame
 	position = Vector2(position.x - (panel_size_x/2), position.y - panel_size_y)
-	defaullt_pos = position.y
+	defaullt_pos = position
 
 func _on_exit_pressed():
 	if visible == true:
@@ -95,5 +95,6 @@ func _on_panel_y_size(size):
 
 
 func _on_panel_offset(offset):
-	position.y = (defaullt_pos - offset/100)
+	position.y = (defaullt_pos.y - offset.y/100)
+	position.x = (defaullt_pos.x - offset.x/100)
 	#print("default:" + str(defaullt_pos) + " changed:" + str(position.y) + " offset:" + str(offset))

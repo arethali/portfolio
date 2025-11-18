@@ -24,7 +24,7 @@ func _ready():
 	DisplayServer.window_set_min_size(Vector2i(0, 480))
 	DisplayServer.window_set_max_size(Vector2i(1920, 4200))
 	root_window.size_changed.connect(_on_window_size_changed)
-	
+	root_window.focus_exited.connect(_on_window_focus_exited)
 	#Set cursors
 	Input.set_custom_mouse_cursor(arrow, Input.CURSOR_ARROW, Vector2(10,10))
 	Input.set_custom_mouse_cursor(point, Input.CURSOR_POINTING_HAND, Vector2(0, 0))
@@ -42,8 +42,12 @@ func _on_window_size_changed():
 	else: 
 		root_window.content_scale_mode = Window.CONTENT_SCALE_MODE_DISABLED
 		camera.offset.y = float(1080.0 - float(get_viewport().size.y))
-		emit_signal("panel_offset", camera.offset.y)
-	
+		camera.offset.x = float(1920.0 - float(get_viewport().size.x))
+		emit_signal("panel_offset", camera.offset)
+
+#fix maximize bug(?)
+func _on_window_focus_exited():
+	_on_window_size_changed()
 
 func _on_projects_pressed():
 	ButtonsSound.clicked()

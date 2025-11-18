@@ -88,7 +88,7 @@ func _ready():
 			music_buttons.visible = true
 			music_buttons.top_padding = 96
 			progress_bar.visible = true
-			progress_bar.top_padding = 88
+			progress_bar.top_padding = 80
 			mute.visible = true
 			pass
 		_:
