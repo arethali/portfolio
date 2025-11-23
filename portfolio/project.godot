@@ -38,7 +38,8 @@ window/size/mode=2
 window/size/window_width_override=1920
 window/size/window_height_override=1200
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_width"
+window/stretch/aspect="expand"
+window/handheld/orientation=6
 mouse_cursor/custom_image="uid://dpw53wsnkm45x"
 
 [rendering]

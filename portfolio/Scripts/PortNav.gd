@@ -85,3 +85,18 @@ func _process(delta):
 
 func _on_sign_entered():
 	ButtonsSound.hover()
+
+
+func _on_to_mobile_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			JavaScriptBridge.eval("window.location.href='https://arethali.notion.site/Hello-there-077ff4e45733405ba3c33945093b8675?pvs=143'")
+			print("To Notion")
+
+
+func _on_to_mobile_mouse_entered():
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+
+
+func _on_to_mobile_mouse_exited():
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)

@@ -1,8 +1,8 @@
 [gd_resource type="AnimatedTexture" load_steps=4 format=3 uid="uid://bs8sfcn34n0w2"]
 
-[ext_resource type="Texture2D" uid="uid://ialv7qv4k5sf" path="res://Assets/Loading/yes_hovered1.png" id="1_mfoyk"]
-[ext_resource type="Texture2D" uid="uid://f201786q1r01" path="res://Assets/Loading/yes_hovered2.png" id="2_wayx0"]
-[ext_resource type="Texture2D" uid="uid://ccovgw18wuqdx" path="res://Assets/Loading/yes_hovered3.png" id="3_lii18"]
+[ext_resource type="Texture2D" uid="uid://mc7171emwkj4" path="res://Assets/Loading/x2/no_pressed1.png" id="1_mfoyk"]
+[ext_resource type="Texture2D" uid="uid://d0t22gcweel3m" path="res://Assets/Loading/x2/no_pressed2.png" id="2_wayx0"]
+[ext_resource type="Texture2D" uid="uid://cp8xnxc3lrgx3" path="res://Assets/Loading/x2/no_pressed3.png" id="3_lii18"]
 
 [resource]
 frames = 4

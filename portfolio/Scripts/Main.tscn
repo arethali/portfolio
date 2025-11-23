@@ -1,4 +1,4 @@
-[gd_scene load_steps=649 format=3 uid="uid://dfhro4he33mwe"]
+[gd_scene load_steps=650 format=3 uid="uid://dfhro4he33mwe"]
 
 [ext_resource type="Script" uid="uid://cvgj45t5itakk" path="res://Scripts/PortNav.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://cegd5obta3j67" path="res://Assets/Background/Origin/Sky + Mountains/Sky.png" id="2_3dxm6"]
@@ -40,7 +40,6 @@
 [ext_resource type="Texture2D" uid="uid://bt1o7nyher70t" path="res://Assets/Background/Below/Dead Pixel/dp1.png" id="28_1w2xm"]
 [ext_resource type="Texture2D" uid="uid://cephdll34oqtn" path="res://Assets/Background/Below/Posters/Poster1.png" id="28_5mvff"]
 [ext_resource type="Texture2D" uid="uid://03nfpptlgs3t" path="res://Assets/Background/Below/Dead Pixel/dp2.png" id="29_gngx1"]
-[ext_resource type="Texture2D" uid="uid://bwjy1na5f6y6q" path="res://Assets/Signs/View on Desktop.png" id="29_uy3go"]
 [ext_resource type="Texture2D" uid="uid://dmhglmmhx4j8p" path="res://Assets/Background/Below/Dead Pixel/dp3.png" id="30_jt61w"]
 [ext_resource type="Texture2D" uid="uid://cytnjy66qtykl" path="res://Assets/Background/Below/Posters/Poster2.png" id="30_oye8v"]
 [ext_resource type="Texture2D" uid="uid://dbj0cm13abwrb" path="res://Assets/Background/Below/Posters/Clippy.png" id="30_yf3a2"]
@@ -50,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://cy3tvv8g8ru8e" path="res://Assets/Background/Below/Dead Pixel/dp7.png" id="34_f4ese"]
 [ext_resource type="Texture2D" uid="uid://b3fm1yd45sarm" path="res://Assets/Background/Below/Dead Pixel/dp8.png" id="35_rchyr"]
 [ext_resource type="Texture2D" uid="uid://c35cblvf5yod2" path="res://Assets/Background/Below/Dead Pixel/dp9.png" id="36_pljue"]
+[ext_resource type="Texture2D" uid="uid://dtvv230igakkn" path="res://Assets/Signs/Mobile.png" id="36_yep5p"]
 [ext_resource type="Script" uid="uid://d0o8gt22ua3na" path="res://Scripts/dead_pixel.gd" id="37_nx4yo"]
 [ext_resource type="Texture2D" uid="uid://demx8m03tdpuc" path="res://Assets/Background/Below/Dead Pixel/dp_fade1.png" id="39_lboh7"]
 [ext_resource type="Texture2D" uid="uid://cobxcpkwwmj0o" path="res://Assets/Background/Below/Dead Pixel/dp_fade2.png" id="40_meayg"]
@@ -793,6 +793,9 @@ _data = {
 &"Fade_in": SubResource("Animation_4ac16"),
 &"RESET": SubResource("Animation_oyd6d")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcpgi"]
+size = Vector2(398, 213)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aquj3"]
 animations = [{
@@ -5376,18 +5379,18 @@ stretch_mode = 2
 
 [node name="ViewOnDesktop" type="Sprite2D" parent="Background"]
 texture_filter = 1
-position = Vector2(3006, 1316)
-texture = ExtResource("29_uy3go")
+position = Vector2(2990, 1322)
+texture = ExtResource("36_yep5p")
 
 [node name="ViewOnDesktopL" type="Sprite2D" parent="Background"]
 texture_filter = 1
-position = Vector2(1238, 1316)
-texture = ExtResource("29_uy3go")
+position = Vector2(1222, 1322)
+texture = ExtResource("36_yep5p")
 
 [node name="ViewOnDesktopR" type="Sprite2D" parent="Background"]
 texture_filter = 1
-position = Vector2(4670, 1316)
-texture = ExtResource("29_uy3go")
+position = Vector2(4654, 1322)
+texture = ExtResource("36_yep5p")
 
 [node name="Highway" type="TextureRect" parent="Background"]
 texture_filter = 1
@@ -5484,6 +5487,24 @@ offset_top = 111.0
 offset_right = 3148.0
 offset_bottom = 497.0
 theme_override_font_sizes/normal_font_size = 40
+
+[node name="To Mobile" type="Area2D" parent="Background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/To Mobile"]
+position = Vector2(2990, 1404.5)
+shape = SubResource("RectangleShape2D_qcpgi")
+
+[node name="To Mobile2" type="Area2D" parent="Background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/To Mobile2"]
+position = Vector2(1223, 1406)
+shape = SubResource("RectangleShape2D_qcpgi")
+
+[node name="To Mobile3" type="Area2D" parent="Background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/To Mobile3"]
+position = Vector2(4655, 1406)
+shape = SubResource("RectangleShape2D_qcpgi")
 
 [node name="Home" type="Node" parent="." node_paths=PackedStringArray("lamp_R_anim", "lamp_L_anim")]
 script = ExtResource("70_kq445")
@@ -8000,6 +8021,15 @@ autostart = true
 [connection signal="timeout" from="Background/Clouds/Timer_2" to="Background/Clouds" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_3" to="Background/Clouds" method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Background/Clouds/Timer_4" to="Background/Clouds" method="_on_timer_4_timeout"]
+[connection signal="input_event" from="Background/To Mobile" to="." method="_on_to_mobile_input_event"]
+[connection signal="mouse_entered" from="Background/To Mobile" to="." method="_on_to_mobile_mouse_entered"]
+[connection signal="mouse_exited" from="Background/To Mobile" to="." method="_on_to_mobile_mouse_exited"]
+[connection signal="input_event" from="Background/To Mobile2" to="." method="_on_to_mobile_input_event"]
+[connection signal="mouse_entered" from="Background/To Mobile2" to="." method="_on_to_mobile_mouse_entered"]
+[connection signal="mouse_exited" from="Background/To Mobile2" to="." method="_on_to_mobile_mouse_exited"]
+[connection signal="input_event" from="Background/To Mobile3" to="." method="_on_to_mobile_input_event"]
+[connection signal="mouse_entered" from="Background/To Mobile3" to="." method="_on_to_mobile_mouse_entered"]
+[connection signal="mouse_exited" from="Background/To Mobile3" to="." method="_on_to_mobile_mouse_exited"]
 [connection signal="mouse_entered" from="Home/Personal" to="." method="_on_sign_entered"]
 [connection signal="pressed" from="Home/Personal" to="." method="_on_personal_pressed"]
 [connection signal="pressed" from="Home/Personal" to="VFX" method="_on_personal_pressed"]
