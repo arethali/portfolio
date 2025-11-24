@@ -60,16 +60,14 @@ func _on_window_size_changed():
 		root_window.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 	else: 
 		root_window.content_scale_mode = Window.CONTENT_SCALE_MODE_DISABLED
-	if aspect_ratio <= 1080.0/1920.0:
-		DisplayServer.screen_set_orientation(DisplayServer.SCREEN_SENSOR_LANDSCAPE)
 
 func _on_button_mouse_entered():
 	ButtonsSound.hover()
 
 
 func _to_notion_pressed():
-	JavaScriptBridge.eval("window.location.href='https://arethali.notion.site/Hello-there-077ff4e45733405ba3c33945093b8675?pvs=143'")
-	print("To Notion")
+	OS.shell_open("https://arethali.notion.site/Hello-there-077ff4e45733405ba3c33945093b8675?pvs=143")
+	#print("To Notion")
 
 func _on_continue_pressed():
 	get_node("AnimationPlayer").play("Label1_out")

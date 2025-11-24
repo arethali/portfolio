@@ -14,8 +14,8 @@ config/name="Portfolio"
 run/main_scene="uid://vdedjycwlrvc"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(1, 0.94902, 0.768627, 1)
-boot_splash/show_image=false
 boot_splash/use_filter=false
+boot_splash/image="uid://djnuhj5fext6y"
 config/icon="uid://d0jaix3xipaiy"
 
 [audio]

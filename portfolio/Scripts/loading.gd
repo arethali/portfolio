@@ -54,6 +54,8 @@ func _process(delta):
 			prog_bar.value = progress * 100
 			if Audio.audio_on == true:
 				head_label.visible = true
+			else:
+				head_label.visible = false
 		3:
 			loaded = true
 	
@@ -76,3 +78,14 @@ func load_main():
 	#print("finished")
 	#print("on", Audio.audio_on)
 	return
+
+#html for status bar
+	#bottom: 45%;
+	#width: 50%;
+	#margin: 0 auto;
+	#border-radius: 0; 
+	#border: 0px;
+	#accent-color: #969a6c !important; 
+	#height: 104px;
+	#width: 1000px;
+	#background-color: #fff2c4;
