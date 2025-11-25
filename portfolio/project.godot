@@ -34,13 +34,17 @@ ButtonsSound="*res://Scripts/sound_manager.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
+window/size/mode=3
 window/size/window_width_override=1920
 window/size/window_height_override=1200
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=6
 mouse_cursor/custom_image="uid://dpw53wsnkm45x"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/custom-html-loader/plugin.cfg")
 
 [rendering]
 

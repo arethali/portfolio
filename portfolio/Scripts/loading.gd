@@ -79,13 +79,39 @@ func load_main():
 	#print("on", Audio.audio_on)
 	return
 
-#html for status bar
-	#bottom: 45%;
+
+#html for web loading
+##status-progress {
+	#bottom: 44%;
 	#width: 50%;
-	#margin: 0 auto;
-	#border-radius: 0; 
-	#border: 0px;
-	#accent-color: #969a6c !important; 
 	#height: 104px;
 	#width: 1000px;
-	#background-color: #fff2c4;
+	#margin: 0 auto;
+	#border-radius: 0px;
+	#border: 0px;
+	#overflow: hidden;
+	#background-color: #fff2c4ff;
+	#/* box-shadow */
+#}
+#
+#/* Цвет фона прогресс-бара (для Chrome, Safari) */
+##status-progress::-webkit-progress-bar {
+	#background-color: #fff2c4ff; /* цвет фона */
+	#border-radius: 0.0px;
+	#border: 0px;
+	#/* box-shadow */
+#}
+#/* Цвет заполненной части прогресс-бара (для Chrome, Safari) */
+##status-progress::-webkit-progress-value {
+	#background-color: #969a6cff; /* цвет прогресса */
+	#border-radius: 0.0px;
+	#border: 0px;
+	#/* box-shadow */
+#}
+#/* Цвет заполненной части прогресс-бара (для Firefox) */
+	##status-progress::-moz-progress-bar {
+	#background-color: #969a6cff; /* цвет прогресса */
+	#border-radius: 0.0px;
+	#border: 0px;
+	#/* box-shadow */
+#}

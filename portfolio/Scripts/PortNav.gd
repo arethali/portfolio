@@ -32,7 +32,7 @@ func _ready():
 	label.hide()
 	color_block.hide()
 	set_process(false)
-	print("Hello There!\nThis portfolio was inspired by Buche.dev. \nGo check it out!\nMade in Aesprite and Godot.\nHosted by GitHub Pages.")
+	print("Welcome to the debug lair!\nThis portfolio was inspired by Buche.dev. \nGo check it out!\nMade in Aesprite and Godot.\nHosted by Itch.io\nFuck you Vercel and Github pages.\nI never wanted to use you anyway.")
 #
 func _on_window_size_changed():
 	await get_tree().process_frame
